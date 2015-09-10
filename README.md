@@ -1,7 +1,7 @@
 # glesys-api
 
-[![Build Status](https://travis-ci.org/jwilsson/glesys-api.svg?branch=master)](https://travis-ci.org/jwilsson/glesys-api)
-[![Coverage Status](https://coveralls.io/repos/jwilsson/glesys-api/badge.svg?branch=master)](https://coveralls.io/r/jwilsson/glesys-api?branch=master)
+[![Build Status](https://travis-ci.org/jwilsson/glesys-api-node.svg?branch=master)](https://travis-ci.org/jwilsson/glesys-api-node)
+[![Coverage Status](https://coveralls.io/repos/jwilsson/glesys-api-node/badge.svg?branch=master&service=github)](https://coveralls.io/github/jwilsson/glesys-api-node?branch=master)
 
 A Node.js wrapper for the GleSYS API.
 
