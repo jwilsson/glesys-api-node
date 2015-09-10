@@ -12,11 +12,7 @@
     "url": "https://github.com/jwilsson/glesys-api-node"
   },
   "dependencies": {
-    "got": "^4.1.1",
-    "lodash.merge": "^3.3.2"
-  },
-  "dependencies": {
-    "got": "^4.1.1",
+    "got": "^4.2.0",
     "lodash.merge": "^3.3.2"
   },
   "devDependencies": {
