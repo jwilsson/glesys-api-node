@@ -15,6 +15,10 @@
     "got": "^4.1.1",
     "lodash.merge": "^3.3.2"
   },
+  "dependencies": {
+    "got": "^4.1.1",
+    "lodash.merge": "^3.3.2"
+  },
   "devDependencies": {
     "coveralls": "^2.11.4",
     "istanbul": "^0.3.19",
