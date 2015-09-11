@@ -223,7 +223,7 @@ describe('endpoints/loadbalancer', function () {
             var loadBalancer;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/loadbalancer/details');
             });
 
@@ -233,7 +233,7 @@ describe('endpoints/loadbalancer', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var loadBalancer;
             var stub;
@@ -241,7 +241,7 @@ describe('endpoints/loadbalancer', function () {
                 loadbalancerid: 1,
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
@@ -485,7 +485,7 @@ describe('endpoints/loadbalancer', function () {
             var loadBalancer;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/loadbalancer/listcertificate');
             });
 
@@ -495,7 +495,7 @@ describe('endpoints/loadbalancer', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var loadBalancer;
             var stub;
@@ -503,7 +503,7 @@ describe('endpoints/loadbalancer', function () {
                 loadbalancerid: 1,
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 

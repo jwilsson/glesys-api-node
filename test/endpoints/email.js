@@ -240,7 +240,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/email/list');
             });
 
@@ -250,7 +250,7 @@ describe('endpoints/email', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var email;
             var stub;
@@ -258,7 +258,7 @@ describe('endpoints/email', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
@@ -292,7 +292,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/email/quota');
             });
 
@@ -302,7 +302,7 @@ describe('endpoints/email', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var email;
             var stub;
@@ -310,7 +310,7 @@ describe('endpoints/email', function () {
                 emailaccount: 'example@example.com',
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 

@@ -174,7 +174,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/archive/details');
             });
 
@@ -184,7 +184,7 @@ describe('endpoints/archive', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var archive;
             var stub;
@@ -192,7 +192,7 @@ describe('endpoints/archive', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 

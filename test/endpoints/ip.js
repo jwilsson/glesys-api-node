@@ -48,7 +48,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/ip/details');
             });
 
@@ -58,7 +58,7 @@ describe('endpoints/ip', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var ip;
             var stub;
@@ -66,7 +66,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/ip/listfree');
             });
 
@@ -93,7 +93,7 @@ describe('endpoints/ip', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var ip;
             var stub;
@@ -101,7 +101,7 @@ describe('endpoints/ip', function () {
                 ipversion: 4,
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/ip/listown');
             });
 
@@ -128,7 +128,7 @@ describe('endpoints/ip', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var ip;
             var stub;
@@ -136,7 +136,7 @@ describe('endpoints/ip', function () {
                 ipversion: 4,
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
