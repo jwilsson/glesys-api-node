@@ -50,7 +50,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -77,7 +77,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -104,7 +104,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -131,7 +131,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -158,7 +158,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -212,7 +212,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -239,7 +239,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -266,7 +266,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -293,7 +293,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -333,7 +333,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -360,7 +360,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -387,7 +387,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -414,7 +414,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -441,7 +441,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -468,7 +468,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -495,7 +495,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
@@ -522,7 +522,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'get', function (url, data, callback) {
@@ -549,7 +549,7 @@ describe('endpoints/server', function () {
             var request = new Request();
             var server = new Server(request);
             var expected = {
-                serverid: 1,
+                serverid: 'z1',
             };
 
             sinon.stub(request, 'post', function (url, data, callback) {
