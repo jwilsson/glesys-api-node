@@ -10,39 +10,51 @@ describe('endpoints/api', function () {
     describe('listFunctions', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var api = new Api(request);
+            var api;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url, data, callback) {
                 assert.strictEqual(url, '/api/listfunctions');
             });
 
+            api = new Api(request);
             api.listFunctions();
+
+            assert.ok(stub.called);
         });
     });
 
     describe('maintenance', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var api = new Api(request);
+            var api;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url, data, callback) {
                 assert.strictEqual(url, '/api/maintenance');
             });
 
+            api = new Api(request);
             api.maintenance();
+
+            assert.ok(stub.called);
         });
     });
 
     describe('serviceInfo', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var api = new Api(request);
+            var api;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url, data, callback) {
                 assert.strictEqual(url, '/api/serviceinfo');
             });
 
+            api = new Api(request);
             api.serviceInfo();
+
+            assert.ok(stub.called);
         });
     });
 });

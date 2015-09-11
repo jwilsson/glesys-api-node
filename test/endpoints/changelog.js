@@ -10,26 +10,34 @@ describe('endpoints/changelog', function () {
     describe('api', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var changelog = new Changelog(request);
+            var changelog;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url, data, callback) {
                 assert.strictEqual(url, '/changelog/api');
             });
 
+            changelog = new Changelog(request);
             changelog.api();
+
+            assert.ok(stub.called);
         });
     });
 
     describe('controlPanel', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var changelog = new Changelog(request);
+            var changelog;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url, data, callback) {
                 assert.strictEqual(url, '/changelog/controlpanel');
             });
 
+            changelog = new Changelog(request);
             changelog.controlPanel();
+
+            assert.ok(stub.called);
         });
     });
 });
