@@ -48,7 +48,7 @@ describe('endpoints/livechat', function () {
             var liveChat;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/livechat/getmessages');
             });
 
@@ -58,7 +58,7 @@ describe('endpoints/livechat', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var liveChat;
             var stub;
@@ -66,7 +66,7 @@ describe('endpoints/livechat', function () {
                 sessionid: 1,
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 

@@ -100,7 +100,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/domain/available');
             });
 
@@ -110,7 +110,7 @@ describe('endpoints/domain', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var domain;
             var stub;
@@ -118,7 +118,7 @@ describe('endpoints/domain', function () {
                 search: 'search',
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
@@ -240,7 +240,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/domain/details');
             });
 
@@ -250,7 +250,7 @@ describe('endpoints/domain', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
             var domain;
             var stub;
@@ -258,7 +258,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
