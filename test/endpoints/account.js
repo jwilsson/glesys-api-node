@@ -10,40 +10,52 @@ describe('endpoints/account', function () {
     describe('changePassword', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var account = new Account(request);
+            var account;
+            var stub;
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/account/changepassword');
             });
 
+            account = new Account(request);
             account.changePassword();
+
+            assert.ok(stub.called);
         });
 
         it('should set the request body', function () {
             var request = new Request();
-            var account = new Account(request);
+            var account;
+            var stub;
             var expected = {
                 password: 'password',
             };
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
+            account = new Account(request);
             account.changePassword(expected);
+
+            assert.ok(stub.called);
         });
     });
 
     describe('info', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var account = new Account(request);
+            var account;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url, data, callback) {
                 assert.strictEqual(url, '/account/info');
             });
 
+            account = new Account(request);
             account.info();
+
+            assert.ok(stub.called);
         });
     });
 });

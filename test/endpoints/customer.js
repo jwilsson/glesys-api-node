@@ -10,27 +10,35 @@ describe('endpoints/customer', function () {
     describe('contactInfo', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var customer = new Customer(request);
+            var customer;
+            var stub;
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/customer/contactinfo');
             });
 
+            customer = new Customer(request);
             customer.contactInfo();
+
+            assert.ok(stub.called);
         });
 
         it('should set the request body', function () {
             var request = new Request();
-            var customer = new Customer(request);
+            var customer;
+            var stub;
             var expected = {
                 companyname: 'companyname',
             };
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
+            customer = new Customer(request);
             customer.contactInfo(expected);
+
+            assert.ok(stub.called);
         });
     });
 });
