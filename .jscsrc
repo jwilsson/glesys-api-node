@@ -4,19 +4,18 @@
     "maximumLineLength": null,
 
     "disallowMultipleVarDecl": "strict",
+    "disallowPaddingNewlinesInBlocks": true,
     "disallowSpacesInAnonymousFunctionExpression": null,
+    "disallowSpacesInFunctionDeclaration": null,
     "disallowSpacesInFunctionExpression": null,
     "disallowDanglingUnderscores": {
         "allExcept": ["__set__"]
     },
 
     "requireBlocksOnNewline": true,
+    "requireTrailingComma": true,
     "requireSpacesInFunction": {
         "beforeOpeningRoundBrace": true
-    },
-
-    "requireTrailingComma": {
-        "ignoreSingleLine": true
     },
 
     "requireSpaceAfterKeywords": [
