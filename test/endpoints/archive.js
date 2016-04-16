@@ -13,7 +13,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/archive/allowedarguments');
             });
 
@@ -30,7 +30,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/archive/changedescription');
             });
 
@@ -49,7 +49,7 @@ describe('endpoints/archive', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/archive/changepassword');
             });
 
@@ -85,7 +85,7 @@ describe('endpoints/archive', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -102,7 +102,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/archive/create');
             });
 
@@ -122,7 +122,7 @@ describe('endpoints/archive', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -139,7 +139,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/archive/delete');
             });
 
@@ -157,7 +157,7 @@ describe('endpoints/archive', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -174,7 +174,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/archive/details');
             });
 
@@ -192,7 +192,7 @@ describe('endpoints/archive', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -209,7 +209,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/archive/list');
             });
 
@@ -226,7 +226,7 @@ describe('endpoints/archive', function () {
             var archive;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/archive/resize');
             });
 
@@ -245,7 +245,7 @@ describe('endpoints/archive', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 

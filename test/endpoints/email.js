@@ -13,7 +13,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/email/costs');
             });
 
@@ -30,7 +30,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/createaccount');
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/email', function () {
                 emailaccount: 'example@example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -65,7 +65,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/createalias');
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/email', function () {
                 emailalias: 'emailalias',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -100,7 +100,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/delete');
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/email', function () {
                 email: 'email',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -135,7 +135,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/editaccount');
             });
 
@@ -153,7 +153,7 @@ describe('endpoints/email', function () {
                 emailaccount: 'example@example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -170,7 +170,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/editalias');
             });
 
@@ -188,7 +188,7 @@ describe('endpoints/email', function () {
                 emailalias: 'alias@example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -205,7 +205,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/globalquota');
             });
 
@@ -223,7 +223,7 @@ describe('endpoints/email', function () {
                 globalquota: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -240,7 +240,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/list');
             });
 
@@ -258,7 +258,7 @@ describe('endpoints/email', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -275,7 +275,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/email/overview');
             });
 
@@ -292,7 +292,7 @@ describe('endpoints/email', function () {
             var email;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/email/quota');
             });
 
@@ -310,7 +310,7 @@ describe('endpoints/email', function () {
                 emailaccount: 'example@example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 

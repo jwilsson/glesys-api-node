@@ -13,7 +13,7 @@ describe('endpoints/user', function () {
             var user;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/user/changepassword');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/user', function () {
                 currentpassword: 'currentpassword',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/user', function () {
             var user;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/user/details');
             });
 
@@ -65,7 +65,7 @@ describe('endpoints/user', function () {
             var user;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/user/disabletwofactor');
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/user', function () {
                 password: 'password',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -100,7 +100,7 @@ describe('endpoints/user', function () {
             var user;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/user/edit');
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/user', function () {
                 name: 'name',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -135,7 +135,7 @@ describe('endpoints/user', function () {
             var user;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/user/enabletwofactor');
             });
 
@@ -153,7 +153,7 @@ describe('endpoints/user', function () {
                 method: 'method',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -170,7 +170,7 @@ describe('endpoints/user', function () {
             var user;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/user/login');
             });
 
@@ -188,7 +188,7 @@ describe('endpoints/user', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -205,7 +205,7 @@ describe('endpoints/user', function () {
             var user;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/user/logout');
             });
 

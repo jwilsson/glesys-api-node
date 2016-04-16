@@ -13,7 +13,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/add');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/details');
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/listfree');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/ip', function () {
                 ipversion: 4,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/listown');
             });
 
@@ -136,7 +136,7 @@ describe('endpoints/ip', function () {
                 ipversion: 4,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -153,7 +153,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/release');
             });
 
@@ -171,7 +171,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -188,7 +188,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/remove');
             });
 
@@ -206,7 +206,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -223,7 +223,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/resetptr');
             });
 
@@ -241,7 +241,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -258,7 +258,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/setptr');
             });
 
@@ -276,7 +276,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -293,7 +293,7 @@ describe('endpoints/ip', function () {
             var ip;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/ip/take');
             });
 
@@ -311,7 +311,7 @@ describe('endpoints/ip', function () {
                 ipaddress: '127.0.0.1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 

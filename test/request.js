@@ -22,7 +22,7 @@ describe('request', function () {
             var request = new Request({});
             var stub;
 
-            stub = sinon.stub(request, 'request', function (url, options, callback) {
+            stub = sinon.stub(request, 'request', function (url, options) {
                 assert.strictEqual(options.method, 'GET');
             });
 
@@ -35,7 +35,7 @@ describe('request', function () {
             var request = new Request({});
             var stub;
 
-            stub = sinon.stub(request, 'request', function (url, options, callback) {
+            stub = sinon.stub(request, 'request', function (url) {
                 assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
             });
 
@@ -51,7 +51,7 @@ describe('request', function () {
                 foo: 'bar',
             };
 
-            stub = sinon.stub(request, 'request', function (url, options, callback) {
+            stub = sinon.stub(request, 'request', function (url, options) {
                 assert.strictEqual(options.query, data);
             });
 
@@ -66,7 +66,7 @@ describe('request', function () {
             var request = new Request({});
             var stub;
 
-            stub = sinon.stub(request, 'request', function (url, options, callback) {
+            stub = sinon.stub(request, 'request', function (url, options) {
                 assert.strictEqual(options.method, 'POST');
             });
 
@@ -79,7 +79,7 @@ describe('request', function () {
             var request = new Request({});
             var stub;
 
-            stub = sinon.stub(request, 'request', function (url, options, callback) {
+            stub = sinon.stub(request, 'request', function (url) {
                 assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
             });
 
@@ -95,7 +95,7 @@ describe('request', function () {
                 foo: 'bar',
             };
 
-            stub = sinon.stub(request, 'request', function (url, options, callback) {
+            stub = sinon.stub(request, 'request', function (url, options) {
                 assert.strictEqual(options.body, data);
             });
 

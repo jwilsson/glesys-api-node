@@ -13,7 +13,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/add');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/addrecord');
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/domain/allowedarguments');
             });
 
@@ -100,7 +100,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/available');
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/domain', function () {
                 search: 'search',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -135,7 +135,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/changenameservers');
             });
 
@@ -153,7 +153,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -170,7 +170,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/delete');
             });
 
@@ -188,7 +188,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -205,7 +205,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/deleterecord');
             });
 
@@ -223,7 +223,7 @@ describe('endpoints/domain', function () {
                 recordid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -240,7 +240,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/details');
             });
 
@@ -258,7 +258,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -275,7 +275,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/edit');
             });
 
@@ -293,7 +293,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -310,7 +310,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/domain/legacywebhosting');
             });
 
@@ -327,7 +327,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/domain/list');
             });
 
@@ -344,7 +344,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/listrecords');
             });
 
@@ -362,7 +362,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -379,7 +379,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/domain/pricelist');
             });
 
@@ -396,7 +396,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/register');
             });
 
@@ -414,7 +414,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -431,7 +431,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/renew');
             });
 
@@ -449,7 +449,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -466,7 +466,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/setautorenew');
             });
 
@@ -484,7 +484,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -501,7 +501,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/transfer');
             });
 
@@ -519,7 +519,7 @@ describe('endpoints/domain', function () {
                 domainname: 'example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -536,7 +536,7 @@ describe('endpoints/domain', function () {
             var domain;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/domain/updaterecord');
             });
 
@@ -554,7 +554,7 @@ describe('endpoints/domain', function () {
                 recordid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 

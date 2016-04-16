@@ -13,7 +13,7 @@ describe('endpoints/customer', function () {
             var customer;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/customer/contactinfo');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/customer', function () {
                 companyname: 'companyname',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 

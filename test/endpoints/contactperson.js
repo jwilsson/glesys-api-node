@@ -13,7 +13,7 @@ describe('endpoints/contactperson', function () {
             var contactPerson;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/contactperson/add');
             });
 
@@ -32,7 +32,7 @@ describe('endpoints/contactperson', function () {
                 phonenumber: '1234567890',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -49,7 +49,7 @@ describe('endpoints/contactperson', function () {
             var contactPerson;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/contactperson/delete');
             });
 
@@ -67,7 +67,7 @@ describe('endpoints/contactperson', function () {
                 contactpersonid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -84,7 +84,7 @@ describe('endpoints/contactperson', function () {
             var contactPerson;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/contactperson/edit');
             });
 
@@ -103,7 +103,7 @@ describe('endpoints/contactperson', function () {
                 name: 'name',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -120,7 +120,7 @@ describe('endpoints/contactperson', function () {
             var contactPerson;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/contactperson/list');
             });
 

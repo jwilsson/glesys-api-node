@@ -13,7 +13,7 @@ describe('endpoints/account', function () {
             var account;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/account/changepassword');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/account', function () {
                 password: 'password',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/account', function () {
             var account;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/account/info');
             });
 

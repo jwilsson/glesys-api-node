@@ -13,7 +13,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/addiso');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/server', function () {
                 archiveusername: 'example',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/allowedarguments');
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/backup');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/clone');
             });
 
@@ -136,7 +136,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -153,7 +153,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/console');
             });
 
@@ -171,7 +171,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -188,7 +188,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/costs');
             });
 
@@ -206,7 +206,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -223,7 +223,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/create');
             });
 
@@ -241,7 +241,7 @@ describe('endpoints/server', function () {
                 datacenter: 'datacenter',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -258,7 +258,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/destroy');
             });
 
@@ -276,7 +276,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -293,7 +293,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/details');
             });
 
@@ -311,7 +311,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -328,7 +328,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/edit');
             });
 
@@ -346,7 +346,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -363,7 +363,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/limits');
             });
 
@@ -381,7 +381,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -398,7 +398,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/server/list');
             });
 
@@ -415,7 +415,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/listiso');
             });
 
@@ -433,7 +433,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -450,7 +450,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/mountiso');
             });
 
@@ -468,7 +468,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -485,7 +485,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/reboot');
             });
 
@@ -503,7 +503,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -520,7 +520,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/resetlimit');
             });
 
@@ -538,7 +538,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -555,7 +555,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/resetpassword');
             });
 
@@ -573,7 +573,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -590,7 +590,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/resourceusage');
             });
 
@@ -608,7 +608,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -625,7 +625,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/start');
             });
 
@@ -643,7 +643,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -660,7 +660,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/status');
             });
 
@@ -678,7 +678,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -695,7 +695,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/server/stop');
             });
 
@@ -713,7 +713,7 @@ describe('endpoints/server', function () {
                 serverid: 'z1',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -730,7 +730,7 @@ describe('endpoints/server', function () {
             var server;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/server/templates');
             });
 

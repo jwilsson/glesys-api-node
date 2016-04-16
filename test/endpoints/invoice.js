@@ -13,7 +13,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/invoice/allowedarguments');
             });
 
@@ -30,7 +30,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/invoice/billingperiod');
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/invoice', function () {
                 account: 'account',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -65,7 +65,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/invoice/list');
             });
 
@@ -82,7 +82,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/invoice/next');
             });
 
@@ -99,7 +99,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/invoice/paybycard');
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/invoice', function () {
                 paymentcardid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -135,7 +135,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/invoice/paybypaypal');
             });
 
@@ -153,7 +153,7 @@ describe('endpoints/invoice', function () {
                 invoicenumbers: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -170,7 +170,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/invoice/paymenthistory');
             });
 
@@ -187,7 +187,7 @@ describe('endpoints/invoice', function () {
             var invoice;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/invoice/settings');
             });
 
@@ -205,7 +205,7 @@ describe('endpoints/invoice', function () {
                 invoiceemailaddress: 'example@example.com',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 

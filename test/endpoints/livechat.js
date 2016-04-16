@@ -13,7 +13,7 @@ describe('endpoints/livechat', function () {
             var liveChat;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/livechat/closesession');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/livechat', function () {
                 sessionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/livechat', function () {
             var liveChat;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/livechat/getmessages');
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/livechat', function () {
                 sessionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/livechat', function () {
             var liveChat;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/livechat/newsession');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/livechat', function () {
                 name: 'Jonathan',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/livechat', function () {
             var liveChat;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/livechat/postmessage');
             });
 
@@ -136,7 +136,7 @@ describe('endpoints/livechat', function () {
                 sessionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -153,7 +153,7 @@ describe('endpoints/livechat', function () {
             var liveChat;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/livechat/sessioninfo');
             });
 
@@ -171,7 +171,7 @@ describe('endpoints/livechat', function () {
                 sessionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -188,7 +188,7 @@ describe('endpoints/livechat', function () {
             var liveChat;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/livechat/status');
             });
 

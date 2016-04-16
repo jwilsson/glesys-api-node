@@ -13,7 +13,7 @@ describe('endpoints/transaction', function () {
             var transaction;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/transaction/acknowledge');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/transaction', function () {
                 transactionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/transaction', function () {
             var transaction;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/transaction/cancel');
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/transaction', function () {
                 transactionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/transaction', function () {
             var transaction;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/transaction/list');
             });
 
@@ -100,7 +100,7 @@ describe('endpoints/transaction', function () {
             var transaction;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/transaction/start');
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/transaction', function () {
                 transactionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 

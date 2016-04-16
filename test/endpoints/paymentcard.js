@@ -13,7 +13,7 @@ describe('endpoints/paymentcard', function () {
             var paymentCard;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/paymentcard/add');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/paymentcard', function () {
                 description: 'description',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/paymentcard', function () {
             var paymentCard;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/paymentcard/delete');
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/paymentcard', function () {
                 paymentcardid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/paymentcard', function () {
             var paymentCard;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/paymentcard/edit');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/paymentcard', function () {
                 paymentcardid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/paymentcard', function () {
             var paymentCard;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/paymentcard/list');
             });
 

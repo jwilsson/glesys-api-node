@@ -13,7 +13,7 @@ describe('endpoints/vpn', function () {
             var vpn;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/vpn/createuser');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/vpn', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/vpn', function () {
             var vpn;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/vpn/deleteuser');
             });
 
@@ -66,7 +66,7 @@ describe('endpoints/vpn', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/vpn', function () {
             var vpn;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/vpn/edituser');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/vpn', function () {
                 username: 'username',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -118,7 +118,7 @@ describe('endpoints/vpn', function () {
             var vpn;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/vpn/listusers');
             });
 

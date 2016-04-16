@@ -13,7 +13,7 @@ describe('endpoints/api', function () {
             var api;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/api/listfunctions');
             });
 
@@ -30,7 +30,7 @@ describe('endpoints/api', function () {
             var api;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/api/maintenance');
             });
 
@@ -47,7 +47,7 @@ describe('endpoints/api', function () {
             var api;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/api/serviceinfo');
             });
 

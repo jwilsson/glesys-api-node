@@ -13,7 +13,7 @@ describe('endpoints/changelog', function () {
             var changelog;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/changelog/api');
             });
 
@@ -30,7 +30,7 @@ describe('endpoints/changelog', function () {
             var changelog;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/changelog/controlpanel');
             });
 

@@ -13,7 +13,7 @@ describe('endpoints/sshkey', function () {
             var sshKey;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/sshkey/add');
             });
 
@@ -31,7 +31,7 @@ describe('endpoints/sshkey', function () {
                 sshkey: 'abc123',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
@@ -48,7 +48,7 @@ describe('endpoints/sshkey', function () {
             var sshKey;
             var stub;
 
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url) {
                 assert.strictEqual(url, '/sshkey/list');
             });
 
@@ -65,7 +65,7 @@ describe('endpoints/sshkey', function () {
             var sshKey;
             var stub;
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url) {
                 assert.strictEqual(url, '/sshkey/remove');
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/sshkey', function () {
                 sshkeyids: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data) {
                 assert.deepEqual(data, expected);
             });
 
