@@ -10,148 +10,192 @@ describe('endpoints/livechat', function () {
     describe('closeSession', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/livechat/closesession');
             });
 
-            livechat.closeSession();
+            liveChat = new LiveChat(request);
+            liveChat.closeSession();
+
+            assert.ok(stub.called);
         });
 
         it('should set the request body', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
             var expected = {
                 sessionid: 1,
             };
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
-            livechat.closeSession(expected);
+            liveChat = new LiveChat(request);
+            liveChat.closeSession(expected);
+
+            assert.ok(stub.called);
         });
     });
 
     describe('getMessages', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/livechat/getmessages');
             });
 
-            livechat.getMessages();
+            liveChat = new LiveChat(request);
+            liveChat.getMessages();
+
+            assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
+        it('should set the request body', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
             var expected = {
                 sessionid: 1,
             };
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
-            livechat.getMessages(expected);
+            liveChat = new LiveChat(request);
+            liveChat.getMessages(expected);
+
+            assert.ok(stub.called);
         });
     });
 
     describe('newSession', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/livechat/newsession');
             });
 
-            livechat.newSession();
+            liveChat = new LiveChat(request);
+            liveChat.newSession();
+
+            assert.ok(stub.called);
         });
 
         it('should set the request body', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
             var expected = {
                 name: 'Jonathan',
             };
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
-            livechat.newSession(expected);
+            liveChat = new LiveChat(request);
+            liveChat.newSession(expected);
+
+            assert.ok(stub.called);
         });
     });
 
     describe('postMessage', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/livechat/postmessage');
             });
 
-            livechat.postMessage();
+            liveChat = new LiveChat(request);
+            liveChat.postMessage();
+
+            assert.ok(stub.called);
         });
 
         it('should set the request body', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
             var expected = {
                 sessionid: 1,
             };
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
-            livechat.postMessage(expected);
+            liveChat = new LiveChat(request);
+            liveChat.postMessage(expected);
+
+            assert.ok(stub.called);
         });
     });
 
     describe('sessionInfo', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.strictEqual(url, '/livechat/sessioninfo');
             });
 
-            livechat.sessionInfo();
+            liveChat = new LiveChat(request);
+            liveChat.sessionInfo();
+
+            assert.ok(stub.called);
         });
 
         it('should set the request body', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
             var expected = {
                 sessionid: 1,
             };
 
-            sinon.stub(request, 'post', function (url, data, callback) {
+            stub = sinon.stub(request, 'post', function (url, data, callback) {
                 assert.deepEqual(data, expected);
             });
 
-            livechat.sessionInfo(expected);
+            liveChat = new LiveChat(request);
+            liveChat.sessionInfo(expected);
+
+            assert.ok(stub.called);
         });
     });
 
     describe('status', function () {
         it('should set the request URL', function () {
             var request = new Request();
-            var livechat = new LiveChat(request);
+            var liveChat;
+            var stub;
 
-            sinon.stub(request, 'get', function (url, data, callback) {
+            stub = sinon.stub(request, 'get', function (url, data, callback) {
                 assert.strictEqual(url, '/livechat/status');
             });
 
-            livechat.status();
+            liveChat = new LiveChat(request);
+            liveChat.status();
+
+            assert.ok(stub.called);
         });
     });
 });
