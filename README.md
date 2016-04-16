@@ -15,14 +15,14 @@ npm install glesys-api
 
 ## Usage
 ```js
-var GleSYSAPI = require('glesys-api');
+const GleSYSAPI = require('glesys-api');
 
-var glesys = new GleSYSAPI({
+const glesys = new GleSYSAPI({
     apiKey: 'key',
     apiUser: 'user',
 });
 
-glesys.api.serviceInfo().then(function (res) {
+glesys.api.serviceInfo().then((res) => {
     console.log(res.body);
 });
 
