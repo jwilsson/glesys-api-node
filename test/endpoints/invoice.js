@@ -79,37 +79,6 @@ describe('endpoints/invoice', () => {
         });
     });
 
-    describe('payByCard', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'post', (url) => {
-                assert.strictEqual(url, '/invoice/paybycard');
-            });
-
-            invoice.payByCard();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const expected = {
-                invoicenumbers: 1,
-                paymentcardid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post', (url, data) => {
-                assert.deepEqual(data, expected);
-            });
-
-            invoice.payByCard(expected);
-
-            assert.ok(stub.called);
-        });
-    });
-
     describe('payByPaypal', () => {
         it('should set the request URL', () => {
             const request = new Request();

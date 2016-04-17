@@ -102,7 +102,6 @@ glesys.email.createAccount({
 * [`GleSYSAPI.invoice.billingPeriod()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicebillingperiod)
 * [`GleSYSAPI.invoice.list()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicelist)
 * [`GleSYSAPI.invoice.next()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicenext)
-* [`GleSYSAPI.invoice.payByCard()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicepaybycard)
 * [`GleSYSAPI.invoice.payByPaypal()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicepaybypaypal)
 * [`GleSYSAPI.invoice.paymentHistory()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicepaymenthistory)
 * [`GleSYSAPI.invoice.settings()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicesettings)
@@ -152,6 +151,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.paymentCard.delete()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcarddelete)
 * [`GleSYSAPI.paymentCard.edit()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcardedit)
 * [`GleSYSAPI.paymentCard.list()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcardlist)
+* [`GleSYSAPI.paymentCard.payInvoices()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcardpayinvoices)
 
 ### server
 * [`GleSYSAPI.server.addISO()`](https://github.com/GleSYS/API/wiki/functions_server#serveraddiso)

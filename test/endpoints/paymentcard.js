@@ -110,4 +110,35 @@ describe('endpoints/paymentcard', () => {
             assert.ok(stub.called);
         });
     });
+
+    describe('payInvoices', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const stub = sinon.stub(request, 'post', (url) => {
+                assert.strictEqual(url, '/paymentcard/payinvoices');
+            });
+
+            paymentCard.payInvoices();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const expected = {
+                invoicenumbers: 1,
+                paymentcardid: 1,
+            };
+
+            const stub = sinon.stub(request, 'post', (url, data) => {
+                assert.deepEqual(data, expected);
+            });
+
+            paymentCard.payInvoices(expected);
+
+            assert.ok(stub.called);
+        });
+    });
 });
