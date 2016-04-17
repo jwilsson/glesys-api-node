@@ -1,57 +1,48 @@
 'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
+const assert = require('assert');
+const sinon = require('sinon');
 
-var Api = require('../../lib/endpoints/api');
-var Request = require('../../lib/request');
+const Api = require('../../lib/endpoints/api');
+const Request = require('../../lib/request');
 
-describe('endpoints/api', function () {
-    describe('listFunctions', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var api;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url) {
+describe('endpoints/api', () => {
+    describe('listFunctions', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const api = new Api(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/api/listfunctions');
             });
 
-            api = new Api(request);
             api.listFunctions();
 
             assert.ok(stub.called);
         });
     });
 
-    describe('maintenance', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var api;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url) {
+    describe('maintenance', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const api = new Api(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/api/maintenance');
             });
 
-            api = new Api(request);
             api.maintenance();
 
             assert.ok(stub.called);
         });
     });
 
-    describe('serviceInfo', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var api;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url) {
+    describe('serviceInfo', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const api = new Api(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/api/serviceinfo');
             });
 
-            api = new Api(request);
             api.serviceInfo();
 
             assert.ok(stub.called);
