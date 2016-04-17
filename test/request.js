@@ -1,28 +1,26 @@
 'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
-var Request = require('../lib/request');
+const assert = require('assert');
+const sinon = require('sinon');
+const Request = require('../lib/request');
 
-describe('request', function () {
-    var authOptions = {
+describe('request', () => {
+    const authOptions = {
         apiKey: 'key',
         apiUser: 'user',
     };
 
-    it('should set apiKey and apiUser', function () {
-        var request = new Request(authOptions);
+    it('should set apiKey and apiUser', () => {
+        const request = new Request(authOptions);
 
         assert.strictEqual(request.apiKey, authOptions.apiKey);
         assert.strictEqual(request.apiUser, authOptions.apiUser);
     });
 
-    describe('get()', function () {
-        it('should set the request method to "GET"', function () {
-            var request = new Request({});
-            var stub;
-
-            stub = sinon.stub(request, 'request', function (url, options) {
+    describe('get()', () => {
+        it('should set the request method to "GET"', () => {
+            const request = new Request({});
+            const stub = sinon.stub(request, 'request', (url, options) => {
                 assert.strictEqual(options.method, 'GET');
             });
 
@@ -31,11 +29,9 @@ describe('request', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the request URL', function () {
-            var request = new Request({});
-            var stub;
-
-            stub = sinon.stub(request, 'request', function (url) {
+        it('should set the request URL', () => {
+            const request = new Request({});
+            const stub = sinon.stub(request, 'request', (url) => {
                 assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
             });
 
@@ -44,14 +40,13 @@ describe('request', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', function () {
-            var request = new Request({});
-            var stub;
-            var data = {
+        it('should set the query string', () => {
+            const request = new Request({});
+            const data = {
                 foo: 'bar',
             };
 
-            stub = sinon.stub(request, 'request', function (url, options) {
+            const stub = sinon.stub(request, 'request', (url, options) => {
                 assert.strictEqual(options.query, data);
             });
 
@@ -61,12 +56,10 @@ describe('request', function () {
         });
     });
 
-    describe('post()', function () {
-        it('should set the request method to "POST"', function () {
-            var request = new Request({});
-            var stub;
-
-            stub = sinon.stub(request, 'request', function (url, options) {
+    describe('post()', () => {
+        it('should set the request method to "POST"', () => {
+            const request = new Request({});
+            const stub = sinon.stub(request, 'request', (url, options) => {
                 assert.strictEqual(options.method, 'POST');
             });
 
@@ -75,11 +68,9 @@ describe('request', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the request URL', function () {
-            var request = new Request({});
-            var stub;
-
-            stub = sinon.stub(request, 'request', function (url) {
+        it('should set the request URL', () => {
+            const request = new Request({});
+            const stub = sinon.stub(request, 'request', (url) => {
                 assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
             });
 
@@ -88,14 +79,13 @@ describe('request', function () {
             assert.ok(stub.called);
         });
 
-        it('should set the body', function () {
-            var request = new Request({});
-            var stub;
-            var data = {
+        it('should set the body', () => {
+            const request = new Request({});
+            const data = {
                 foo: 'bar',
             };
 
-            stub = sinon.stub(request, 'request', function (url, options) {
+            const stub = sinon.stub(request, 'request', (url, options) => {
                 assert.strictEqual(options.body, data);
             });
 
