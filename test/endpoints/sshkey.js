@@ -1,93 +1,80 @@
 'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
+const assert = require('assert');
+const sinon = require('sinon');
 
-var SshKey = require('../../lib/endpoints/sshkey');
-var Request = require('../../lib/request');
+const SshKey = require('../../lib/endpoints/sshkey');
+const Request = require('../../lib/request');
 
-describe('endpoints/sshkey', function () {
-    describe('add', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var sshKey;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url) {
+describe('endpoints/sshkey', () => {
+    describe('add', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const sshKey = new SshKey(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/sshkey/add');
             });
 
-            sshKey = new SshKey(request);
             sshKey.add();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var sshKey;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const sshKey = new SshKey(request);
+            const expected = {
                 sshkey: 'abc123',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            sshKey = new SshKey(request);
             sshKey.add(expected);
 
             assert.ok(stub.called);
         });
     });
 
-    describe('list', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var sshKey;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url) {
+    describe('list', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const sshKey = new SshKey(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/sshkey/list');
             });
 
-            sshKey = new SshKey(request);
             sshKey.list();
 
             assert.ok(stub.called);
         });
     });
 
-    describe('remove', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var sshKey;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url) {
+    describe('remove', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const sshKey = new SshKey(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/sshkey/remove');
             });
 
-            sshKey = new SshKey(request);
             sshKey.remove();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var sshKey;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const sshKey = new SshKey(request);
+            const expected = {
                 sshkeyids: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            sshKey = new SshKey(request);
             sshKey.remove(expected);
 
             assert.ok(stub.called);
