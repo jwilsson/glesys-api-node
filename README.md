@@ -1,6 +1,6 @@
 # glesys-api
 
-[![npm](https://img.shields.io/npm/v/glesys-api-node.svg)](https://www.npmjs.com/package/glesys-api-node)
+[![npm](https://img.shields.io/npm/v/glesys-api.svg)](https://www.npmjs.com/package/glesys-api)
 [![Build Status](https://travis-ci.org/jwilsson/glesys-api-node.svg?branch=master)](https://travis-ci.org/jwilsson/glesys-api-node)
 [![Coverage Status](https://coveralls.io/repos/jwilsson/glesys-api-node/badge.svg?branch=master&service=github)](https://coveralls.io/github/jwilsson/glesys-api-node?branch=master)
 
