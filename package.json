@@ -18,21 +18,18 @@
     "url": "https://github.com/jwilsson/glesys-api-node"
   },
   "dependencies": {
-    "got": "^4.2.0",
-    "lodash.merge": "^3.3.2"
+    "got": "^6.3.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.4",
-    "istanbul": "^0.3.19",
-    "jscs": "^2.1.1",
-    "jshint": "^2.8.0",
+    "eslint": "^2.8.0",
+    "istanbul": "^0.4.3",
     "mocha": "^2.3.2",
-    "rewire": "^2.3.4",
     "sinon": "^1.16.1"
   },
   "scripts": {
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "pretest": "jshint lib test && jscs lib test",
+    "pretest": "eslint lib test",
     "test": "mocha"
   },
   "license": "MIT",

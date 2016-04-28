@@ -1,25 +1,28 @@
 # glesys-api
 
+[![npm](https://img.shields.io/npm/v/glesys-api-node.svg)](https://www.npmjs.com/package/glesys-api-node)
 [![Build Status](https://travis-ci.org/jwilsson/glesys-api-node.svg?branch=master)](https://travis-ci.org/jwilsson/glesys-api-node)
 [![Coverage Status](https://coveralls.io/repos/jwilsson/glesys-api-node/badge.svg?branch=master&service=github)](https://coveralls.io/github/jwilsson/glesys-api-node?branch=master)
 
 A Node.js wrapper for the GleSYS API.
 
 ## Installation
+*Note: Node 4 or later is required.*
+
 ```bash
 npm install glesys-api
 ```
 
 ## Usage
 ```js
-var GleSYSAPI = require('glesys-api');
+const GleSYSAPI = require('glesys-api');
 
-var glesys = new GleSYSAPI({
+const glesys = new GleSYSAPI({
     apiKey: 'key',
     apiUser: 'user',
 });
 
-glesys.api.serviceInfo().then(function (res) {
+glesys.api.serviceInfo().then((res) => {
     console.log(res.body);
 });
 
@@ -99,7 +102,6 @@ glesys.email.createAccount({
 * [`GleSYSAPI.invoice.billingPeriod()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicebillingperiod)
 * [`GleSYSAPI.invoice.list()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicelist)
 * [`GleSYSAPI.invoice.next()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicenext)
-* [`GleSYSAPI.invoice.payByCard()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicepaybycard)
 * [`GleSYSAPI.invoice.payByPaypal()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicepaybypaypal)
 * [`GleSYSAPI.invoice.paymentHistory()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicepaymenthistory)
 * [`GleSYSAPI.invoice.settings()`](https://github.com/GleSYS/API/wiki/functions_invoice#invoicesettings)
@@ -149,6 +151,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.paymentCard.delete()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcarddelete)
 * [`GleSYSAPI.paymentCard.edit()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcardedit)
 * [`GleSYSAPI.paymentCard.list()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcardlist)
+* [`GleSYSAPI.paymentCard.payInvoices()`](https://github.com/GleSYS/API/wiki/functions_paymentcard#paymentcardpayinvoices)
 
 ### server
 * [`GleSYSAPI.server.addISO()`](https://github.com/GleSYS/API/wiki/functions_server#serveraddiso)

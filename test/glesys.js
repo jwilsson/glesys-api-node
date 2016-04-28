@@ -1,26 +1,21 @@
 'use strict';
 
-var assert = require('assert');
-var rewire = require('rewire');
+const assert = require('assert');
+const GleSYSAPI = require('../lib/glesys');
 
-describe('GleSYSAPI', function () {
-    it('should set apiKey and apiUser on Request object', function () {
-        var GleSYSAPI = rewire('../lib/glesys');
-
-        GleSYSAPI.__set__('Request', function (options) {
-            assert.strictEqual(options.apiKey, 'key');
-            assert.strictEqual(options.apiUser, 'user');
-        });
-
-        new GleSYSAPI({
+describe('GleSYSAPI', () => {
+    it('should set apiKey and apiUser on Request object', () => {
+        const glesys = new GleSYSAPI({
             apiKey: 'key',
             apiUser: 'user',
         });
+
+        assert.strictEqual(glesys.request.apiKey, 'key');
+        assert.strictEqual(glesys.request.apiUser, 'user');
     });
 
-    it('should expose API methods', function () {
-        var GleSYSAPI = require('../lib/glesys');
-        var glesys = new GleSYSAPI();
+    it('should expose API methods', () => {
+        const glesys = new GleSYSAPI();
 
         // We're just checking for existence
         assert.ok(glesys.account);

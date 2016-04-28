@@ -1,40 +1,34 @@
 'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
+const assert = require('assert');
+const sinon = require('sinon');
 
-var Changelog = require('../../lib/endpoints/changelog');
-var Request = require('../../lib/request');
+const Changelog = require('../../lib/endpoints/changelog');
+const Request = require('../../lib/request');
 
-describe('endpoints/changelog', function () {
-    describe('api', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var changelog;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+describe('endpoints/changelog', () => {
+    describe('api', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const changelog = new Changelog(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/changelog/api');
             });
 
-            changelog = new Changelog(request);
             changelog.api();
 
             assert.ok(stub.called);
         });
     });
 
-    describe('controlPanel', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var changelog;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+    describe('controlPanel', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const changelog = new Changelog(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/changelog/controlpanel');
             });
 
-            changelog = new Changelog(request);
             changelog.controlPanel();
 
             assert.ok(stub.called);

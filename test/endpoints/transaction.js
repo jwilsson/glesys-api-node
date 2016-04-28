@@ -1,128 +1,110 @@
 'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
+const assert = require('assert');
+const sinon = require('sinon');
 
-var Transaction = require('../../lib/endpoints/transaction');
-var Request = require('../../lib/request');
+const Transaction = require('../../lib/endpoints/transaction');
+const Request = require('../../lib/request');
 
-describe('endpoints/transaction', function () {
-    describe('acknowledge', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var transaction;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+describe('endpoints/transaction', () => {
+    describe('acknowledge', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const transaction = new Transaction(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/transaction/acknowledge');
             });
 
-            transaction = new Transaction(request);
             transaction.acknowledge();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var transaction;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const transaction = new Transaction(request);
+            const expected = {
                 transactionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            transaction = new Transaction(request);
             transaction.acknowledge(expected);
 
             assert.ok(stub.called);
         });
     });
 
-    describe('cancel', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var transaction;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+    describe('cancel', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const transaction = new Transaction(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/transaction/cancel');
             });
 
-            transaction = new Transaction(request);
             transaction.cancel();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var transaction;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const transaction = new Transaction(request);
+            const expected = {
                 transactionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            transaction = new Transaction(request);
             transaction.cancel(expected);
 
             assert.ok(stub.called);
         });
     });
 
-    describe('list', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var transaction;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+    describe('list', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const transaction = new Transaction(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/transaction/list');
             });
 
-            transaction = new Transaction(request);
             transaction.list();
 
             assert.ok(stub.called);
         });
     });
 
-    describe('start', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var transaction;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+    describe('start', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const transaction = new Transaction(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/transaction/start');
             });
 
-            transaction = new Transaction(request);
             transaction.start();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var transaction;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const transaction = new Transaction(request);
+            const expected = {
                 transactionid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            transaction = new Transaction(request);
             transaction.start(expected);
 
             assert.ok(stub.called);

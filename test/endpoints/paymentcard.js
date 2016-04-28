@@ -1,129 +1,142 @@
 'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
+const assert = require('assert');
+const sinon = require('sinon');
 
-var PaymentCard = require('../../lib/endpoints/paymentcard');
-var Request = require('../../lib/request');
+const PaymentCard = require('../../lib/endpoints/paymentcard');
+const Request = require('../../lib/request');
 
-describe('endpoints/paymentcard', function () {
-    describe('add', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var paymentCard;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+describe('endpoints/paymentcard', () => {
+    describe('add', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/paymentcard/add');
             });
 
-            paymentCard = new PaymentCard(request);
             paymentCard.add();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var paymentCard;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const expected = {
                 description: 'description',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            paymentCard = new PaymentCard(request);
             paymentCard.add(expected);
 
             assert.ok(stub.called);
         });
     });
 
-    describe('delete', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var paymentCard;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+    describe('delete', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/paymentcard/delete');
             });
 
-            paymentCard = new PaymentCard(request);
             paymentCard.delete();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var paymentCard;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const expected = {
                 paymentcardid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            paymentCard = new PaymentCard(request);
             paymentCard.delete(expected);
 
             assert.ok(stub.called);
         });
     });
 
-    describe('edit', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var paymentCard;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+    describe('edit', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/paymentcard/edit');
             });
 
-            paymentCard = new PaymentCard(request);
             paymentCard.edit();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var paymentCard;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const expected = {
                 paymentcardid: 1,
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            paymentCard = new PaymentCard(request);
             paymentCard.edit(expected);
 
             assert.ok(stub.called);
         });
     });
 
-    describe('list', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var paymentCard;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+    describe('list', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/paymentcard/list');
             });
 
-            paymentCard = new PaymentCard(request);
             paymentCard.list();
+
+            assert.ok(stub.called);
+        });
+    });
+
+    describe('payInvoices', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const stub = sinon.stub(request, 'post', (url) => {
+                assert.strictEqual(url, '/paymentcard/payinvoices');
+            });
+
+            paymentCard.payInvoices();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const paymentCard = new PaymentCard(request);
+            const expected = {
+                invoicenumbers: 1,
+                paymentcardid: 1,
+            };
+
+            const stub = sinon.stub(request, 'post', (url, data) => {
+                assert.deepEqual(data, expected);
+            });
+
+            paymentCard.payInvoices(expected);
 
             assert.ok(stub.called);
         });

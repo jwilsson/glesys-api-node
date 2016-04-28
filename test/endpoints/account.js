@@ -1,58 +1,50 @@
 'use strict';
 
-var assert = require('assert');
-var sinon = require('sinon');
+const assert = require('assert');
+const sinon = require('sinon');
 
-var Account = require('../../lib/endpoints/account');
-var Request = require('../../lib/request');
+const Account = require('../../lib/endpoints/account');
+const Request = require('../../lib/request');
 
-describe('endpoints/account', function () {
-    describe('changePassword', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var account;
-            var stub;
-
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+describe('endpoints/account', () => {
+    describe('changePassword', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const account = new Account(request);
+            const stub = sinon.stub(request, 'post', (url) => {
                 assert.strictEqual(url, '/account/changepassword');
             });
 
-            account = new Account(request);
             account.changePassword();
 
             assert.ok(stub.called);
         });
 
-        it('should set the request body', function () {
-            var request = new Request();
-            var account;
-            var stub;
-            var expected = {
+        it('should set the request body', () => {
+            const request = new Request();
+            const account = new Account(request);
+            const expected = {
                 password: 'password',
             };
 
-            stub = sinon.stub(request, 'post', function (url, data, callback) {
+            const stub = sinon.stub(request, 'post', (url, data) => {
                 assert.deepEqual(data, expected);
             });
 
-            account = new Account(request);
             account.changePassword(expected);
 
             assert.ok(stub.called);
         });
     });
 
-    describe('info', function () {
-        it('should set the request URL', function () {
-            var request = new Request();
-            var account;
-            var stub;
-
-            stub = sinon.stub(request, 'get', function (url, data, callback) {
+    describe('info', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const account = new Account(request);
+            const stub = sinon.stub(request, 'get', (url) => {
                 assert.strictEqual(url, '/account/info');
             });
 
-            account = new Account(request);
             account.info();
 
             assert.ok(stub.called);
