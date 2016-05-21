@@ -13,6 +13,9 @@
   "keywords": [
     "glesys"
   ],
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jwilsson/glesys-api-node"
