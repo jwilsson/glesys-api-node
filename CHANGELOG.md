@@ -1,5 +1,5 @@
 # Changelog
-## 2.0.0 (2016-05-21)
+## 2.1.0 (2016-05-21)
 * The `npm` package now only includes the relevant files.
 
 ## 2.0.0 (2016-04-28)
