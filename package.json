@@ -28,7 +28,7 @@
     "eslint-config-jwilsson": "jwilsson/eslint-config",
     "eslint": "^3.0.0",
     "istanbul": "^0.4.3",
-    "mocha": "^2.3.2",
+    "mocha": "^3.0.0",
     "sinon": "^1.16.1"
   },
   "scripts": {
