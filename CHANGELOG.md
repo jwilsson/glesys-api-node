@@ -1,4 +1,7 @@
 # Changelog
+## 2.1.1 (2016-09-27)
+* `Buffer.from()` is now used when available.
+
 ## 2.1.0 (2016-05-21)
 * The `npm` package now only includes the relevant files.
 
