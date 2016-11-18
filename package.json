@@ -5,11 +5,11 @@
   "main": "lib/glesys.js",
   "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
   "contributors": [
-    {
-      "name": "Oskar Risberg",
-      "email": "kokarn@gmail.com"
-    }
+    "Oskar Risberg <kokarn@gmail.com>"
   ],
+  "engines": {
+    "node": ">=4"
+  },
   "keywords": [
     "glesys"
   ],
@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.4",
-    "eslint-config-jwilsson": "jwilsson/eslint-config",
     "eslint": "^3.0.0",
+    "eslint-config-jwilsson": "jwilsson/eslint-config",
     "istanbul": "^0.4.3",
     "mocha": "^3.0.0",
     "sinon": "^1.16.1"
