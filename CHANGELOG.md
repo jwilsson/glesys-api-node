@@ -1,4 +1,8 @@
 # Changelog
+## 2.2.0 (2016-11-27)
+* Supported Node versions are now specified in the `engines` field.
+* Tests are run on Node 7.
+
 ## 2.1.1 (2016-09-27)
 * `Buffer.from()` is now used when available.
 
