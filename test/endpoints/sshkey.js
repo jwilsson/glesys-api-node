@@ -11,7 +11,7 @@ describe('endpoints/sshkey', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const sshKey = new SshKey(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/sshkey/add');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/sshkey', () => {
                 sshkey: 'abc123',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/sshkey', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const sshKey = new SshKey(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/sshkey/list');
             });
 
@@ -55,7 +55,7 @@ describe('endpoints/sshkey', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const sshKey = new SshKey(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/sshkey/remove');
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/sshkey', () => {
                 sshkeyids: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

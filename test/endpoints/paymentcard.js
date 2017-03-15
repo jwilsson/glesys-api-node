@@ -11,7 +11,7 @@ describe('endpoints/paymentcard', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/paymentcard/add');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/paymentcard', () => {
                 description: 'description',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/paymentcard', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/paymentcard/delete');
             });
 
@@ -57,7 +57,7 @@ describe('endpoints/paymentcard', () => {
                 paymentcardid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/paymentcard', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/paymentcard/edit');
             });
 
@@ -87,7 +87,7 @@ describe('endpoints/paymentcard', () => {
                 paymentcardid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/paymentcard', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/paymentcard/list');
             });
 
@@ -115,7 +115,7 @@ describe('endpoints/paymentcard', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/paymentcard/payinvoices');
             });
 
@@ -132,7 +132,7 @@ describe('endpoints/paymentcard', () => {
                 paymentcardid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

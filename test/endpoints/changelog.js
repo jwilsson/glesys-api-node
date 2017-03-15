@@ -11,7 +11,7 @@ describe('endpoints/changelog', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const changelog = new Changelog(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/changelog/api');
             });
 
@@ -25,7 +25,7 @@ describe('endpoints/changelog', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const changelog = new Changelog(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/changelog/controlpanel');
             });
 

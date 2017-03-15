@@ -11,7 +11,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/add');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -42,7 +42,7 @@ describe('endpoints/domain', () => {
             const request = new Request();
             const domain = new Domain(request);
 
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/addrecord');
             });
 
@@ -58,7 +58,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -72,7 +72,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/domain/allowedarguments');
             });
 
@@ -86,7 +86,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/available');
             });
 
@@ -102,7 +102,7 @@ describe('endpoints/domain', () => {
                 search: 'search',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -116,7 +116,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/changenameservers');
             });
 
@@ -132,7 +132,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -146,7 +146,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/delete');
             });
 
@@ -162,7 +162,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -176,7 +176,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/deleterecord');
             });
 
@@ -192,7 +192,7 @@ describe('endpoints/domain', () => {
                 recordid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -206,7 +206,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/details');
             });
 
@@ -222,7 +222,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -236,7 +236,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/edit');
             });
 
@@ -252,7 +252,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -266,7 +266,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/domain/legacywebhosting');
             });
 
@@ -280,7 +280,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/domain/list');
             });
 
@@ -294,7 +294,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/listrecords');
             });
 
@@ -310,7 +310,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -324,7 +324,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/domain/pricelist');
             });
 
@@ -338,7 +338,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/register');
             });
 
@@ -354,7 +354,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -368,7 +368,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/renew');
             });
 
@@ -384,7 +384,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -398,7 +398,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/setautorenew');
             });
 
@@ -414,7 +414,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -428,7 +428,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/transfer');
             });
 
@@ -444,7 +444,7 @@ describe('endpoints/domain', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -458,7 +458,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/updaterecord');
             });
 
@@ -474,7 +474,7 @@ describe('endpoints/domain', () => {
                 recordid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

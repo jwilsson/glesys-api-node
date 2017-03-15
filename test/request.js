@@ -20,7 +20,7 @@ describe('request', () => {
     describe('get()', () => {
         it('should set the request method to "GET"', () => {
             const request = new Request({});
-            const stub = sinon.stub(request, 'request', (url, options) => {
+            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
                 assert.strictEqual(options.method, 'GET');
             });
 
@@ -31,7 +31,7 @@ describe('request', () => {
 
         it('should set the request URL', () => {
             const request = new Request({});
-            const stub = sinon.stub(request, 'request', (url) => {
+            const stub = sinon.stub(request, 'request').callsFake((url) => {
                 assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
             });
 
@@ -46,7 +46,7 @@ describe('request', () => {
                 foo: 'bar',
             };
 
-            const stub = sinon.stub(request, 'request', (url, options) => {
+            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
                 assert.strictEqual(options.query, data);
             });
 
@@ -59,7 +59,7 @@ describe('request', () => {
     describe('post()', () => {
         it('should set the request method to "POST"', () => {
             const request = new Request({});
-            const stub = sinon.stub(request, 'request', (url, options) => {
+            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
                 assert.strictEqual(options.method, 'POST');
             });
 
@@ -70,7 +70,7 @@ describe('request', () => {
 
         it('should set the request URL', () => {
             const request = new Request({});
-            const stub = sinon.stub(request, 'request', (url) => {
+            const stub = sinon.stub(request, 'request').callsFake((url) => {
                 assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
             });
 
@@ -85,7 +85,7 @@ describe('request', () => {
                 foo: 'bar',
             };
 
-            const stub = sinon.stub(request, 'request', (url, options) => {
+            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
                 assert.strictEqual(options.body, data);
             });
 

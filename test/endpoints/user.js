@@ -11,7 +11,7 @@ describe('endpoints/user', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const user = new User(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/user/changepassword');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/user', () => {
                 currentpassword: 'currentpassword',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/user', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const user = new User(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/user/details');
             });
 
@@ -55,7 +55,7 @@ describe('endpoints/user', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const user = new User(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/user/disabletwofactor');
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/user', () => {
                 password: 'password',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -85,7 +85,7 @@ describe('endpoints/user', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const user = new User(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/user/edit');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/user', () => {
                 name: 'name',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -115,7 +115,7 @@ describe('endpoints/user', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const user = new User(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/user/enabletwofactor');
             });
 
@@ -131,7 +131,7 @@ describe('endpoints/user', () => {
                 method: 'method',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -145,7 +145,7 @@ describe('endpoints/user', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const user = new User(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/user/login');
             });
 
@@ -161,7 +161,7 @@ describe('endpoints/user', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -175,7 +175,7 @@ describe('endpoints/user', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const user = new User(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/user/logout');
             });
 

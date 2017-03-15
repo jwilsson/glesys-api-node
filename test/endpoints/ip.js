@@ -11,7 +11,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/add');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/ip', () => {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/details');
             });
 
@@ -57,7 +57,7 @@ describe('endpoints/ip', () => {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/listfree');
             });
 
@@ -87,7 +87,7 @@ describe('endpoints/ip', () => {
                 ipversion: 4,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/listown');
             });
 
@@ -117,7 +117,7 @@ describe('endpoints/ip', () => {
                 ipversion: 4,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -131,7 +131,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/release');
             });
 
@@ -147,7 +147,7 @@ describe('endpoints/ip', () => {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -161,7 +161,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/remove');
             });
 
@@ -177,7 +177,7 @@ describe('endpoints/ip', () => {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -191,7 +191,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/resetptr');
             });
 
@@ -207,7 +207,7 @@ describe('endpoints/ip', () => {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -221,7 +221,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/setptr');
             });
 
@@ -237,7 +237,7 @@ describe('endpoints/ip', () => {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -251,7 +251,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/ip/take');
             });
 
@@ -267,7 +267,7 @@ describe('endpoints/ip', () => {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

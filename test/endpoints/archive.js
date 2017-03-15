@@ -11,7 +11,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/archive/allowedarguments');
             });
 
@@ -25,7 +25,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/archive/changedescription');
             });
 
@@ -42,7 +42,7 @@ describe('endpoints/archive', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -56,7 +56,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/archive/changepassword');
             });
 
@@ -73,7 +73,7 @@ describe('endpoints/archive', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -87,7 +87,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/archive/create');
             });
 
@@ -105,7 +105,7 @@ describe('endpoints/archive', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -119,7 +119,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/archive/delete');
             });
 
@@ -135,7 +135,7 @@ describe('endpoints/archive', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -149,7 +149,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/archive/details');
             });
 
@@ -165,7 +165,7 @@ describe('endpoints/archive', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -179,7 +179,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/archive/list');
             });
 
@@ -193,7 +193,7 @@ describe('endpoints/archive', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/archive/resize');
             });
 
@@ -210,7 +210,7 @@ describe('endpoints/archive', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

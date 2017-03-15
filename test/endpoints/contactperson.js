@@ -11,7 +11,7 @@ describe('endpoints/contactperson', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const contactPerson = new ContactPerson(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/contactperson/add');
             });
 
@@ -28,7 +28,7 @@ describe('endpoints/contactperson', () => {
                 phonenumber: '1234567890',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -42,7 +42,7 @@ describe('endpoints/contactperson', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const contactPerson = new ContactPerson(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/contactperson/delete');
             });
 
@@ -58,7 +58,7 @@ describe('endpoints/contactperson', () => {
                 contactpersonid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -72,7 +72,7 @@ describe('endpoints/contactperson', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const contactPerson = new ContactPerson(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/contactperson/edit');
             });
 
@@ -89,7 +89,7 @@ describe('endpoints/contactperson', () => {
                 name: 'name',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -103,7 +103,7 @@ describe('endpoints/contactperson', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const contactPerson = new ContactPerson(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/contactperson/list');
             });
 

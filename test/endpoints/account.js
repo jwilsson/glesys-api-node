@@ -11,7 +11,7 @@ describe('endpoints/account', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const account = new Account(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/account/changepassword');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/account', () => {
                 password: 'password',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/account', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const account = new Account(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/account/info');
             });
 

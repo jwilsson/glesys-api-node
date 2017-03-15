@@ -11,7 +11,7 @@ describe('endpoints/vpn', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const vpn = new Vpn(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/vpn/createuser');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/vpn', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/vpn', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const vpn = new Vpn(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/vpn/deleteuser');
             });
 
@@ -57,7 +57,7 @@ describe('endpoints/vpn', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -72,7 +72,7 @@ describe('endpoints/vpn', () => {
             const request = new Request();
             const vpn = new Vpn(request);
 
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/vpn/edituser');
             });
 
@@ -88,7 +88,7 @@ describe('endpoints/vpn', () => {
                 username: 'username',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -102,7 +102,7 @@ describe('endpoints/vpn', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const vpn = new Vpn(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/vpn/listusers');
             });
 

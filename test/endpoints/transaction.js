@@ -11,7 +11,7 @@ describe('endpoints/transaction', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/transaction/acknowledge');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/transaction', () => {
                 transactionid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/transaction', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/transaction/cancel');
             });
 
@@ -57,7 +57,7 @@ describe('endpoints/transaction', () => {
                 transactionid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/transaction', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/transaction/list');
             });
 
@@ -85,7 +85,7 @@ describe('endpoints/transaction', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/transaction/start');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/transaction', () => {
                 transactionid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

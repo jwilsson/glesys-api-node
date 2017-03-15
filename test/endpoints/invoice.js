@@ -11,7 +11,7 @@ describe('endpoints/invoice', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/invoice/allowedarguments');
             });
 
@@ -25,7 +25,7 @@ describe('endpoints/invoice', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/invoice/billingperiod');
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/invoice', () => {
                 account: 'account',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -55,7 +55,7 @@ describe('endpoints/invoice', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/invoice/list');
             });
 
@@ -69,7 +69,7 @@ describe('endpoints/invoice', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/invoice/next');
             });
 
@@ -83,7 +83,7 @@ describe('endpoints/invoice', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/invoice/paybypaypal');
             });
 
@@ -99,7 +99,7 @@ describe('endpoints/invoice', () => {
                 invoicenumbers: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -113,7 +113,7 @@ describe('endpoints/invoice', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/invoice/paymenthistory');
             });
 
@@ -127,7 +127,7 @@ describe('endpoints/invoice', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/invoice/settings');
             });
 
@@ -143,7 +143,7 @@ describe('endpoints/invoice', () => {
                 invoiceemailaddress: 'example@example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

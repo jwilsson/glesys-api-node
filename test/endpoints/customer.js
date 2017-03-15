@@ -11,7 +11,7 @@ describe('endpoints/customer', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const customer = new Customer(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/customer/contactinfo');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/customer', () => {
                 companyname: 'companyname',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

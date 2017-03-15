@@ -11,7 +11,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/email/costs');
             });
 
@@ -25,7 +25,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/createaccount');
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/email', () => {
                 emailaccount: 'example@example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -55,7 +55,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/createalias');
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/email', () => {
                 emailalias: 'emailalias',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -85,7 +85,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/delete');
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/email', () => {
                 email: 'email',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -115,7 +115,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/editaccount');
             });
 
@@ -131,7 +131,7 @@ describe('endpoints/email', () => {
                 emailaccount: 'example@example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -145,7 +145,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/editalias');
             });
 
@@ -161,7 +161,7 @@ describe('endpoints/email', () => {
                 emailalias: 'alias@example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -175,7 +175,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/globalquota');
             });
 
@@ -191,7 +191,7 @@ describe('endpoints/email', () => {
                 globalquota: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -205,7 +205,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/list');
             });
 
@@ -221,7 +221,7 @@ describe('endpoints/email', () => {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -235,7 +235,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/email/overview');
             });
 
@@ -249,7 +249,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/email/quota');
             });
 
@@ -265,7 +265,7 @@ describe('endpoints/email', () => {
                 emailaccount: 'example@example.com',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 

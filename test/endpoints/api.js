@@ -11,7 +11,7 @@ describe('endpoints/api', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const api = new Api(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/api/listfunctions');
             });
 
@@ -25,7 +25,7 @@ describe('endpoints/api', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const api = new Api(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/api/maintenance');
             });
 
@@ -39,7 +39,7 @@ describe('endpoints/api', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const api = new Api(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/api/serviceinfo');
             });
 

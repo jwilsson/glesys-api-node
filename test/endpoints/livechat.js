@@ -11,7 +11,7 @@ describe('endpoints/livechat', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const liveChat = new LiveChat(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/livechat/closesession');
             });
 
@@ -27,7 +27,7 @@ describe('endpoints/livechat', () => {
                 sessionid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -41,7 +41,7 @@ describe('endpoints/livechat', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const liveChat = new LiveChat(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/livechat/getmessages');
             });
 
@@ -57,7 +57,7 @@ describe('endpoints/livechat', () => {
                 sessionid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/livechat', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const liveChat = new LiveChat(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/livechat/newsession');
             });
 
@@ -87,7 +87,7 @@ describe('endpoints/livechat', () => {
                 name: 'Jonathan',
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/livechat', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const liveChat = new LiveChat(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/livechat/postmessage');
             });
 
@@ -117,7 +117,7 @@ describe('endpoints/livechat', () => {
                 sessionid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -131,7 +131,7 @@ describe('endpoints/livechat', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const liveChat = new LiveChat(request);
-            const stub = sinon.stub(request, 'post', (url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/livechat/sessioninfo');
             });
 
@@ -147,7 +147,7 @@ describe('endpoints/livechat', () => {
                 sessionid: 1,
             };
 
-            const stub = sinon.stub(request, 'post', (url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepEqual(data, expected);
             });
 
@@ -161,7 +161,7 @@ describe('endpoints/livechat', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const liveChat = new LiveChat(request);
-            const stub = sinon.stub(request, 'get', (url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/livechat/status');
             });
 
