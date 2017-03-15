@@ -27,14 +27,14 @@
     "coveralls": "^2.11.4",
     "eslint": "^3.0.0",
     "eslint-config-jwilsson": "^1.0.2",
-    "istanbul": "^0.4.3",
     "mocha": "^3.0.0",
+    "nyc": "^10.1.2",
     "sinon": "^1.16.1"
   },
   "scripts": {
-    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "eslint lib test",
-    "test": "mocha"
+    "test": "nyc mocha"
   },
   "eslintConfig": {
     "extends": "eslint-config-jwilsson/node"
