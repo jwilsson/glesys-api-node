@@ -26,7 +26,7 @@
   "devDependencies": {
     "coveralls": "^2.11.4",
     "eslint": "^3.0.0",
-    "eslint-config-jwilsson": "jwilsson/eslint-config",
+    "eslint-config-jwilsson": "^1.0.2",
     "istanbul": "^0.4.3",
     "mocha": "^3.0.0",
     "sinon": "^1.16.1"
@@ -37,7 +37,7 @@
     "test": "mocha"
   },
   "eslintConfig": {
-    "extends": "eslint-config-jwilsson/node.json"
+    "extends": "eslint-config-jwilsson/node"
   },
   "license": "MIT",
   "bugs": {
