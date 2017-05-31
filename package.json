@@ -32,7 +32,7 @@
     "sinon": "^2.0.0"
   },
   "scripts": {
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "cover": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "eslint lib test",
     "test": "nyc mocha"
   },
