@@ -25,8 +25,8 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.4",
-    "eslint": "^3.0.0",
-    "eslint-config-jwilsson": "^1.0.2",
+    "eslint": "^4.0.0",
+    "eslint-config-jwilsson": "^2.0.1",
     "mocha": "^3.0.0",
     "nyc": "^11.0.1",
     "sinon": "^2.0.0"
