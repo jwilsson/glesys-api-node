@@ -10,11 +10,17 @@ describe('request', () => {
         apiUser: 'user',
     };
 
-    it('should set apiKey and apiUser', () => {
+    it('should create a token', () => {
         const request = new Request(authOptions);
 
         assert.strictEqual(request.apiKey, authOptions.apiKey);
         assert.strictEqual(request.apiUser, authOptions.apiUser);
+    });
+
+    it('should create a token', () => {
+        const request = new Request(authOptions);
+
+        assert.strictEqual(request.token, 'dXNlcjprZXk=');
     });
 
     describe('get()', () => {
@@ -70,6 +76,16 @@ describe('request', () => {
             request.post('/api/serviceinfo', data);
 
             assert.ok(stub.called);
+        });
+    });
+
+    describe('request()', () => {
+        it('should send a request', () => {
+            const request = new Request(authOptions);
+
+            request.request('https://httpbin.org/headers').then((res) => {
+                assert.strictEqual(res.body.headers.Authorization, 'Basic dXNlcjprZXk=');
+            });
         });
     });
 });
