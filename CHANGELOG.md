@@ -1,4 +1,11 @@
 # Changelog
+## 2.2.1 (2017-06-17)
+* Safer building of API URLs.
+* Replaced `istanbul` with `nyc`
+* Updated `got` to `7.x`.
+* Updated dev dependencies.
+* Tests are run on Node 8.
+
 ## 2.2.0 (2016-11-27)
 * Supported Node versions are now specified in the `engines` field.
 * Tests are run on Node 7.
