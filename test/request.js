@@ -10,7 +10,7 @@ describe('request', () => {
         apiUser: 'user',
     };
 
-    it('should create a token', () => {
+    it('should set apiKey and apiUser', () => {
         const request = new Request(authOptions);
 
         assert.strictEqual(request.apiKey, authOptions.apiKey);
