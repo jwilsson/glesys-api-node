@@ -29,17 +29,6 @@ describe('request', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request URL', () => {
-            const request = new Request({});
-            const stub = sinon.stub(request, 'request').callsFake((url) => {
-                assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
-            });
-
-            request.get('/api/serviceinfo');
-
-            assert.ok(stub.called);
-        });
-
         it('should set the query string', () => {
             const request = new Request({});
             const data = {
@@ -64,17 +53,6 @@ describe('request', () => {
             });
 
             request.post('https://api.glesys.com');
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request URL', () => {
-            const request = new Request({});
-            const stub = sinon.stub(request, 'request').callsFake((url) => {
-                assert.strictEqual(url, 'https://api.glesys.com/api/serviceinfo');
-            });
-
-            request.post('/api/serviceinfo');
 
             assert.ok(stub.called);
         });
