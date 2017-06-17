@@ -1,4 +1,7 @@
 # Changelog
+## 2.2.2 (2017-06-17)
+* Increased test coverage.
+
 ## 2.2.1 (2017-06-17)
 * Safer building of API URLs.
 * Replaced `istanbul` with `nyc`
