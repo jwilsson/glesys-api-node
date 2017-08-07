@@ -29,7 +29,7 @@
     "eslint-config-jwilsson": "^2.0.1",
     "mocha": "^3.0.0",
     "nyc": "^11.0.1",
-    "sinon": "^2.0.0"
+    "sinon": "^3.0.0"
   },
   "scripts": {
     "cover": "nyc report --reporter=text-lcov | coveralls",
