@@ -21,7 +21,7 @@
     "url": "https://github.com/jwilsson/glesys-api-node"
   },
   "dependencies": {
-    "got": "^7.0.0"
+    "got": "^8.0.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
