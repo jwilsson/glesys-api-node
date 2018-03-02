@@ -1,4 +1,11 @@
 # Changelog
+## 3.0.0 (2018-03-02)
+* Support for Node < 6 has been dropped.
+* Updated `got` to `8.x`.
+* Tests are run on Node 9.
+* Updated dev dependencies.
+* Sped up Travis builds.
+
 ## 2.2.2 (2017-06-17)
 * Increased test coverage.
 
