@@ -8,7 +8,7 @@
     "Oskar Risberg <kokarn@gmail.com>"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=8.9.0"
   },
   "keywords": [
     "glesys"
