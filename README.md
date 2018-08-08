@@ -22,14 +22,20 @@ const glesys = new GleSYSAPI({
     apiUser: 'user',
 });
 
-glesys.api.serviceInfo().then((res) => {
-    console.log(res.body);
-});
+(async () => {
+    try {
+        const { body } = await glesys.api.serviceInfo();
 
-glesys.email.createAccount({
-    emailaccount: 'example@example.com',
-    password: 'password',
-});
+        console.log(body)
+    } catch (e) {
+        console.error(e);
+    }
+
+    glesys.email.createAccount({
+        emailaccount: 'example@example.com',
+        password: 'password',
+    });
+})();
 ```
 
 ## Available methods
