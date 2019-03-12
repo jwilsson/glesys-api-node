@@ -29,7 +29,7 @@ describe('endpoints/contactperson', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             contactPerson.add(expected);
@@ -59,7 +59,7 @@ describe('endpoints/contactperson', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             contactPerson.delete(expected);
@@ -90,7 +90,7 @@ describe('endpoints/contactperson', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             contactPerson.edit(expected);

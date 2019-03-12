@@ -42,7 +42,7 @@ describe('endpoints/invoice', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             invoice.billingPeriod(expected);
@@ -100,7 +100,7 @@ describe('endpoints/invoice', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             invoice.payByPaypal(expected);
@@ -144,7 +144,7 @@ describe('endpoints/invoice', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             invoice.settings(expected);

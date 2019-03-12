@@ -28,7 +28,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.addISO(expected);
@@ -58,7 +58,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.allowedArguments(expected);
@@ -88,7 +88,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.backup(expected);
@@ -118,7 +118,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.clone(expected);
@@ -148,7 +148,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.console(expected);
@@ -178,7 +178,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.costs(expected);
@@ -208,7 +208,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.create(expected);
@@ -238,7 +238,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.destroy(expected);
@@ -268,7 +268,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.details(expected);
@@ -298,7 +298,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.edit(expected);
@@ -328,7 +328,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.limits(expected);
@@ -372,7 +372,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.listISO(expected);
@@ -402,7 +402,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.mountISO(expected);
@@ -432,7 +432,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.reboot(expected);
@@ -462,7 +462,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.resetLimit(expected);
@@ -492,7 +492,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.resetPassword(expected);
@@ -522,7 +522,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.resourceUsage(expected);
@@ -552,7 +552,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.start(expected);
@@ -582,7 +582,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.status(expected);
@@ -612,7 +612,7 @@ describe('endpoints/server', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             server.stop(expected);

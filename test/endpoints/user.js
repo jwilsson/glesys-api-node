@@ -28,7 +28,7 @@ describe('endpoints/user', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             user.changePassword(expected);
@@ -72,7 +72,7 @@ describe('endpoints/user', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             user.disableTwoFactor(expected);
@@ -102,7 +102,7 @@ describe('endpoints/user', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             user.edit(expected);
@@ -132,7 +132,7 @@ describe('endpoints/user', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             user.enableTwoFactor(expected);
@@ -162,7 +162,7 @@ describe('endpoints/user', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             user.login(expected);

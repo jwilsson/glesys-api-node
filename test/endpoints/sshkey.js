@@ -28,7 +28,7 @@ describe('endpoints/sshkey', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             sshKey.add(expected);
@@ -72,7 +72,7 @@ describe('endpoints/sshkey', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             sshKey.remove(expected);

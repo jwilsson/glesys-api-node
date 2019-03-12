@@ -43,7 +43,7 @@ describe('endpoints/archive', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             archive.changeDescription(expected);
@@ -74,7 +74,7 @@ describe('endpoints/archive', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             archive.changePassword(expected);
@@ -106,7 +106,7 @@ describe('endpoints/archive', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             archive.create(expected);
@@ -136,7 +136,7 @@ describe('endpoints/archive', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             archive.delete(expected);
@@ -166,7 +166,7 @@ describe('endpoints/archive', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             archive.details(expected);
@@ -211,7 +211,7 @@ describe('endpoints/archive', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             archive.resize(expected);

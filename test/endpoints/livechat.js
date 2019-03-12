@@ -28,7 +28,7 @@ describe('endpoints/livechat', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             liveChat.closeSession(expected);
@@ -58,7 +58,7 @@ describe('endpoints/livechat', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             liveChat.getMessages(expected);
@@ -88,7 +88,7 @@ describe('endpoints/livechat', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             liveChat.newSession(expected);
@@ -118,7 +118,7 @@ describe('endpoints/livechat', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             liveChat.postMessage(expected);
@@ -148,7 +148,7 @@ describe('endpoints/livechat', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             liveChat.sessionInfo(expected);

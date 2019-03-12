@@ -28,7 +28,7 @@ describe('endpoints/paymentcard', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             paymentCard.add(expected);
@@ -58,7 +58,7 @@ describe('endpoints/paymentcard', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             paymentCard.delete(expected);
@@ -88,7 +88,7 @@ describe('endpoints/paymentcard', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             paymentCard.edit(expected);
@@ -133,7 +133,7 @@ describe('endpoints/paymentcard', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             paymentCard.payInvoices(expected);

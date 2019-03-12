@@ -28,7 +28,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.add(expected);
@@ -58,7 +58,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.details(expected);
@@ -88,7 +88,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.listFree(expected);
@@ -118,7 +118,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.listOwn(expected);
@@ -148,7 +148,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.release(expected);
@@ -178,7 +178,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.remove(expected);
@@ -208,7 +208,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.resetPTR(expected);
@@ -238,7 +238,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.setPTR(expected);
@@ -268,7 +268,7 @@ describe('endpoints/ip', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             ip.take(expected);

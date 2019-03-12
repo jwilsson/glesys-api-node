@@ -28,7 +28,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.addBackEnd(expected);
@@ -58,7 +58,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.addCertificate(expected);
@@ -88,7 +88,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.addFrontEnd(expected);
@@ -118,7 +118,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.addTarget(expected);
@@ -148,7 +148,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.create(expected);
@@ -178,7 +178,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.destroy(expected);
@@ -208,7 +208,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.details(expected);
@@ -238,7 +238,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.disableTarget(expected);
@@ -268,7 +268,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.edit(expected);
@@ -298,7 +298,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.editBackEnd(expected);
@@ -328,7 +328,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.editFrontEnd(expected);
@@ -358,7 +358,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.editTarget(expected);
@@ -388,7 +388,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.enableTarget(expected);
@@ -432,7 +432,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.listCertificate(expected);
@@ -462,7 +462,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.removeBackEnd(expected);
@@ -492,7 +492,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.removeCertificate(expected);
@@ -522,7 +522,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.removeFrontEnd(expected);
@@ -552,7 +552,7 @@ describe('endpoints/loadbalancer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             loadBalancer.removeTarget(expected);

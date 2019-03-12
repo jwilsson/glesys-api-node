@@ -28,7 +28,7 @@ describe('endpoints/customer', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             customer.contactInfo(expected);

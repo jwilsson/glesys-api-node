@@ -28,7 +28,7 @@ describe('endpoints/transaction', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             transaction.acknowledge(expected);
@@ -58,7 +58,7 @@ describe('endpoints/transaction', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             transaction.cancel(expected);
@@ -102,7 +102,7 @@ describe('endpoints/transaction', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             transaction.start(expected);

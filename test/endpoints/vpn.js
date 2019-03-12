@@ -28,7 +28,7 @@ describe('endpoints/vpn', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             vpn.createUser(expected);
@@ -58,7 +58,7 @@ describe('endpoints/vpn', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             vpn.deleteUser(expected);
@@ -89,7 +89,7 @@ describe('endpoints/vpn', () => {
             };
 
             const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepEqual(data, expected);
+                assert.deepStrictEqual(data, expected);
             });
 
             vpn.editUser(expected);
