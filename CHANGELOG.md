@@ -1,4 +1,10 @@
 # Changelog
+## 4.0.0 (2019-03-12)
+* Support for Node < 8 has been dropped.
+* Updated `got` to `9.x`.
+* Tests are run on Node 10 and 11.
+* Updated dev dependencies.
+
 ## 3.0.0 (2018-03-02)
 * Support for Node < 6 has been dropped.
 * Updated `got` to `8.x`.
