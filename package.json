@@ -25,10 +25,10 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "eslint": "^5.0.0",
-    "eslint-config-jwilsson": "^3.0.1",
+    "eslint": "^6.0.0",
+    "eslint-config-jwilsson": "^4.0.0",
     "mocha": "^6.0.2",
-    "nyc": "^13.3.0",
+    "nyc": "^14.0.0",
     "sinon": "^7.2.7"
   },
   "scripts": {
@@ -40,9 +40,6 @@
     "extends": "eslint-config-jwilsson/node",
     "env": {
       "mocha": true
-    },
-    "rules": {
-      "prefer-object-spread": "off"
     }
   },
   "license": "MIT",
