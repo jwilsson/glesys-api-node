@@ -1,4 +1,9 @@
 # Changelog
+## 4.0.1 (2019-08-03)
+* Replaced deprecated `url.resolve()` calls with `new URL()`.
+* Tests are run on Node 12.
+* Updated dev dependencies.
+
 ## 4.0.0 (2019-03-12)
 * Support for Node < 8 has been dropped.
 * Updated `got` to `9.x`.
