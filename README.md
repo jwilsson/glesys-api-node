@@ -209,4 +209,4 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.vpn.editUser()`](https://github.com/GleSYS/API/wiki/API-Documentation#vpnedituser)
 * [`GleSYSAPI.vpn.listUsers()`](https://github.com/GleSYS/API/wiki/API-Documentation#vpnlistusers)
 
-For more information about the GleSYS API, available arguments etc., please see the [GleSYS API documentation](https://github.com/GleSYS/API/wiki/Full-API-Documentation).
+For more information about the GleSYS API, available arguments etc., please see the [GleSYS API documentation](https://github.com/glesys/API/wiki/API-Documentation).
