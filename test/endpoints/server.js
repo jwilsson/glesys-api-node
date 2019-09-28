@@ -411,6 +411,36 @@ describe('endpoints/server', () => {
         });
     });
 
+    describe('networkAdapters', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const server = new Server(request);
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
+                assert.strictEqual(url, '/server/networkadapters');
+            });
+
+            server.networkAdapters();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the query string', () => {
+            const request = new Request();
+            const server = new Server(request);
+            const expected = {
+                serverid: 'z1',
+            };
+
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            server.networkAdapters(expected);
+
+            assert.ok(stub.called);
+        });
+    });
+
     describe('reboot', () => {
         it('should set the request URL', () => {
             const request = new Request();

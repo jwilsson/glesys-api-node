@@ -37,6 +37,68 @@ describe('endpoints/user', () => {
         });
     });
 
+    describe('confirm', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const user = new User(request);
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
+                assert.strictEqual(url, '/user/confirm');
+            });
+
+            user.confirm();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const user = new User(request);
+            const expected = {
+                token: 'token',
+            };
+
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            user.confirm(expected);
+
+            assert.ok(stub.called);
+        });
+    });
+
+    describe('createOrganization', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const user = new User(request);
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
+                assert.strictEqual(url, '/user/createorganization');
+            });
+
+            user.createOrganization();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const user = new User(request);
+            const expected = {
+                country: 'country',
+                name: 'name',
+                type: 'type',
+            };
+
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            user.createOrganization(expected);
+
+            assert.ok(stub.called);
+        });
+    });
+
     describe('details', () => {
         it('should set the request URL', () => {
             const request = new Request();
@@ -141,6 +203,20 @@ describe('endpoints/user', () => {
         });
     });
 
+    describe('listOrganizations', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const user = new User(request);
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
+                assert.strictEqual(url, '/user/listorganizations');
+            });
+
+            user.listOrganizations();
+
+            assert.ok(stub.called);
+        });
+    });
+
     describe('login', () => {
         it('should set the request URL', () => {
             const request = new Request();
@@ -180,6 +256,55 @@ describe('endpoints/user', () => {
             });
 
             user.logout();
+
+            assert.ok(stub.called);
+        });
+    });
+
+    describe('searchData', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const user = new User(request);
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
+                assert.strictEqual(url, '/user/searchdata');
+            });
+
+            user.searchData();
+
+            assert.ok(stub.called);
+        });
+    });
+
+    describe('signUp', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const user = new User(request);
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
+                assert.strictEqual(url, '/user/signup');
+            });
+
+            user.signUp();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const user = new User(request);
+            const expected = {
+                email: 'email',
+                locale: 'locale',
+                name: 'name',
+                password: 'password',
+                termsofservice: 'termsofservice',
+                useragent: 'useragent',
+            };
+
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            user.signUp(expected);
 
             assert.ok(stub.called);
         });

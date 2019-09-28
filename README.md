@@ -68,8 +68,17 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.contactPerson.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#contactpersonedit)
 * [`GleSYSAPI.contactPerson.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#contactpersonlist)
 
+### country
+* [`GleSYSAPI.country.list()`](https://github.com/glesys/API/wiki/API-Documentation#countrylist)
+
 ### customer
 * [`GleSYSAPI.customer.contactInfo()`](https://github.com/GleSYS/API/wiki/API-Documentation#customercontactinfo)
+* [`GleSYSAPI.customer.createProject()`](https://github.com/glesys/API/wiki/API-Documentation#customercreateproject)
+* [`GleSYSAPI.customer.editCollaborator()`](https://github.com/glesys/API/wiki/API-Documentation#customereditcollaborator)
+* [`GleSYSAPI.customer.listCollaborators()`](https://github.com/glesys/API/wiki/API-Documentation#customerlistcollaborators)
+* [`GleSYSAPI.customer.listProjects()`](https://github.com/glesys/API/wiki/API-Documentation#customerlistprojects)
+* [`GleSYSAPI.customer.removeCollaborator()`](https://github.com/glesys/API/wiki/API-Documentation#customerremovecollaborator)
+* [`GleSYSAPI.customer.settings()`](https://github.com/glesys/API/wiki/API-Documentation#customersettings)
 
 ### domain
 * [`GleSYSAPI.domain.add()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainadd)
@@ -102,6 +111,15 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.email.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#emaillist)
 * [`GleSYSAPI.email.overview()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailoverview)
 * [`GleSYSAPI.email.quota()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailquota)
+
+### fileStorage
+* [`GleSYSAPI.fileStorage.createVolume()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragecreatevolume)
+* [`GleSYSAPI.fileStorage.editVolume()`](https://github.com/glesys/API/wiki/API-Documentation#filestorageeditvolume)
+* [`GleSYSAPI.fileStorage.deleteVolume()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragedeletevolume)
+* [`GleSYSAPI.fileStorage.listPlans()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragelistplans)
+* [`GleSYSAPI.fileStorage.listVolumes()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragelistvolumes)
+* [`GleSYSAPI.fileStorage.resourceUsage()`](https://github.com/glesys/API/wiki/API-Documentation#filestorageresourceusage)
+* [`GleSYSAPI.fileStorage.volumeDetails()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragevolumedetails
 
 ### invoice
 * [`GleSYSAPI.invoice.allowedArguments()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoiceallowedarguments)
@@ -136,6 +154,7 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.loadBalancer.addCertificate()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalanceraddcertificate)
 * [`GleSYSAPI.loadBalancer.addFrontEnd()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalanceraddfrontend)
 * [`GleSYSAPI.loadBalancer.addTarget()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalanceraddtarget)
+* [`GleSYSAPI.loadBalancer.addToBlacklist()`](https://github.com/glesys/API/wiki/API-Documentation#loadbalanceraddtoblacklist)
 * [`GleSYSAPI.loadBalancer.create()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancercreate)
 * [`GleSYSAPI.loadBalancer.destroy()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerdestroy)
 * [`GleSYSAPI.loadBalancer.details()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerdetails)
@@ -145,12 +164,27 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.loadBalancer.editFrontEnd()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancereditfrontend)
 * [`GleSYSAPI.loadBalancer.editTarget()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalanceredittarget)
 * [`GleSYSAPI.loadBalancer.enableTarget()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerenabletarget)
+* [`GleSYSAPI.loadBalancer.errors()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancererrors)
 * [`GleSYSAPI.loadBalancer.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerlist)
 * [`GleSYSAPI.loadBalancer.listCertificate()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerlistcertificate)
 * [`GleSYSAPI.loadBalancer.removeBackEnd()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovebackend)
 * [`GleSYSAPI.loadBalancer.removeCertificate()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovecertificate)
+* [`GleSYSAPI.loadBalancer.removeFromBlacklist()`](https://github.com/glesys/API/wiki/API-Documentation#loadbalancerremovefromblacklist)
 * [`GleSYSAPI.loadBalancer.removeFrontEnd()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovefrontend)
 * [`GleSYSAPI.loadBalancer.removeTarget()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovetarget)
+
+### network
+* [`GleSYSAPI.network.create()`](https://github.com/glesys/API/wiki/API-Documentation#networkcreate)
+* [`GleSYSAPI.network.delete()`](https://github.com/glesys/API/wiki/API-Documentation#networkdelete)
+* [`GleSYSAPI.network.details()`](https://github.com/glesys/API/wiki/API-Documentation#networkdetails)
+* [`GleSYSAPI.network.edit()`](https://github.com/glesys/API/wiki/API-Documentation#networkedit)
+* [`GleSYSAPI.network.list()`](https://github.com/glesys/API/wiki/API-Documentation#networklist)
+
+### networkAdapter
+* [`GleSYSAPI.networkAdapter.create()`](https://github.com/glesys/API/wiki/API-Documentation#networkadaptercreate)
+* [`GleSYSAPI.networkAdapter.delete()`](https://github.com/glesys/API/wiki/API-Documentation#networkadapterdelete)
+* [`GleSYSAPI.networkAdapter.details()`](https://github.com/glesys/API/wiki/API-Documentation#networkadapterdetails)
+* [`GleSYSAPI.networkAdapter.edit()`](https://github.com/glesys/API/wiki/API-Documentation#networkadapteredit)
 
 ### paymentCard
 * [`GleSYSAPI.paymentCard.add()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardadd)
@@ -158,6 +192,10 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.paymentCard.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardedit)
 * [`GleSYSAPI.paymentCard.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardlist)
 * [`GleSYSAPI.paymentCard.payInvoices()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardpayinvoices)
+
+### project
+* [`GleSYSAPI.project.delete()`](https://github.com/glesys/API/wiki/API-Documentation#projectdelete)
+* [`GleSYSAPI.project.rename()`](https://github.com/glesys/API/wiki/API-Documentation#projectrename)
 
 ### server
 * [`GleSYSAPI.server.addISO()`](https://github.com/GleSYS/API/wiki/API-Documentation#serveraddiso)
@@ -174,6 +212,7 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.server.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverlist)
 * [`GleSYSAPI.server.listISO()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverlistiso)
 * [`GleSYSAPI.server.mountISO()`](https://github.com/GleSYS/API/wiki/API-Documentation#servermountiso)
+* [`GleSYSAPI.server.networkAdapters()`](https://github.com/glesys/API/wiki/API-Documentation#servernetworkadapters)
 * [`GleSYSAPI.server.reboot()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverreboot)
 * [`GleSYSAPI.server.resetLimit()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverresetlimit)
 * [`GleSYSAPI.server.resetPassword()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverresetpassword)
@@ -196,12 +235,17 @@ const glesys = new GleSYSAPI({
 
 ### user
 * [`GleSYSAPI.user.changePassword()`](https://github.com/GleSYS/API/wiki/API-Documentation#userchangepassword)
+* [`GleSYSAPI.user.confirm()`](https://github.com/GleSYS/API/wiki/API-Documentation#userconfirm)
+* [`GleSYSAPI.user.createOrganization()`](https://github.com/glesys/API/wiki/API-Documentation#usercreateorganization)
 * [`GleSYSAPI.user.details()`](https://github.com/GleSYS/API/wiki/API-Documentation#userdetails)
 * [`GleSYSAPI.user.disableTwoFactor()`](https://github.com/GleSYS/API/wiki/API-Documentation#userdisabletwofactor)
 * [`GleSYSAPI.user.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#useredit)
 * [`GleSYSAPI.user.enableTwoFactor()`](https://github.com/GleSYS/API/wiki/API-Documentation#userenabletwofactor)
+* [`GleSYSAPI.user.listOrganizations()`](https://github.com/glesys/API/wiki/API-Documentation#userlistorganizations)
 * [`GleSYSAPI.user.login()`](https://github.com/GleSYS/API/wiki/API-Documentation#userlogin)
 * [`GleSYSAPI.user.logout()`](https://github.com/GleSYS/API/wiki/API-Documentation#userlogout)
+* [`GleSYSAPI.user.searchData()`](https://github.com/GleSYS/API/wiki/API-Documentation#usersearchdata)
+* [`GleSYSAPI.user.signUp()`](https://github.com/GleSYS/API/wiki/API-Documentation#usersignup)
 
 ### vpn
 * [`GleSYSAPI.vpn.createUser()`](https://github.com/GleSYS/API/wiki/API-Documentation#vpncreateuser)

@@ -127,6 +127,37 @@ describe('endpoints/loadbalancer', () => {
         });
     });
 
+    describe('addToBlacklist', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const loadBalancer = new LoadBalancer(request);
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
+                assert.strictEqual(url, '/loadbalancer/addtoblacklist');
+            });
+
+            loadBalancer.addToBlacklist();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const loadBalancer = new LoadBalancer(request);
+            const expected = {
+                loadbalancerid: 1,
+                prefix: 'a',
+            };
+
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            loadBalancer.addToBlacklist(expected);
+
+            assert.ok(stub.called);
+        });
+    });
+
     describe('create', () => {
         it('should set the request URL', () => {
             const request = new Request();
@@ -397,6 +428,36 @@ describe('endpoints/loadbalancer', () => {
         });
     });
 
+    describe('errors', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const loadBalancer = new LoadBalancer(request);
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
+                assert.strictEqual(url, '/loadbalancer/errors');
+            });
+
+            loadBalancer.errors();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the query string', () => {
+            const request = new Request();
+            const loadBalancer = new LoadBalancer(request);
+            const expected = {
+                loadbalancerid: 1,
+            };
+
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            loadBalancer.errors(expected);
+
+            assert.ok(stub.called);
+        });
+    });
+
     describe('list', () => {
         it('should set the request URL', () => {
             const request = new Request();
@@ -496,6 +557,37 @@ describe('endpoints/loadbalancer', () => {
             });
 
             loadBalancer.removeCertificate(expected);
+
+            assert.ok(stub.called);
+        });
+    });
+
+    describe('removeFromBlacklist', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const loadBalancer = new LoadBalancer(request);
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
+                assert.strictEqual(url, '/loadbalancer/removefromblacklist');
+            });
+
+            loadBalancer.removeFromBlacklist();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const loadBalancer = new LoadBalancer(request);
+            const expected = {
+                loadbalancerid: 1,
+                prefix: 'a',
+            };
+
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            loadBalancer.removeFromBlacklist(expected);
 
             assert.ok(stub.called);
         });
