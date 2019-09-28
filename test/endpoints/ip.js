@@ -41,7 +41,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/ip/details');
             });
 
@@ -50,14 +50,14 @@ describe('endpoints/ip', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request body', () => {
+        it('should set the query string', () => {
             const request = new Request();
             const ip = new Ip(request);
             const expected = {
                 ipaddress: '127.0.0.1',
             };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -71,7 +71,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/ip/listfree');
             });
 
@@ -80,14 +80,14 @@ describe('endpoints/ip', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request body', () => {
+        it('should set the query string', () => {
             const request = new Request();
             const ip = new Ip(request);
             const expected = {
                 ipversion: 4,
             };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -101,7 +101,7 @@ describe('endpoints/ip', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/ip/listown');
             });
 
@@ -110,14 +110,14 @@ describe('endpoints/ip', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request body', () => {
+        it('should set the query string', () => {
             const request = new Request();
             const ip = new Ip(request);
             const expected = {
                 ipversion: 4,
             };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 

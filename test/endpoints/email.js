@@ -205,7 +205,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/email/list');
             });
 
@@ -214,14 +214,14 @@ describe('endpoints/email', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request body', () => {
+        it('should set the query string', () => {
             const request = new Request();
             const email = new Email(request);
             const expected = {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -249,7 +249,7 @@ describe('endpoints/email', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/email/quota');
             });
 
@@ -258,14 +258,14 @@ describe('endpoints/email', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request body', () => {
+        it('should set the query string', () => {
             const request = new Request();
             const email = new Email(request);
             const expected = {
                 emailaccount: 'example@example.com',
             };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 

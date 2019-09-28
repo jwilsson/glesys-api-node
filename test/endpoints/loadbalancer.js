@@ -191,7 +191,7 @@ describe('endpoints/loadbalancer', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/loadbalancer/details');
             });
 
@@ -200,14 +200,14 @@ describe('endpoints/loadbalancer', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request body', () => {
+        it('should set the query string', () => {
             const request = new Request();
             const loadBalancer = new LoadBalancer(request);
             const expected = {
                 loadbalancerid: 1,
             };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -415,7 +415,7 @@ describe('endpoints/loadbalancer', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
+            const stub = sinon.stub(request, 'get').callsFake((url) => {
                 assert.strictEqual(url, '/loadbalancer/listcertificate');
             });
 
@@ -424,14 +424,14 @@ describe('endpoints/loadbalancer', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the request body', () => {
+        it('should set the query string', () => {
             const request = new Request();
             const loadBalancer = new LoadBalancer(request);
             const expected = {
                 loadbalancerid: 1,
             };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
