@@ -1,4 +1,9 @@
 # Changelog
+## 4.1.0 (2019-10-03)
+* Added new endpoint methods.
+* Switched `POST` to `GET` where applicable.
+* Updated inline doc links.
+
 ## 4.0.1 (2019-08-03)
 * Replaced deprecated `url.resolve()` calls with `new URL()`.
 * Tests are run on Node 12.
