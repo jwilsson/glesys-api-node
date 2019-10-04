@@ -119,7 +119,7 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.fileStorage.listPlans()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragelistplans)
 * [`GleSYSAPI.fileStorage.listVolumes()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragelistvolumes)
 * [`GleSYSAPI.fileStorage.resourceUsage()`](https://github.com/glesys/API/wiki/API-Documentation#filestorageresourceusage)
-* [`GleSYSAPI.fileStorage.volumeDetails()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragevolumedetails
+* [`GleSYSAPI.fileStorage.volumeDetails()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragevolumedetails)
 
 ### invoice
 * [`GleSYSAPI.invoice.allowedArguments()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoiceallowedarguments)
