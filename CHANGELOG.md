@@ -1,4 +1,7 @@
 # Changelog
+## 4.1.1 (2019-10-05)
+* Fixed an small issue when merging request options.
+
 ## 4.1.0 (2019-10-03)
 * Added new endpoint methods.
 * Switched `POST` to `GET` where applicable.
