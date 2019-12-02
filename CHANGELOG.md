@@ -1,4 +1,28 @@
 # Changelog
+## 5.0.0 (2019-12-02)
+* Dropped support for Node < 10.
+* Updated `got` to `10.x`.
+* Removed the following methods removed from the GleSYS API:
+    * `GleSYSAPI.account.changePassword()`
+    * `GleSYSAPI.changelog.api()`
+    * `GleSYSAPI.changelog.controlPanel()`
+    * `GleSYSAPI.contactPerson.add()`
+    * `GleSYSAPI.contactPerson.delete()`
+    * `GleSYSAPI.contactPerson.edit()`
+    * `GleSYSAPI.contactPerson.list()`
+    * `GleSYSAPI.customer.contactInfo()`
+    * `GleSYSAPI.domain.allowedArguments()`
+    * `GleSYSAPI.invoice.allowedArguments()`
+    * `GleSYSAPI.invoice.paymentHistory()`
+    * `GleSYSAPI.invoice.settings()`
+    * `GleSYSAPI.liveChat.closeSession()`
+    * `GleSYSAPI.liveChat.getMessages()`
+    * `GleSYSAPI.liveChat.newSession()`
+    * `GleSYSAPI.liveChat.postMessage()`
+    * `GleSYSAPI.liveChat.sessionInfo()`
+    * `GleSYSAPI.liveChat.status()`
+    * `GleSYSAPI.paymentCard.edit()`
+
 ## 4.1.2 (2019-12-02)
 * Restored `POST` from `GET` where applicable.
 
