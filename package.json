@@ -1,6 +1,6 @@
 {
   "name": "glesys-api",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Node.js wrapper for the GleSYS API.",
   "main": "lib/glesys.js",
   "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
