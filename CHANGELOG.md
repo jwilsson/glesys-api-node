@@ -1,4 +1,7 @@
 # Changelog
+## 4.1.2 (2019-12-02)
+* Restored `POST` from `GET` where applicable.
+
 ## 4.1.1 (2019-10-05)
 * Fixed an small issue when merging request options.
 
