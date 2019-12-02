@@ -1,4 +1,7 @@
 # Changelog
+## 5.0.1 (2019-12-02)
+* Fixed lint errors.
+
 ## 5.0.0 (2019-12-02)
 * Dropped support for Node < 10.
 * Updated `got` to `10.x`.
