@@ -86,7 +86,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/available');
             });
 
@@ -95,14 +95,14 @@ describe('endpoints/domain', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const domain = new Domain(request);
             const expected = {
                 search: 'search',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -206,7 +206,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/details');
             });
 
@@ -215,14 +215,14 @@ describe('endpoints/domain', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const domain = new Domain(request);
             const expected = {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -294,7 +294,7 @@ describe('endpoints/domain', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/domain/listrecords');
             });
 
@@ -303,14 +303,14 @@ describe('endpoints/domain', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const domain = new Domain(request);
             const expected = {
                 domainname: 'example.com',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 

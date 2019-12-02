@@ -131,7 +131,7 @@ describe('endpoints/server', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/server/console');
             });
 
@@ -140,14 +140,14 @@ describe('endpoints/server', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const server = new Server(request);
             const expected = {
                 serverid: 'z1',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -161,7 +161,7 @@ describe('endpoints/server', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/server/costs');
             });
 
@@ -170,14 +170,14 @@ describe('endpoints/server', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const server = new Server(request);
             const expected = {
                 serverid: 'z1',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -251,7 +251,7 @@ describe('endpoints/server', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/server/details');
             });
 
@@ -260,14 +260,14 @@ describe('endpoints/server', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const server = new Server(request);
             const expected = {
                 serverid: 'z1',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -311,7 +311,7 @@ describe('endpoints/server', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/server/limits');
             });
 
@@ -320,14 +320,14 @@ describe('endpoints/server', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const server = new Server(request);
             const expected = {
                 serverid: 'z1',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -355,7 +355,7 @@ describe('endpoints/server', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/server/listiso');
             });
 
@@ -364,14 +364,14 @@ describe('endpoints/server', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const server = new Server(request);
             const expected = {
                 serverid: 'z1',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -535,7 +535,7 @@ describe('endpoints/server', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/server/resourceusage');
             });
 
@@ -544,14 +544,14 @@ describe('endpoints/server', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const server = new Server(request);
             const expected = {
                 serverid: 'z1',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
@@ -595,7 +595,7 @@ describe('endpoints/server', () => {
         it('should set the request URL', () => {
             const request = new Request();
             const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
                 assert.strictEqual(url, '/server/status');
             });
 
@@ -604,14 +604,14 @@ describe('endpoints/server', () => {
             assert.ok(stub.called);
         });
 
-        it('should set the query string', () => {
+        it('should set the request body', () => {
             const request = new Request();
             const server = new Server(request);
             const expected = {
                 serverid: 'z1',
             };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
                 assert.deepStrictEqual(data, expected);
             });
 
