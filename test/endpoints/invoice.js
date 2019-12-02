@@ -7,20 +7,6 @@ const Invoice = require('../../lib/endpoints/invoice');
 const Request = require('../../lib/request');
 
 describe('endpoints/invoice', () => {
-    describe('allowedArguments', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/invoice/allowedarguments');
-            });
-
-            invoice.allowedArguments();
-
-            assert.ok(stub.called);
-        });
-    });
-
     describe('billingPeriod', () => {
         it('should set the request URL', () => {
             const request = new Request();
@@ -104,50 +90,6 @@ describe('endpoints/invoice', () => {
             });
 
             invoice.payByPaypal(expected);
-
-            assert.ok(stub.called);
-        });
-    });
-
-    describe('paymentHistory', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/invoice/paymenthistory');
-            });
-
-            invoice.paymentHistory();
-
-            assert.ok(stub.called);
-        });
-    });
-
-    describe('settings', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/invoice/settings');
-            });
-
-            invoice.settings();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const expected = {
-                invoiceemailaddress: 'example@example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            invoice.settings(expected);
 
             assert.ok(stub.called);
         });

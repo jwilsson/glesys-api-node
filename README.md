@@ -40,7 +40,6 @@ const glesys = new GleSYSAPI({
 
 ## Available methods
 ### account
-* [`GleSYSAPI.account.changePassword()`](https://github.com/GleSYS/API/wiki/API-Documentation#accountchangepassword)
 * [`GleSYSAPI.account.info()`](https://github.com/GleSYS/API/wiki/API-Documentation#accountinfo)
 
 ### api
@@ -58,21 +57,10 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.archive.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#archivelist)
 * [`GleSYSAPI.archive.resize()`](https://github.com/GleSYS/API/wiki/API-Documentation#archiveresize)
 
-### changelog
-* [`GleSYSAPI.changelog.api()`](https://github.com/GleSYS/API/wiki/API-Documentation#changelogapi)
-* [`GleSYSAPI.changelog.controlPanel()`](https://github.com/GleSYS/API/wiki/API-Documentation#changelogcontrolpanel)
-
-### contactPerson
-* [`GleSYSAPI.contactPerson.add()`](https://github.com/GleSYS/API/wiki/API-Documentation#contactpersonadd)
-* [`GleSYSAPI.contactPerson.delete()`](https://github.com/GleSYS/API/wiki/API-Documentation#contactpersondelete)
-* [`GleSYSAPI.contactPerson.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#contactpersonedit)
-* [`GleSYSAPI.contactPerson.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#contactpersonlist)
-
 ### country
 * [`GleSYSAPI.country.list()`](https://github.com/glesys/API/wiki/API-Documentation#countrylist)
 
 ### customer
-* [`GleSYSAPI.customer.contactInfo()`](https://github.com/GleSYS/API/wiki/API-Documentation#customercontactinfo)
 * [`GleSYSAPI.customer.createProject()`](https://github.com/glesys/API/wiki/API-Documentation#customercreateproject)
 * [`GleSYSAPI.customer.editCollaborator()`](https://github.com/glesys/API/wiki/API-Documentation#customereditcollaborator)
 * [`GleSYSAPI.customer.listCollaborators()`](https://github.com/glesys/API/wiki/API-Documentation#customerlistcollaborators)
@@ -83,7 +71,6 @@ const glesys = new GleSYSAPI({
 ### domain
 * [`GleSYSAPI.domain.add()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainadd)
 * [`GleSYSAPI.domain.addRecord()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainaddrecord)
-* [`GleSYSAPI.domain.allowedArguments()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainallowedarguments)
 * [`GleSYSAPI.domain.available()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainavailable)
 * [`GleSYSAPI.domain.changeNameServers()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainchangenameservers)
 * [`GleSYSAPI.domain.delete()`](https://github.com/GleSYS/API/wiki/API-Documentation#domaindelete)
@@ -122,13 +109,10 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.fileStorage.volumeDetails()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragevolumedetails)
 
 ### invoice
-* [`GleSYSAPI.invoice.allowedArguments()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoiceallowedarguments)
 * [`GleSYSAPI.invoice.billingPeriod()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicebillingperiod)
 * [`GleSYSAPI.invoice.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicelist)
 * [`GleSYSAPI.invoice.next()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicenext)
 * [`GleSYSAPI.invoice.payByPaypal()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicepaybypaypal)
-* [`GleSYSAPI.invoice.paymentHistory()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicepaymenthistory)
-* [`GleSYSAPI.invoice.settings()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicesettings)
 
 ### ip
 * [`GleSYSAPI.ip.add()`](https://github.com/GleSYS/API/wiki/API-Documentation#ipadd)
@@ -140,14 +124,6 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.ip.resetPTR()`](https://github.com/GleSYS/API/wiki/API-Documentation#ipresetptr)
 * [`GleSYSAPI.ip.setPTR()`](https://github.com/GleSYS/API/wiki/API-Documentation#ipsetptr)
 * [`GleSYSAPI.ip.take()`](https://github.com/GleSYS/API/wiki/API-Documentation#iptake)
-
-### liveChat
-* [`GleSYSAPI.liveChat.closeSession()`](https://github.com/GleSYS/API/wiki/API-Documentation#livechatclosesession)
-* [`GleSYSAPI.liveChat.getMessages()`](https://github.com/GleSYS/API/wiki/API-Documentation#livechatgetmessages)
-* [`GleSYSAPI.liveChat.newSession()`](https://github.com/GleSYS/API/wiki/API-Documentation#livechatnewsession)
-* [`GleSYSAPI.liveChat.postMessage()`](https://github.com/GleSYS/API/wiki/API-Documentation#livechatpostmessage)
-* [`GleSYSAPI.liveChat.sessionInfo()`](https://github.com/GleSYS/API/wiki/API-Documentation#livechatsessioninfo)
-* [`GleSYSAPI.liveChat.status()`](https://github.com/GleSYS/API/wiki/API-Documentation#livechatstatus)
 
 ### loadBalancer
 * [`GleSYSAPI.loadBalancer.addBackEnd()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalanceraddbackend)
@@ -189,7 +165,6 @@ const glesys = new GleSYSAPI({
 ### paymentCard
 * [`GleSYSAPI.paymentCard.add()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardadd)
 * [`GleSYSAPI.paymentCard.delete()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcarddelete)
-* [`GleSYSAPI.paymentCard.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardedit)
 * [`GleSYSAPI.paymentCard.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardlist)
 * [`GleSYSAPI.paymentCard.payInvoices()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardpayinvoices)
 

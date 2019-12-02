@@ -67,36 +67,6 @@ describe('endpoints/paymentcard', () => {
         });
     });
 
-    describe('edit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/paymentcard/edit');
-            });
-
-            paymentCard.edit();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const expected = {
-                paymentcardid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            paymentCard.edit(expected);
-
-            assert.ok(stub.called);
-        });
-    });
-
     describe('list', () => {
         it('should set the request URL', () => {
             const request = new Request();

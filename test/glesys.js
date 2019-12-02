@@ -21,8 +21,6 @@ describe('GleSYSAPI', () => {
         assert.ok(glesys.account);
         assert.ok(glesys.api);
         assert.ok(glesys.archive);
-        assert.ok(glesys.changelog);
-        assert.ok(glesys.contactPerson);
         assert.ok(glesys.country);
         assert.ok(glesys.customer);
         assert.ok(glesys.domain);
@@ -30,7 +28,6 @@ describe('GleSYSAPI', () => {
         assert.ok(glesys.fileStorage);
         assert.ok(glesys.invoice);
         assert.ok(glesys.ip);
-        assert.ok(glesys.liveChat);
         assert.ok(glesys.loadBalancer);
         assert.ok(glesys.network);
         assert.ok(glesys.networkAdapter);

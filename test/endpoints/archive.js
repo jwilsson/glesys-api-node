@@ -52,37 +52,6 @@ describe('endpoints/archive', () => {
         });
     });
 
-    describe('changePassword', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/archive/changepassword');
-            });
-
-            archive.changePassword();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const expected = {
-                password: 'password',
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            archive.changePassword(expected);
-
-            assert.ok(stub.called);
-        });
-    });
-
     describe('create', () => {
         it('should set the request URL', () => {
             const request = new Request();
