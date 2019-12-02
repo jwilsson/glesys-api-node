@@ -42,7 +42,7 @@ describe('request', () => {
             };
 
             const stub = sinon.stub(request, 'request').callsFake((url, options) => {
-                assert.strictEqual(options.query, data);
+                assert.strictEqual(options.searchParams, data);
             });
 
             request.get('/api/serviceinfo', data);
@@ -70,7 +70,7 @@ describe('request', () => {
             };
 
             const stub = sinon.stub(request, 'request').callsFake((url, options) => {
-                assert.strictEqual(options.body, data);
+                assert.strictEqual(options.json, data);
             });
 
             request.post('/api/serviceinfo', data);
