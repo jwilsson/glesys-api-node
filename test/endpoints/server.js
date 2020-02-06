@@ -307,6 +307,36 @@ describe('endpoints/server', () => {
         });
     });
 
+    describe('estimatedCost', () => {
+        it('should set the request URL', () => {
+            const request = new Request();
+            const server = new Server(request);
+            const stub = sinon.stub(request, 'post').callsFake((url) => {
+                assert.strictEqual(url, '/server/estimatedcost');
+            });
+
+            server.estimatedCost();
+
+            assert.ok(stub.called);
+        });
+
+        it('should set the request body', () => {
+            const request = new Request();
+            const server = new Server(request);
+            const expected = {
+                serverid: 'z1',
+            };
+
+            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
+                assert.deepStrictEqual(data, expected);
+            });
+
+            server.estimatedCost(expected);
+
+            assert.ok(stub.called);
+        });
+    });
+
     describe('limits', () => {
         it('should set the request URL', () => {
             const request = new Request();

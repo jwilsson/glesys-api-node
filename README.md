@@ -183,6 +183,7 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.server.destroy()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverdestroy)
 * [`GleSYSAPI.server.details()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverdetails)
 * [`GleSYSAPI.server.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#serveredit)
+* [`GleSYSAPI.server.estimatedCost()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverestimatedcost)
 * [`GleSYSAPI.server.limits()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverlimits)
 * [`GleSYSAPI.server.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverlist)
 * [`GleSYSAPI.server.listISO()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverlistiso)
