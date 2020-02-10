@@ -1,4 +1,8 @@
 # Changelog
+## 5.1.0 (2020-02-10)
+* Added new `GleSYSAPI.server.estimatedCost()` method.
+* Updated dev dependencies.
+
 ## 5.0.1 (2019-12-02)
 * Fixed lint errors.
 
