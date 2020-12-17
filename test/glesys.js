@@ -31,6 +31,7 @@ describe('GleSYSAPI', () => {
         assert.ok(glesys.loadBalancer);
         assert.ok(glesys.network);
         assert.ok(glesys.networkAdapter);
+        assert.ok(glesys.objectStorage);
         assert.ok(glesys.paymentCard);
         assert.ok(glesys.project);
         assert.ok(glesys.server);

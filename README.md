@@ -162,6 +162,16 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.networkAdapter.details()`](https://github.com/glesys/API/wiki/API-Documentation#networkadapterdetails)
 * [`GleSYSAPI.networkAdapter.edit()`](https://github.com/glesys/API/wiki/API-Documentation#networkadapteredit)
 
+### objectStorage
+* [`GleSYSAPI.objectStorage.createCredential()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstoragecreatecredential)
+* [`GleSYSAPI.objectStorage.createInstance()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstoragecreateinstance)
+* [`GleSYSAPI.objectStorage.deleteCredential()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstoragedeletecredential)
+* [`GleSYSAPI.objectStorage.deleteInstance()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstoragedeleteinstance)
+* [`GleSYSAPI.objectStorage.editInstance()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstorageeditinstance)
+* [`GleSYSAPI.objectStorage.estimatedCost()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstorageestimatedcost)
+* [`GleSYSAPI.objectStorage.instanceDetails()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstorageinstancedetails)
+* [`GleSYSAPI.objectStorage.listInstances()`](https://github.com/GleSYS/API/wiki/API-Documentation#objectstoragelistinstances)
+
 ### paymentCard
 * [`GleSYSAPI.paymentCard.add()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardadd)
 * [`GleSYSAPI.paymentCard.delete()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcarddelete)
