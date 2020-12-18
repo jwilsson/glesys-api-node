@@ -1,4 +1,21 @@
 # Changelog
+## 5.2.0 (2020-12-18)
+* Added new `ObjectStorage` methods (thanks @hejhansson):
+    * `GleSYSAPI.objectStorage.createCredential()`
+    * `GleSYSAPI.objectStorage.createInstance()`
+    * `GleSYSAPI.objectStorage.deleteCredential()`
+    * `GleSYSAPI.objectStorage.deleteInstance()`
+    * `GleSYSAPI.objectStorage.editInstance()`
+    * `GleSYSAPI.objectStorage.estimatedCost()`
+    * `GleSYSAPI.objectStorage.instanceDetails()`
+    * `GleSYSAPI.objectStorage.listInstances()`
+* Added new `Server methods`:
+    * `GleSYSAPI.server.createFromBackup()`
+    * `GleSYSAPI.server.listBackups()`
+    * `GleSYSAPI.server.previewCloudConfig()`
+* Refactored tests to use Jest.
+* Updated dev dependencies.
+
 ## 5.1.0 (2020-02-10)
 * Added new `GleSYSAPI.server.estimatedCost()` method.
 * Updated dev dependencies.
