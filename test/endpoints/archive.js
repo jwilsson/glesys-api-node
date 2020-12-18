@@ -1,222 +1,101 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Archive = require('../../lib/endpoints/archive');
 const Request = require('../../lib/request');
 
 describe('endpoints/archive', () => {
-    describe('allowedArguments', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/archive/allowedarguments');
-            });
+    let archive;
+    let request;
 
-            archive.allowedArguments();
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        archive = new Archive(request);
     });
 
-    describe('changeDescription', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/archive/changedescription');
-            });
+    test('allowedArguments()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            archive.changeDescription();
+        archive.allowedArguments();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const expected = {
-                description: 'description',
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            archive.changeDescription(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/allowedarguments');
     });
 
-    describe('changePassword', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/archive/changepassword');
-            });
+    test('changeDescription()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            description: 'description',
+            username: 'username',
+        };
 
-            archive.changePassword();
+        archive.changeDescription(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const expected = {
-                password: 'password',
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            archive.changePassword(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/changedescription', data);
     });
 
-    describe('create', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/archive/create');
-            });
+    test('changePassword()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            password: 'password',
+            username: 'username',
+        };
 
-            archive.create();
+        archive.changePassword(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const expected = {
-                password: 'password',
-                size: 1,
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            archive.create(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/changepassword', data);
     });
 
-    describe('delete', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/archive/delete');
-            });
+    test('create()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            password: 'password',
+            size: 1,
+            username: 'username',
+        };
 
-            archive.delete();
+        archive.create(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const expected = {
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            archive.delete(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/create', data);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/archive/details');
-            });
+    test('delete()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            username: 'username',
+        };
 
-            archive.details();
+        archive.delete(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const expected = {
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            archive.details(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/delete', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/archive/list');
-            });
+    test('details()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            username: 'username',
+        };
 
-            archive.list();
+        archive.details(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/details', data);
     });
 
-    describe('resize', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/archive/resize');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            archive.resize();
+        archive.list();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/list');
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const archive = new Archive(request);
-            const expected = {
-                size: 1,
-                username: 'username',
-            };
+    test('resize()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            size: 1,
+            username: 'username',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        archive.resize(data);
 
-            archive.resize(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/archive/resize', data);
     });
 });

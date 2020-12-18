@@ -1,113 +1,55 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Transaction = require('../../lib/endpoints/transaction');
 const Request = require('../../lib/request');
 
 describe('endpoints/transaction', () => {
-    describe('acknowledge', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/transaction/acknowledge');
-            });
+    let transaction;
+    let request;
 
-            transaction.acknowledge();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const transaction = new Transaction(request);
-            const expected = {
-                transactionid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            transaction.acknowledge(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        transaction = new Transaction(request);
     });
 
-    describe('cancel', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/transaction/cancel');
-            });
+    test('acknowledge()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            transactionid: 1,
+        };
 
-            transaction.cancel();
+        transaction.acknowledge(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const transaction = new Transaction(request);
-            const expected = {
-                transactionid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            transaction.cancel(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/transaction/acknowledge', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/transaction/list');
-            });
+    test('cancel()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            transactionid: 1,
+        };
 
-            transaction.list();
+        transaction.cancel(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/transaction/cancel', data);
     });
 
-    describe('start', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const transaction = new Transaction(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/transaction/start');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            transaction.start();
+        transaction.list();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/transaction/list');
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const transaction = new Transaction(request);
-            const expected = {
-                transactionid: 1,
-            };
+    test('start()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            transactionid: 1,
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        transaction.start(data);
 
-            transaction.start(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/transaction/start', data);
     });
 });

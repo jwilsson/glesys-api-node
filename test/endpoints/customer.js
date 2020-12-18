@@ -1,157 +1,74 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Customer = require('../../lib/endpoints/customer');
 const Request = require('../../lib/request');
 
 describe('endpoints/customer', () => {
-    describe('createProject', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/customer/createproject');
-            });
+    let customer;
+    let request;
 
-            customer.createProject();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const expected = {
-                name: 'name',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            customer.createProject(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        customer = new Customer(request);
     });
 
-    describe('editCollaborator', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/customer/editcollaborator');
-            });
+    test('createProject()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            name: 'name',
+        };
 
-            customer.editCollaborator();
+        customer.createProject(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const expected = {
-                collaboratorid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            customer.editCollaborator(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/customer/createproject', data);
     });
 
-    describe('listCollaborators', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/customer/listcollaborators');
-            });
+    test('editCollaborator()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            collaboratorid: 1,
+        };
 
-            customer.listCollaborators();
+        customer.editCollaborator(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/customer/editcollaborator', data);
     });
 
-    describe('listProjects', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/customer/listprojects');
-            });
+    test('listCollaborators()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            customer.listProjects();
+        customer.listCollaborators();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/customer/listcollaborators');
     });
 
-    describe('removeCollaborator', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/customer/removecollaborator');
-            });
+    test('listProjects()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            customer.removeCollaborator();
+        customer.listProjects();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const expected = {
-                collaboratorid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            customer.removeCollaborator(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/customer/listprojects');
     });
 
-    describe('settings', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/customer/settings');
-            });
+    test('removeCollaborator()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            collaboratorid: 1,
+        };
 
-            customer.settings();
+        customer.removeCollaborator(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/customer/removecollaborator', data);
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const customer = new Customer(request);
-            const expected = {
-                name: 'name',
-            };
+    test('settings()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            name: 'name',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        customer.settings(data);
 
-            customer.settings(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/customer/settings', data);
     });
 });

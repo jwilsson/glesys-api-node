@@ -1,144 +1,67 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Network = require('../../lib/endpoints/network');
 const Request = require('../../lib/request');
 
 describe('endpoints/network', () => {
-    describe('create', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/network/create');
-            });
+    let network;
+    let request;
 
-            network.create();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const expected = {
-                datacenter: 'datacenter',
-                description: 'description',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            network.create(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        network = new Network(request);
     });
 
-    describe('delete', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/network/delete');
-            });
+    test('create()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            datacenter: 'datacenter',
+            description: 'description',
+        };
 
-            network.delete();
+        network.create(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const expected = {
-                networkid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            network.delete(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/network/create', data);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/network/details');
-            });
+    test('delete()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            networkid: 1,
+        };
 
-            network.details();
+        network.delete(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the query string', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const expected = {
-                networkid: 1,
-            };
-
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            network.details(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/network/delete', data);
     });
 
-    describe('edit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/network/edit');
-            });
+    test('details()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+        const data = {
+            networkid: 1,
+        };
 
-            network.edit();
+        network.details(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const expected = {
-                networkid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            network.edit(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/network/details', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const network = new Network(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/network/list');
-            });
+    test('edit()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            networkid: 1,
+        };
 
-            network.list();
+        network.edit(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/network/edit', data);
+    });
+
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+
+        network.list();
+
+        expect(spy).toHaveBeenCalledWith('/network/list');
     });
 });

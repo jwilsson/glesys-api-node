@@ -1,97 +1,52 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Invoice = require('../../lib/endpoints/invoice');
 const Request = require('../../lib/request');
 
 describe('endpoints/invoice', () => {
-    describe('billingPeriod', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/invoice/billingperiod');
-            });
+    let invoice;
+    let request;
 
-            invoice.billingPeriod();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const expected = {
-                account: 'account',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            invoice.billingPeriod(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        invoice = new Invoice(request);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/invoice/list');
-            });
+    test('billingPeriod()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            account: 'account',
+        };
 
-            invoice.list();
+        invoice.billingPeriod(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/invoice/billingperiod', data);
     });
 
-    describe('next', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/invoice/next');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            invoice.next();
+        invoice.list();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/invoice/list');
     });
 
-    describe('payByPaypal', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/invoice/paybypaypal');
-            });
+    test('next()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            invoice.payByPaypal();
+        invoice.next();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/invoice/next');
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const invoice = new Invoice(request);
-            const expected = {
-                invoicenumbers: 1,
-            };
+    test('payByPaypal()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            invoicenumbers: 1,
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        invoice.payByPaypal(data);
 
-            invoice.payByPaypal(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/invoice/paybypaypal', data);
     });
 });

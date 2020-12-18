@@ -1,279 +1,113 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Ip = require('../../lib/endpoints/ip');
 const Request = require('../../lib/request');
 
 describe('endpoints/ip', () => {
-    describe('add', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/add');
-            });
+    let ip;
+    let request;
 
-            ip.add();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipaddress: '127.0.0.1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.add(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        ip = new Ip(request);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/details');
-            });
+    test('add()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipaddress: '127.0.0.1',
+        };
 
-            ip.details();
+        ip.add(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipaddress: '127.0.0.1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.details(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/add', data);
     });
 
-    describe('listFree', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/listfree');
-            });
+    test('details()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipaddress: '127.0.0.1',
+        };
 
-            ip.listFree();
+        ip.details(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipversion: 4,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.listFree(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/details', data);
     });
 
-    describe('listOwn', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/listown');
-            });
+    test('listFree()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipversion: 4,
+        };
 
-            ip.listOwn();
+        ip.listFree(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipversion: 4,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.listOwn(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/listfree', data);
     });
 
-    describe('release', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/release');
-            });
+    test('listOwn()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipversion: 4,
+        };
 
-            ip.release();
+        ip.listOwn(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipaddress: '127.0.0.1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.release(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/listown', data);
     });
 
-    describe('remove', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/remove');
-            });
+    test('release()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipaddress: '127.0.0.1',
+        };
 
-            ip.remove();
+        ip.release(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipaddress: '127.0.0.1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.remove(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/release', data);
     });
 
-    describe('resetPTR', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/resetptr');
-            });
+    test('remove()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipaddress: '127.0.0.1',
+        };
 
-            ip.resetPTR();
+        ip.remove(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipaddress: '127.0.0.1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.resetPTR(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/remove', data);
     });
 
-    describe('setPTR', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/setptr');
-            });
+    test('resetPTR()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipaddress: '127.0.0.1',
+        };
 
-            ip.setPTR();
+        ip.resetPTR(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipaddress: '127.0.0.1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            ip.setPTR(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/resetptr', data);
     });
 
-    describe('take', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/ip/take');
-            });
+    test('setPTR()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipaddress: '127.0.0.1',
+        };
 
-            ip.take();
+        ip.setPTR(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/setptr', data);
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const ip = new Ip(request);
-            const expected = {
-                ipaddress: '127.0.0.1',
-            };
+    test('take()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            ipaddress: '127.0.0.1',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        ip.take(data);
 
-            ip.take(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/ip/take', data);
     });
 });

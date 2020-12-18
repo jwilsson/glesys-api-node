@@ -1,277 +1,118 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Email = require('../../lib/endpoints/email');
 const Request = require('../../lib/request');
 
 describe('endpoints/email', () => {
-    describe('costs', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/email/costs');
-            });
+    let request;
+    let email;
 
-            email.costs();
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        email = new Email(request);
     });
 
-    describe('createAccount', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/createaccount');
-            });
+    test('costs()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            email.createAccount();
+        email.costs();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                emailaccount: 'example@example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            email.createAccount(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/costs');
     });
 
-    describe('createAlias', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/createalias');
-            });
+    test('createAccount()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            emailaccount: 'example@example.com',
+        };
 
-            email.createAlias();
+        email.createAccount(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                emailalias: 'emailalias',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            email.createAlias(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/createaccount', data);
     });
 
-    describe('delete', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/delete');
-            });
+    test('createAlias()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            emailalias: 'emailalias',
+        };
 
-            email.delete();
+        email.createAlias(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                email: 'email',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            email.delete(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/createalias', data);
     });
 
-    describe('editAccount', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/editaccount');
-            });
+    test('delete()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            email: 'email',
+        };
 
-            email.editAccount();
+        email.delete(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                emailaccount: 'example@example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            email.editAccount(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/delete', data);
     });
 
-    describe('editAlias', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/editalias');
-            });
+    test('editAccount()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            emailaccount: 'example@example.com',
+        };
 
-            email.editAlias();
+        email.editAccount(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                emailalias: 'alias@example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            email.editAlias(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/editaccount', data);
     });
 
-    describe('globalQuota', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/globalquota');
-            });
+    test('editAlias()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            emailalias: 'alias@example.com',
+        };
 
-            email.globalQuota();
+        email.editAlias(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                globalquota: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            email.globalQuota(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/editalias', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/list');
-            });
+    test('globalQuota()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            globalquota: 1,
+        };
 
-            email.list();
+        email.globalQuota(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            email.list(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/globalquota', data);
     });
 
-    describe('overview', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/email/overview');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            email.overview();
+        email.list(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/list', data);
     });
 
-    describe('quota', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/email/quota');
-            });
+    test('overview()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            email.quota();
+        email.overview();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/overview');
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const email = new Email(request);
-            const expected = {
-                emailaccount: 'example@example.com',
-            };
+    test('quota()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            emailaccount: 'example@example.com',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        email.quota(data);
 
-            email.quota(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/email/quota', data);
     });
 });

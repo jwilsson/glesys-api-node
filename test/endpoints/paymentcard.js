@@ -1,114 +1,56 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const PaymentCard = require('../../lib/endpoints/paymentcard');
 const Request = require('../../lib/request');
 
 describe('endpoints/paymentcard', () => {
-    describe('add', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/paymentcard/add');
-            });
+    let paymentCard;
+    let request;
 
-            paymentCard.add();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const expected = {
-                description: 'description',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            paymentCard.add(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        paymentCard = new PaymentCard(request);
     });
 
-    describe('delete', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/paymentcard/delete');
-            });
+    test('add()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            description: 'description',
+        };
 
-            paymentCard.delete();
+        paymentCard.add(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const expected = {
-                paymentcardid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            paymentCard.delete(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/paymentcard/add', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/paymentcard/list');
-            });
+    test('delete()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            paymentcardid: 1,
+        };
 
-            paymentCard.list();
+        paymentCard.delete(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/paymentcard/delete', data);
     });
 
-    describe('payInvoices', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/paymentcard/payinvoices');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            paymentCard.payInvoices();
+        paymentCard.list();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/paymentcard/list');
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const paymentCard = new PaymentCard(request);
-            const expected = {
-                invoicenumbers: 1,
-                paymentcardid: 1,
-            };
+    test('payInvoices()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            invoicenumbers: 1,
+            paymentcardid: 1,
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        paymentCard.payInvoices(data);
 
-            paymentCard.payInvoices(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/paymentcard/payinvoices', data);
     });
 });

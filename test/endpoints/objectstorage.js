@@ -1,239 +1,105 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const ObjectStorage = require('../../lib/endpoints/objectstorage');
 const Request = require('../../lib/request');
 
 describe('endpoints/objectstorage', () => {
-    describe('createCredential', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/createcredential');
-            });
+    let objectStorage;
+    let request;
 
-            objectStorage.createCredential();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const expected = {
-                description: 'description',
-                instanceid: 'os-123',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            objectStorage.createCredential(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        objectStorage = new ObjectStorage(request);
     });
 
-    describe('createInstance', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/createinstance');
-            });
+    test('createCredential()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            description: 'description',
+            instanceid: 'os-123',
+        };
 
-            objectStorage.createInstance();
+        objectStorage.createCredential(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const expected = {
-                createinitialbucket: true,
-                datacenter: 'dc-sto1',
-                projectkey: 'cl123',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            objectStorage.createInstance(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/objectstorage/createcredential', data);
     });
 
-    describe('deleteCredential', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/deletecredential');
-            });
+    test('createInstance()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            createinitialbucket: true,
+            datacenter: 'dc-sto1',
+            projectkey: 'cl123',
+        };
 
-            objectStorage.deleteCredential();
+        objectStorage.createInstance(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const expected = {
-                credentialid: 'abc123',
-                instanceid: 'os-123',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            objectStorage.deleteCredential(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/objectstorage/createinstance', data);
     });
 
-    describe('deleteInstance', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/deleteinstance');
-            });
+    test('deleteCredential()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            credentialid: 'abc123',
+            instanceid: 'os-123',
+        };
 
-            objectStorage.deleteInstance();
+        objectStorage.deleteCredential(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const expected = {
-                instanceid: 'os-123',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            objectStorage.deleteInstance(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/objectstorage/deletecredential', data);
     });
 
-    describe('editInstance', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/editinstance');
-            });
+    test('deleteInstance()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            instanceid: 'os-123',
+        };
 
-            objectStorage.editInstance();
+        objectStorage.deleteInstance(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const expected = {
-                description: 'new description',
-                instanceid: 'os-123',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            objectStorage.editInstance(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/objectstorage/deleteinstance', data);
     });
 
-    describe('estimatedCost', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/estimatedcost');
-            });
+    test('editInstance()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            description: 'new description',
+            instanceid: 'os-123',
+        };
 
-            objectStorage.estimatedCost();
+        objectStorage.editInstance(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const expected = {
-                averageUsageInGib: 10,
-                instanceid: 'os-123',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            objectStorage.estimatedCost(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/objectstorage/editinstance', data);
     });
 
-    describe('instanceDetails', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/instancedetails');
-            });
+    test('estimatedCost()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            averageUsageInGib: 10,
+            instanceid: 'os-123',
+        };
 
-            objectStorage.instanceDetails();
+        objectStorage.estimatedCost(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const expected = {
-                instanceid: 'os-123',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            objectStorage.instanceDetails(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/objectstorage/estimatedcost', data);
     });
 
-    describe('listInstances', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const objectStorage = new ObjectStorage(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/objectstorage/listinstances');
-            });
+    test('instanceDetails()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            instanceid: 'os-123',
+        };
 
-            objectStorage.listInstances();
+        objectStorage.instanceDetails(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/objectstorage/instancedetails', data);
+    });
+
+    test('listInstances()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+
+        objectStorage.listInstances();
+
+        expect(spy).toHaveBeenCalledWith('/objectstorage/listinstances');
     });
 });

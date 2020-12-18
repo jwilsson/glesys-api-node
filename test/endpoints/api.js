@@ -1,51 +1,38 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Api = require('../../lib/endpoints/api');
 const Request = require('../../lib/request');
 
 describe('endpoints/api', () => {
-    describe('listFunctions', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const api = new Api(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/api/listfunctions');
-            });
+    let request;
+    let api;
 
-            api.listFunctions();
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        api = new Api(request);
     });
 
-    describe('maintenance', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const api = new Api(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/api/maintenance');
-            });
+    test('listFunctions()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            api.maintenance();
+        api.listFunctions();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/api/listfunctions');
     });
 
-    describe('serviceInfo', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const api = new Api(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/api/serviceinfo');
-            });
+    test('maintenance()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            api.serviceInfo();
+        api.maintenance();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/api/maintenance');
+    });
+
+    test('serviceInfo()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+
+        api.serviceInfo();
+
+        expect(spy).toHaveBeenCalledWith('/api/serviceinfo');
     });
 });

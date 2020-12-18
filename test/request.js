@@ -1,7 +1,5 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
 const Request = require('../lib/request');
 
 describe('request', () => {
@@ -10,82 +8,52 @@ describe('request', () => {
         apiUser: 'user',
     };
 
-    it('should set apiKey and apiUser', () => {
+    test('constructor sets auth options and creates token', () => {
         const request = new Request(authOptions);
 
-        assert.strictEqual(request.apiKey, authOptions.apiKey);
-        assert.strictEqual(request.apiUser, authOptions.apiUser);
+        expect(request.apiKey).toBe(authOptions.apiKey);
+        expect(request.apiUser).toBe(authOptions.apiUser);
+        expect(request.token).toBe('dXNlcjprZXk=');
     });
 
-    it('should create a token', () => {
+    test('get() sets query string and request method', () => {
+        const request = new Request({});
+        const requestSpy = jest.spyOn(request, 'request').mockImplementation();
+
+        const url = 'https://api.glesys.com/api/serviceinfo';
+        const data = {
+            foo: 'bar',
+        };
+
+        request.get(url, data);
+
+        expect(requestSpy).toHaveBeenCalledWith(url, expect.objectContaining({
+            method: 'GET',
+            searchParams: data,
+        }));
+    });
+
+    test('post() sets body and request method', () => {
+        const request = new Request({});
+        const requestSpy = jest.spyOn(request, 'request').mockImplementation();
+
+        const url = 'https://api.glesys.com/api/serviceinfo';
+        const data = {
+            foo: 'bar',
+        };
+
+        request.post(url, data);
+
+        expect(requestSpy).toHaveBeenCalledWith(url, expect.objectContaining({
+            json: data,
+            method: 'POST',
+        }));
+    });
+
+    test('request() sends a request', async () => {
         const request = new Request(authOptions);
+        const response = await request.request('https://httpbin.org/headers');
 
-        assert.strictEqual(request.token, 'dXNlcjprZXk=');
-    });
-
-    describe('get()', () => {
-        it('should set the request method to "GET"', () => {
-            const request = new Request({});
-            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
-                assert.strictEqual(options.method, 'GET');
-            });
-
-            request.get('https://api.glesys.com');
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the query string', () => {
-            const request = new Request({});
-            const data = {
-                foo: 'bar',
-            };
-
-            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
-                assert.strictEqual(options.searchParams, data);
-            });
-
-            request.get('/api/serviceinfo', data);
-
-            assert.ok(stub.called);
-        });
-    });
-
-    describe('post()', () => {
-        it('should set the request method to "POST"', () => {
-            const request = new Request({});
-            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
-                assert.strictEqual(options.method, 'POST');
-            });
-
-            request.post('https://api.glesys.com');
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the body', () => {
-            const request = new Request({});
-            const data = {
-                foo: 'bar',
-            };
-
-            const stub = sinon.stub(request, 'request').callsFake((url, options) => {
-                assert.strictEqual(options.json, data);
-            });
-
-            request.post('/api/serviceinfo', data);
-
-            assert.ok(stub.called);
-        });
-    });
-
-    describe('request()', () => {
-        it('should send a request', () => {
-            const request = new Request(authOptions);
-
-            request.request('https://httpbin.org/headers').then((res) => {
-                assert.strictEqual(res.body.headers.Authorization, 'Basic dXNlcjprZXk=');
-            });
-        });
+        expect(response.body.headers.Authorization).toBe('Basic dXNlcjprZXk=');
     });
 });

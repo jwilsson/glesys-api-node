@@ -1,129 +1,54 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const NetworkAdapter = require('../../lib/endpoints/networkadapter');
 const Request = require('../../lib/request');
 
 describe('endpoints/networkadapter', () => {
-    describe('create', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/networkadapter/create');
-            });
+    const request = new Request();
+    const getSpy = jest.spyOn(request, 'get').mockImplementation();
+    const postSpy = jest.spyOn(request, 'post').mockImplementation();
 
-            networkAdapter.create();
+    test('create()', () => {
+        const networkAdapter = new NetworkAdapter(request);
+        const data = {
+            serverid: 1,
+        };
 
-            assert.ok(stub.called);
-        });
+        networkAdapter.create(data);
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const expected = {
-                serverid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            networkAdapter.create(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(postSpy).toHaveBeenCalledWith('/networkadapter/create', data);
     });
 
-    describe('delete', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/networkadapter/delete');
-            });
+    test('delete()', () => {
+        const networkAdapter = new NetworkAdapter(request);
+        const data = {
+            networkadapterid: 1,
+        };
 
-            networkAdapter.delete();
+        networkAdapter.delete(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const expected = {
-                networkadapterid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            networkAdapter.delete(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(postSpy).toHaveBeenCalledWith('/networkadapter/delete', data);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/networkadapter/details');
-            });
+    test('details()', () => {
+        const networkAdapter = new NetworkAdapter(request);
+        const data = {
+            networkadapterid: 1,
+        };
 
-            networkAdapter.details();
+        networkAdapter.details(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the query string', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const expected = {
-                networkadapterid: 1,
-            };
-
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            networkAdapter.details(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(getSpy).toHaveBeenCalledWith('/networkadapter/details', data);
     });
 
-    describe('edit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/networkadapter/edit');
-            });
+    test('edit()', () => {
+        const networkAdapter = new NetworkAdapter(request);
+        const data = {
+            networkadapterid: 1,
+        };
 
-            networkAdapter.edit();
+        networkAdapter.edit(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const networkAdapter = new NetworkAdapter(request);
-            const expected = {
-                networkadapterid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            networkAdapter.edit(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(postSpy).toHaveBeenCalledWith('/networkadapter/edit', data);
     });
 });

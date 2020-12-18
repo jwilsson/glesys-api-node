@@ -1,486 +1,200 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Domain = require('../../lib/endpoints/domain');
 const Request = require('../../lib/request');
 
 describe('endpoints/domain', () => {
-    describe('add', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/add');
-            });
+    let request;
+    let domain;
 
-            domain.add();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.add(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        domain = new Domain(request);
     });
 
-    describe('addRecord', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
+    test('add()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/addrecord');
-            });
+        domain.add(data);
 
-            domain.addRecord();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.addRecord(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/add', data);
     });
 
-    describe('allowedArguments', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/domain/allowedarguments');
-            });
+    test('addRecord()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.allowedArguments();
+        domain.addRecord(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/addrecord', data);
     });
 
-    describe('available', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/available');
-            });
+    test('allowedArguments()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            domain.available();
+        domain.allowedArguments();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                search: 'search',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.available(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/allowedarguments');
     });
 
-    describe('changeNameServers', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/changenameservers');
-            });
+    test('available()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            search: 'search',
+        };
 
-            domain.changeNameServers();
+        domain.available(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.changeNameServers(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/available', data);
     });
 
-    describe('delete', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/delete');
-            });
+    test('changeNameServers()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.delete();
+        domain.changeNameServers(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.delete(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/changenameservers', data);
     });
 
-    describe('deleteRecord', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/deleterecord');
-            });
+    test('delete()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.deleteRecord();
+        domain.delete(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                recordid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.deleteRecord(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/delete', data);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/details');
-            });
+    test('deleteRecord()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            recordid: 1,
+        };
 
-            domain.details();
+        domain.deleteRecord(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.details(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/deleterecord', data);
     });
 
-    describe('edit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/edit');
-            });
+    test('details()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.edit();
+        domain.details(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.edit(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/details', data);
     });
 
-    describe('legacyWebHosting', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/domain/legacywebhosting');
-            });
+    test('edit()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.legacyWebHosting();
+        domain.edit(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/edit', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/domain/list');
-            });
+    test('legacyWebHosting()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            domain.list();
+        domain.legacyWebHosting();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/legacywebhosting');
     });
 
-    describe('listRecords', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/listrecords');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            domain.listRecords();
+        domain.list();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.listRecords(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/list');
     });
 
-    describe('priceList', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/domain/pricelist');
-            });
+    test('listRecords()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.priceList();
+        domain.listRecords(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/listrecords', data);
     });
 
-    describe('register', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/register');
-            });
+    test('priceList()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            domain.register();
+        domain.priceList();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.register(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/pricelist');
     });
 
-    describe('renew', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/renew');
-            });
+    test('register()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.renew();
+        domain.register(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.renew(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/register', data);
     });
 
-    describe('setAutoRenew', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/setautorenew');
-            });
+    test('renew()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.setAutoRenew();
+        domain.renew(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.setAutoRenew(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/renew', data);
     });
 
-    describe('transfer', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/transfer');
-            });
+    test('setAutoRenew()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.transfer();
+        domain.setAutoRenew(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                domainname: 'example.com',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            domain.transfer(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/setautorenew', data);
     });
 
-    describe('updateRecord', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/domain/updaterecord');
-            });
+    test('transfer()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
 
-            domain.updateRecord();
+        domain.transfer(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/transfer', data);
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const domain = new Domain(request);
-            const expected = {
-                recordid: 1,
-            };
+    test('updateRecord()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            recordid: 1,
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        domain.updateRecord(data);
 
-            domain.updateRecord(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/domain/updaterecord', data);
     });
 });

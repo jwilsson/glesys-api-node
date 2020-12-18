@@ -1,204 +1,89 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const FileStorage = require('../../lib/endpoints/filestorage');
 const Request = require('../../lib/request');
 
 describe('endpoints/filestorage', () => {
-    describe('createVolume', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/filestorage/createvolume');
-            });
+    let fileStorage;
+    let request;
 
-            fileStorage.createVolume();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const expected = {
-                datacenter: 'datacenter',
-                planid: 'planid',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            fileStorage.createVolume(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        fileStorage = new FileStorage(request);
     });
 
-    describe('editVolume', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/filestorage/editvolume');
-            });
+    test('createVolume()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            datacenter: 'datacenter',
+            planid: 'planid',
+        };
 
-            fileStorage.editVolume();
+        fileStorage.createVolume(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const expected = {
-                volumeid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            fileStorage.editVolume(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/filestorage/createvolume', data);
     });
 
-    describe('deleteVolume', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/filestorage/deletevolume');
-            });
+    test('editVolume()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            volumeid: 1,
+        };
 
-            fileStorage.deleteVolume();
+        fileStorage.editVolume(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const expected = {
-                volumeid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            fileStorage.deleteVolume(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/filestorage/editvolume', data);
     });
 
-    describe('listPlans', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/filestorage/listplans');
-            });
+    test('deleteVolume()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            volumeid: 1,
+        };
 
-            fileStorage.listPlans();
+        fileStorage.deleteVolume(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the query string', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const expected = {
-                volumeid: 1,
-            };
-
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            fileStorage.listPlans(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/filestorage/deletevolume', data);
     });
 
-    describe('listVolumes', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/filestorage/listvolumes');
-            });
+    test('listPlans()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+        const data = {
+            volumeid: 1,
+        };
 
-            fileStorage.listVolumes();
+        fileStorage.listPlans(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/filestorage/listplans', data);
     });
 
-    describe('resourceUsage', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/filestorage/resourceusage');
-            });
+    test('listVolumes()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            fileStorage.resourceUsage();
+        fileStorage.listVolumes();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the query string', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const expected = {
-                volumeid: 1,
-            };
-
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            fileStorage.resourceUsage(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/filestorage/listvolumes');
     });
 
-    describe('volumeDetails', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/filestorage/volumedetails');
-            });
+    test('resourceUsage()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+        const data = {
+            volumeid: 1,
+        };
 
-            fileStorage.volumeDetails();
+        fileStorage.resourceUsage(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/filestorage/resourceusage', data);
+    });
 
-        it('should set the query string', () => {
-            const request = new Request();
-            const fileStorage = new FileStorage(request);
-            const expected = {
-                volumeid: 1,
-            };
+    test('volumeDetails()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+        const data = {
+            volumeid: 1,
+        };
 
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        fileStorage.volumeDetails(data);
 
-            fileStorage.volumeDetails(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/filestorage/volumedetails', data);
     });
 });

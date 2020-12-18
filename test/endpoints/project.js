@@ -1,53 +1,34 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Project = require('../../lib/endpoints/project');
 const Request = require('../../lib/request');
 
 describe('endpoints/project', () => {
-    describe('delete', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const project = new Project(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/project/delete');
-            });
+    let project;
+    let request;
 
-            project.delete();
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        project = new Project(request);
     });
 
-    describe('rename', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const project = new Project(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/project/rename');
-            });
+    test('delete()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {};
 
-            project.rename();
+        project.delete(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/project/delete', data);
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const project = new Project(request);
-            const expected = {
-                name: 'name',
-            };
+    test('rename()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            name: 'name',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        project.rename(data);
 
-            project.rename(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/project/rename', data);
     });
 });

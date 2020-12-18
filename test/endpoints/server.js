@@ -1,697 +1,272 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Server = require('../../lib/endpoints/server');
 const Request = require('../../lib/request');
 
 describe('endpoints/server', () => {
-    describe('addISO', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/addiso');
-            });
+    let server;
+    let request;
 
-            server.addISO();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                archiveusername: 'example',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.addISO(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        server = new Server(request);
     });
 
-    describe('allowedArguments', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/allowedarguments');
-            });
+    test('addISO()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            archiveusername: 'example',
+        };
 
-            server.allowedArguments();
+        server.addISO(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.allowedArguments(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/addiso', data);
     });
 
-    describe('backup', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/backup');
-            });
+    test('allowedArguments()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.backup();
+        server.allowedArguments(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.backup(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/allowedarguments', data);
     });
 
-    describe('clone', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/clone');
-            });
+    test('backup()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.clone();
+        server.backup(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.clone(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/backup', data);
     });
 
-    describe('console', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/console');
-            });
+    test('clone()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.console();
+        server.clone(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.console(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/clone', data);
     });
 
-    describe('costs', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/costs');
-            });
+    test('console()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.costs();
+        server.console(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.costs(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/console', data);
     });
 
-    describe('create', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/create');
-            });
+    test('costs()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.create();
+        server.costs(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                datacenter: 'datacenter',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.create(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/costs', data);
     });
 
-    describe('destroy', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/destroy');
-            });
+    test('create()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            datacenter: 'datacenter',
+        };
 
-            server.destroy();
+        server.create(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.destroy(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/create', data);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/details');
-            });
+    test('destroy()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.details();
+        server.destroy(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.details(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/destroy', data);
     });
 
-    describe('edit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/edit');
-            });
+    test('details()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.edit();
+        server.details(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.edit(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/details', data);
     });
 
-    describe('estimatedCost', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/estimatedcost');
-            });
+    test('edit()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.estimatedCost();
+        server.edit(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.estimatedCost(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/edit', data);
     });
 
-    describe('limits', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/limits');
-            });
+    test('estimatedCost()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.limits();
+        server.estimatedCost(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.limits(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/estimatedcost', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/server/list');
-            });
+    test('limits()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.list();
+        server.limits(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/limits', data);
     });
 
-    describe('listISO', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/listiso');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            server.listISO();
+        server.list();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.listISO(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/list');
     });
 
-    describe('mountISO', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/mountiso');
-            });
+    test('listISO()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.mountISO();
+        server.listISO(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.mountISO(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/listiso', data);
     });
 
-    describe('networkAdapters', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/server/networkadapters');
-            });
+    test('mountISO()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.networkAdapters();
+        server.mountISO(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the query string', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.networkAdapters(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/mountiso', data);
     });
 
-    describe('reboot', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/reboot');
-            });
+    test('networkAdapters()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.reboot();
+        server.networkAdapters(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.reboot(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/networkadapters', data);
     });
 
-    describe('resetLimit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/resetlimit');
-            });
+    test('reboot()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.resetLimit();
+        server.reboot(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.resetLimit(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/reboot', data);
     });
 
-    describe('resetPassword', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/resetpassword');
-            });
+    test('resetLimit()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.resetPassword();
+        server.resetLimit(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.resetPassword(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/resetlimit', data);
     });
 
-    describe('resourceUsage', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/resourceusage');
-            });
+    test('resetPassword()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.resourceUsage();
+        server.resetPassword(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.resourceUsage(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/resetpassword', data);
     });
 
-    describe('start', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/start');
-            });
+    test('resourceUsage()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.start();
+        server.resourceUsage(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.start(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/resourceusage', data);
     });
 
-    describe('status', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/status');
-            });
+    test('start()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.status();
+        server.start(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.status(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/start', data);
     });
 
-    describe('stop', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/server/stop');
-            });
+    test('status()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.stop();
+        server.status(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const expected = {
-                serverid: 'z1',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            server.stop(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/status', data);
     });
 
-    describe('templates', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const server = new Server(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/server/templates');
-            });
+    test('stop()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
 
-            server.templates();
+        server.stop(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/server/stop', data);
+    });
+
+    test('templates()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+
+        server.templates();
+
+        expect(spy).toHaveBeenCalledWith('/server/templates');
     });
 });

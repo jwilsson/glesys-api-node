@@ -1,655 +1,255 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const LoadBalancer = require('../../lib/endpoints/loadbalancer');
 const Request = require('../../lib/request');
 
 describe('endpoints/loadbalancer', () => {
-    describe('addBackEnd', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/addbackend');
-            });
+    let loadBalancer;
+    let request;
 
-            loadBalancer.addBackEnd();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.addBackEnd(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        loadBalancer = new LoadBalancer(request);
     });
 
-    describe('addCertificate', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/addcertificate');
-            });
+    test('addBackEnd()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.addCertificate();
+        loadBalancer.addBackEnd(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.addCertificate(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/addbackend', data);
     });
 
-    describe('addFrontEnd', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/addfrontend');
-            });
+    test('addCertificate()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.addFrontEnd();
+        loadBalancer.addCertificate(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.addFrontEnd(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/addcertificate', data);
     });
 
-    describe('addTarget', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/addtarget');
-            });
+    test('addFrontEnd()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.addTarget();
+        loadBalancer.addFrontEnd(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.addTarget(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/addfrontend', data);
     });
 
-    describe('addToBlacklist', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/addtoblacklist');
-            });
+    test('addTarget()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.addToBlacklist();
+        loadBalancer.addTarget(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-                prefix: 'a',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.addToBlacklist(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/addtarget', data);
     });
 
-    describe('create', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/create');
-            });
+    test('addToBlacklist()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+            prefix: 'a',
+        };
 
-            loadBalancer.create();
+        loadBalancer.addToBlacklist(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                name: 'example',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.create(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/addtoblacklist', data);
     });
 
-    describe('destroy', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/destroy');
-            });
+    test('create()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            name: 'example',
+        };
 
-            loadBalancer.destroy();
+        loadBalancer.create(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.destroy(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/create', data);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/details');
-            });
+    test('destroy()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.details();
+        loadBalancer.destroy(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.details(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/destroy', data);
     });
 
-    describe('disableTarget', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/disabletarget');
-            });
+    test('details()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.disableTarget();
+        loadBalancer.details(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.disableTarget(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/details', data);
     });
 
-    describe('edit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/edit');
-            });
+    test('disableTarget()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.edit();
+        loadBalancer.disableTarget(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.edit(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/disabletarget', data);
     });
 
-    describe('editBackEnd', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/editbackend');
-            });
+    test('edit()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.editBackEnd();
+        loadBalancer.edit(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.editBackEnd(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/edit', data);
     });
 
-    describe('editFrontEnd', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/editfrontend');
-            });
+    test('editBackEnd()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.editFrontEnd();
+        loadBalancer.editBackEnd(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.editFrontEnd(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/editbackend', data);
     });
 
-    describe('editTarget', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/edittarget');
-            });
+    test('editFrontEnd()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.editTarget();
+        loadBalancer.editFrontEnd(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.editTarget(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/editfrontend', data);
     });
 
-    describe('enableTarget', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/enabletarget');
-            });
+    test('editTarget()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.enableTarget();
+        loadBalancer.editTarget(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.enableTarget(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/edittarget', data);
     });
 
-    describe('errors', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/errors');
-            });
+    test('enableTarget()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.errors();
+        loadBalancer.enableTarget(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the query string', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'get').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.errors(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/enabletarget', data);
     });
 
-    describe('list', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/list');
-            });
+    test('errors()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.list();
+        loadBalancer.errors(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/errors', data);
     });
 
-    describe('listCertificate', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/listcertificate');
-            });
+    test('list()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            loadBalancer.listCertificate();
+        loadBalancer.list();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.listCertificate(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/list');
     });
 
-    describe('removeBackEnd', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/removebackend');
-            });
+    test('listCertificate()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.removeBackEnd();
+        loadBalancer.listCertificate(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.removeBackEnd(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/listcertificate', data);
     });
 
-    describe('removeCertificate', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/removecertificate');
-            });
+    test('removeBackEnd()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.removeCertificate();
+        loadBalancer.removeBackEnd(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.removeCertificate(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/removebackend', data);
     });
 
-    describe('removeFromBlacklist', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/removefromblacklist');
-            });
+    test('removeCertificate()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.removeFromBlacklist();
+        loadBalancer.removeCertificate(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-                prefix: 'a',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.removeFromBlacklist(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/removecertificate', data);
     });
 
-    describe('removeFrontEnd', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/removefrontend');
-            });
+    test('removeFromBlacklist()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+            prefix: 'a',
+        };
 
-            loadBalancer.removeFrontEnd();
+        loadBalancer.removeFromBlacklist(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            loadBalancer.removeFrontEnd(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/removefromblacklist', data);
     });
 
-    describe('removeTarget', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/loadbalancer/removetarget');
-            });
+    test('removeFrontEnd()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            loadBalancer.removeTarget();
+        loadBalancer.removeFrontEnd(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/removefrontend', data);
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const loadBalancer = new LoadBalancer(request);
-            const expected = {
-                loadbalancerid: 1,
-            };
+    test('removeTarget()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        loadBalancer.removeTarget(data);
 
-            loadBalancer.removeTarget(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/removetarget', data);
     });
 });

@@ -1,114 +1,55 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const Vpn = require('../../lib/endpoints/vpn');
 const Request = require('../../lib/request');
 
 describe('endpoints/vpn', () => {
-    describe('createUser', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const vpn = new Vpn(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/vpn/createuser');
-            });
+    let vpn;
+    let request;
 
-            vpn.createUser();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const vpn = new Vpn(request);
-            const expected = {
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            vpn.createUser(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        vpn = new Vpn(request);
     });
 
-    describe('deleteUser', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const vpn = new Vpn(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/vpn/deleteuser');
-            });
+    test('createUser()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            username: 'username',
+        };
 
-            vpn.deleteUser();
+        vpn.createUser(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const vpn = new Vpn(request);
-            const expected = {
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            vpn.deleteUser(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/vpn/createuser', data);
     });
 
-    describe('editUser', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const vpn = new Vpn(request);
+    test('deleteUser()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            username: 'username',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/vpn/edituser');
-            });
+        vpn.deleteUser(data);
 
-            vpn.editUser();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const vpn = new Vpn(request);
-            const expected = {
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            vpn.editUser(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/vpn/deleteuser', data);
     });
 
-    describe('listUsers', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const vpn = new Vpn(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/vpn/listusers');
-            });
+    test('editUser()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            username: 'username',
+        };
 
-            vpn.listUsers();
+        vpn.editUser(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/vpn/edituser', data);
+    });
+
+    test('listUsers()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
+
+        vpn.listUsers();
+
+        expect(spy).toHaveBeenCalledWith('/vpn/listusers');
     });
 });

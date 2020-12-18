@@ -1,312 +1,141 @@
 'use strict';
 
-const assert = require('assert');
-const sinon = require('sinon');
-
 const User = require('../../lib/endpoints/user');
 const Request = require('../../lib/request');
 
 describe('endpoints/user', () => {
-    describe('changePassword', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/changepassword');
-            });
+    let request;
+    let user;
 
-            user.changePassword();
-
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                currentpassword: 'currentpassword',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            user.changePassword(expected);
-
-            assert.ok(stub.called);
-        });
+    beforeEach(() => {
+        request = new Request();
+        user = new User(request);
     });
 
-    describe('confirm', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/confirm');
-            });
+    test('changePassword()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            currentpassword: 'currentpassword',
+        };
 
-            user.confirm();
+        user.changePassword(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                token: 'token',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            user.confirm(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/changepassword', data);
     });
 
-    describe('createOrganization', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/createorganization');
-            });
+    test('confirm()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            token: 'token',
+        };
 
-            user.createOrganization();
+        user.confirm(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                country: 'country',
-                name: 'name',
-                type: 'type',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            user.createOrganization(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/confirm', data);
     });
 
-    describe('details', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/user/details');
-            });
+    test('createOrganization()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            country: 'country',
+            name: 'name',
+            type: 'type',
+        };
 
-            user.details();
+        user.createOrganization(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/createorganization', data);
     });
 
-    describe('disableTwoFactor', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/disabletwofactor');
-            });
+    test('details()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            user.disableTwoFactor();
+        user.details();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                password: 'password',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            user.disableTwoFactor(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/details');
     });
 
-    describe('edit', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/edit');
-            });
+    test('disableTwoFactor()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            password: 'password',
+        };
 
-            user.edit();
+        user.disableTwoFactor(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                name: 'name',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            user.edit(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/disabletwofactor', data);
     });
 
-    describe('enableTwoFactor', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/enabletwofactor');
-            });
+    test('edit()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            name: 'name',
+        };
 
-            user.enableTwoFactor();
+        user.edit(data);
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                method: 'method',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            user.enableTwoFactor(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/edit', data);
     });
 
-    describe('listOrganizations', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/user/listorganizations');
-            });
+    test('enableTwoFactor()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            method: 'method',
+        };
 
-            user.listOrganizations();
+        user.enableTwoFactor(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/enabletwofactor', data);
     });
 
-    describe('login', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/login');
-            });
+    test('listOrganizations()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            user.login();
+        user.listOrganizations();
 
-            assert.ok(stub.called);
-        });
-
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                username: 'username',
-            };
-
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
-
-            user.login(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/listorganizations');
     });
 
-    describe('logout', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/logout');
-            });
+    test('login()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            username: 'username',
+        };
 
-            user.logout();
+        user.login(data);
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/login', data);
     });
 
-    describe('searchData', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'get').callsFake((url) => {
-                assert.strictEqual(url, '/user/searchdata');
-            });
+    test('logout()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
 
-            user.searchData();
+        user.logout();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/logout');
     });
 
-    describe('signUp', () => {
-        it('should set the request URL', () => {
-            const request = new Request();
-            const user = new User(request);
-            const stub = sinon.stub(request, 'post').callsFake((url) => {
-                assert.strictEqual(url, '/user/signup');
-            });
+    test('searchData()', () => {
+        const spy = global.setupRequestSpy(request, 'get');
 
-            user.signUp();
+        user.searchData();
 
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/searchdata');
+    });
 
-        it('should set the request body', () => {
-            const request = new Request();
-            const user = new User(request);
-            const expected = {
-                email: 'email',
-                locale: 'locale',
-                name: 'name',
-                password: 'password',
-                termsofservice: 'termsofservice',
-                useragent: 'useragent',
-            };
+    test('signUp()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            email: 'email',
+            locale: 'locale',
+            name: 'name',
+            password: 'password',
+            termsofservice: 'termsofservice',
+            useragent: 'useragent',
+        };
 
-            const stub = sinon.stub(request, 'post').callsFake((url, data) => {
-                assert.deepStrictEqual(data, expected);
-            });
+        user.signUp(data);
 
-            user.signUp(expected);
-
-            assert.ok(stub.called);
-        });
+        expect(spy).toHaveBeenCalledWith('/user/signup', data);
     });
 });
