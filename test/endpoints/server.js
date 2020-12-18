@@ -89,6 +89,17 @@ describe('endpoints/server', () => {
         expect(spy).toHaveBeenCalledWith('/server/create', data);
     });
 
+    test('createFromBackup()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            backupid: 'b1',
+        };
+
+        server.createFromBackup(data);
+
+        expect(spy).toHaveBeenCalledWith('/server/createfrombackup', data);
+    });
+
     test('destroy()', () => {
         const spy = global.setupRequestSpy(request, 'post');
         const data = {
@@ -152,6 +163,17 @@ describe('endpoints/server', () => {
         expect(spy).toHaveBeenCalledWith('/server/list');
     });
 
+    test('listBackups()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
+
+        server.listBackups(data);
+
+        expect(spy).toHaveBeenCalledWith('/server/listbackups', data);
+    });
+
     test('listISO()', () => {
         const spy = global.setupRequestSpy(request, 'post');
         const data = {
@@ -183,6 +205,17 @@ describe('endpoints/server', () => {
         server.networkAdapters(data);
 
         expect(spy).toHaveBeenCalledWith('/server/networkadapters', data);
+    });
+
+    test('previewCloudConfig()', () => {
+        const spy = global.setupRequestSpy(request, 'post');
+        const data = {
+            cloudconfig: 'config',
+        };
+
+        server.previewCloudConfig(data);
+
+        expect(spy).toHaveBeenCalledWith('/server/previewcloudconfig', data);
     });
 
     test('reboot()', () => {
