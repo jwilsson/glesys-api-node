@@ -1,6 +1,6 @@
 {
   "name": "glesys-api",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Node.js wrapper for the GleSYS API.",
   "main": "lib/glesys.js",
   "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
@@ -42,8 +42,12 @@
   },
   "jest": {
     "collectCoverage": true,
-    "setupFilesAfterEnv": ["<rootDir>/jestSetup.js"],
-    "testMatch": ["<rootDir>/test/**/*.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jestSetup.js"
+    ],
+    "testMatch": [
+      "<rootDir>/test/**/*.js"
+    ],
     "verbose": true
   },
   "license": "MIT",
