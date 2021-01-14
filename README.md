@@ -7,7 +7,7 @@
 A Node.js wrapper for the GleSYS API.
 
 ## Installation
-*Note: Node 10.13.0 (LTS) or later is required.*
+*Note: Node 14.15.0 (LTS) or later is required.*
 
 ```bash
 npm install glesys-api
