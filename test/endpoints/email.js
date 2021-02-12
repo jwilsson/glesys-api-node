@@ -99,10 +99,13 @@ describe('endpoints/email', () => {
 
     test('overview()', () => {
         const spy = global.setupRequestSpy(request, 'get');
+        const data = {
+            page: 1,
+        };
 
-        email.overview();
+        email.overview(data);
 
-        expect(spy).toHaveBeenCalledWith('/email/overview');
+        expect(spy).toHaveBeenCalledWith('/email/overview', data);
     });
 
     test('quota()', () => {
