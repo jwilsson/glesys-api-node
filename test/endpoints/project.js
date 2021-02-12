@@ -14,11 +14,10 @@ describe('endpoints/project', () => {
 
     test('delete()', () => {
         const spy = global.setupRequestSpy(request, 'post');
-        const data = {};
 
-        project.delete(data);
+        project.delete();
 
-        expect(spy).toHaveBeenCalledWith('/project/delete', data);
+        expect(spy).toHaveBeenCalledWith('/project/delete');
     });
 
     test('rename()', () => {
