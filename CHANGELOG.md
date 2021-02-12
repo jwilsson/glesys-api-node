@@ -1,4 +1,7 @@
 # Changelog
+## 5.3.0 (2021-02-12)
+* Added `data` argument to `GleSYSAPI.Email.overview()`.
+
 ## 5.2.0 (2020-12-18)
 * Added new `ObjectStorage` methods (thanks [@hejhansson](https://github.com/hejhansson)):
     * `GleSYSAPI.objectStorage.createCredential()`
