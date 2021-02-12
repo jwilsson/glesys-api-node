@@ -12,17 +12,6 @@ describe('endpoints/server', () => {
         server = new Server(request);
     });
 
-    test('addISO()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
-        const data = {
-            archiveusername: 'example',
-        };
-
-        server.addISO(data);
-
-        expect(spy).toHaveBeenCalledWith('/server/addiso', data);
-    });
-
     test('allowedArguments()', () => {
         const spy = global.setupRequestSpy(request, 'post');
         const data = {

@@ -183,7 +183,6 @@ const glesys = new GleSYSAPI({
 * [`GleSYSAPI.project.rename()`](https://github.com/glesys/API/wiki/API-Documentation#projectrename)
 
 ### server
-* [`GleSYSAPI.server.addISO()`](https://github.com/GleSYS/API/wiki/API-Documentation#serveraddiso)
 * [`GleSYSAPI.server.allowedArguments()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverallowedarguments)
 * [`GleSYSAPI.server.backup()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverbackup)
 * [`GleSYSAPI.server.clone()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverclone)
