@@ -30,9 +30,9 @@
     "got": "^10.0.1"
   },
   "devDependencies": {
+    "@jwilsson/eslint-config-node": "^6.0.0",
     "coveralls": "^3.0.0",
     "eslint": "^7.15.0",
-    "eslint-config-jwilsson": "^5.7.0",
     "jest": "^26.6.3"
   },
   "scripts": {
@@ -41,7 +41,9 @@
   },
   "babel": {},
   "eslintConfig": {
-    "extends": "eslint-config-jwilsson/node",
+    "extends": [
+      "@jwilsson/eslint-config-node"
+    ],
     "env": {
       "jest": true
     }
@@ -56,8 +58,5 @@
     ],
     "verbose": true
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jwilsson/glesys-api-node/issues"
-  }
+  "license": "MIT"
 }
