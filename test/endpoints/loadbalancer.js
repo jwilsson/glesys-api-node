@@ -216,7 +216,10 @@ describe('endpoints/loadbalancer', () => {
 
         loadBalancer.removeCertificate(data);
 
-        expect(spy).toHaveBeenCalledWith('/loadbalancer/removecertificate', data);
+        expect(spy).toHaveBeenCalledWith(
+            '/loadbalancer/removecertificate',
+            data,
+        );
     });
 
     test('removeFromBlacklist()', () => {
@@ -228,7 +231,10 @@ describe('endpoints/loadbalancer', () => {
 
         loadBalancer.removeFromBlacklist(data);
 
-        expect(spy).toHaveBeenCalledWith('/loadbalancer/removefromblacklist', data);
+        expect(spy).toHaveBeenCalledWith(
+            '/loadbalancer/removefromblacklist',
+            data,
+        );
     });
 
     test('removeFrontEnd()', () => {

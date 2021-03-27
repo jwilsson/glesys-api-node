@@ -27,10 +27,13 @@ describe('request', () => {
 
         request.get(url, data);
 
-        expect(requestSpy).toHaveBeenCalledWith(url, expect.objectContaining({
-            method: 'GET',
-            searchParams: data,
-        }));
+        expect(requestSpy).toHaveBeenCalledWith(
+            url,
+            expect.objectContaining({
+                method: 'GET',
+                searchParams: data,
+            }),
+        );
     });
 
     test('post() sets body and request method', () => {
@@ -44,10 +47,13 @@ describe('request', () => {
 
         request.post(url, data);
 
-        expect(requestSpy).toHaveBeenCalledWith(url, expect.objectContaining({
-            json: data,
-            method: 'POST',
-        }));
+        expect(requestSpy).toHaveBeenCalledWith(
+            url,
+            expect.objectContaining({
+                json: data,
+                method: 'POST',
+            }),
+        );
     });
 
     test('request() sends a request', async () => {
