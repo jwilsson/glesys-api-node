@@ -23,7 +23,7 @@
     "url": "https://github.com/jwilsson/glesys-api-node"
   },
   "dependencies": {
-    "got": "^10.0.1"
+    "got": "^11.8.2"
   },
   "devDependencies": {
     "@jest/globals": "^26.6.2",
