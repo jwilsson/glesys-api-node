@@ -1,6 +1,6 @@
 {
   "name": "glesys-api",
-  "version": "5.3.0",
+  "version": "6.0.0",
   "description": "Node.js wrapper for the GleSYS API.",
   "type": "module",
   "main": "./lib/glesys.js",
