@@ -15,7 +15,7 @@ npm install glesys-api
 
 ## Usage
 ```js
-import GleSYSAPI from ''glesys-api'';
+import GleSYSAPI from 'glesys-api';
 
 const glesys = new GleSYSAPI({
     apiKey: 'key',
