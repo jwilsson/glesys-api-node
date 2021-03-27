@@ -1,7 +1,5 @@
-'use strict';
-
-const Transaction = require('../../lib/endpoints/transaction');
-const Request = require('../../lib/request');
+import Transaction from '../../lib/endpoints/transaction';
+import Request from '../../lib/request';
 
 describe('endpoints/transaction', () => {
     let transaction;
@@ -13,7 +11,7 @@ describe('endpoints/transaction', () => {
     });
 
     test('acknowledge()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             transactionid: 1,
         };
@@ -24,7 +22,7 @@ describe('endpoints/transaction', () => {
     });
 
     test('cancel()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             transactionid: 1,
         };
@@ -35,7 +33,7 @@ describe('endpoints/transaction', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         transaction.list();
 
@@ -43,7 +41,7 @@ describe('endpoints/transaction', () => {
     });
 
     test('start()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             transactionid: 1,
         };

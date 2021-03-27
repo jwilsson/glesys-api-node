@@ -1,7 +1,5 @@
-'use strict';
-
-const Email = require('../../lib/endpoints/email');
-const Request = require('../../lib/request');
+import Email from '../../lib/endpoints/email';
+import Request from '../../lib/request';
 
 describe('endpoints/email', () => {
     let request;
@@ -13,7 +11,7 @@ describe('endpoints/email', () => {
     });
 
     test('costs()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         email.costs();
 
@@ -21,7 +19,7 @@ describe('endpoints/email', () => {
     });
 
     test('createAccount()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             emailaccount: 'example@example.com',
         };
@@ -32,7 +30,7 @@ describe('endpoints/email', () => {
     });
 
     test('createAlias()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             emailalias: 'emailalias',
         };
@@ -43,7 +41,7 @@ describe('endpoints/email', () => {
     });
 
     test('delete()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             email: 'email',
         };
@@ -54,7 +52,7 @@ describe('endpoints/email', () => {
     });
 
     test('editAccount()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             emailaccount: 'example@example.com',
         };
@@ -65,7 +63,7 @@ describe('endpoints/email', () => {
     });
 
     test('editAlias()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             emailalias: 'alias@example.com',
         };
@@ -76,7 +74,7 @@ describe('endpoints/email', () => {
     });
 
     test('globalQuota()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             globalquota: 1,
         };
@@ -87,7 +85,7 @@ describe('endpoints/email', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -98,7 +96,7 @@ describe('endpoints/email', () => {
     });
 
     test('overview()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
             page: 1,
         };
@@ -109,7 +107,7 @@ describe('endpoints/email', () => {
     });
 
     test('quota()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             emailaccount: 'example@example.com',
         };

@@ -1,7 +1,5 @@
-'use strict';
-
-const LoadBalancer = require('../../lib/endpoints/loadbalancer');
-const Request = require('../../lib/request');
+import LoadBalancer from '../../lib/endpoints/loadbalancer';
+import Request from '../../lib/request';
 
 describe('endpoints/loadbalancer', () => {
     let loadBalancer;
@@ -13,7 +11,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('addBackEnd()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -24,7 +22,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('addCertificate()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -35,7 +33,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('addFrontEnd()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -46,7 +44,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('addTarget()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -57,7 +55,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('addToBlacklist()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
             prefix: 'a',
@@ -69,7 +67,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('create()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             name: 'example',
         };
@@ -80,7 +78,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('destroy()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -91,7 +89,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('details()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -102,7 +100,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('disableTarget()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -113,7 +111,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('edit()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -124,7 +122,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('editBackEnd()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -135,7 +133,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('editFrontEnd()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -146,7 +144,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('editTarget()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -157,7 +155,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('enableTarget()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -168,7 +166,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('errors()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
             loadbalancerid: 1,
         };
@@ -179,7 +177,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         loadBalancer.list();
 
@@ -187,7 +185,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('listCertificate()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -198,7 +196,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('removeBackEnd()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -209,7 +207,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('removeCertificate()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -223,7 +221,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('removeFromBlacklist()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
             prefix: 'a',
@@ -238,7 +236,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('removeFrontEnd()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };
@@ -249,7 +247,7 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('removeTarget()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             loadbalancerid: 1,
         };

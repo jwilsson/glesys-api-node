@@ -1,7 +1,5 @@
-'use strict';
-
-const FileStorage = require('../../lib/endpoints/filestorage');
-const Request = require('../../lib/request');
+import FileStorage from '../../lib/endpoints/filestorage';
+import Request from '../../lib/request';
 
 describe('endpoints/filestorage', () => {
     let fileStorage;
@@ -13,7 +11,7 @@ describe('endpoints/filestorage', () => {
     });
 
     test('createVolume()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             datacenter: 'datacenter',
             planid: 'planid',
@@ -25,7 +23,7 @@ describe('endpoints/filestorage', () => {
     });
 
     test('editVolume()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             volumeid: 1,
         };
@@ -36,7 +34,7 @@ describe('endpoints/filestorage', () => {
     });
 
     test('deleteVolume()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             volumeid: 1,
         };
@@ -47,7 +45,7 @@ describe('endpoints/filestorage', () => {
     });
 
     test('listPlans()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
             volumeid: 1,
         };
@@ -58,7 +56,7 @@ describe('endpoints/filestorage', () => {
     });
 
     test('listVolumes()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         fileStorage.listVolumes();
 
@@ -66,7 +64,7 @@ describe('endpoints/filestorage', () => {
     });
 
     test('resourceUsage()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
             volumeid: 1,
         };
@@ -77,7 +75,7 @@ describe('endpoints/filestorage', () => {
     });
 
     test('volumeDetails()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
             volumeid: 1,
         };

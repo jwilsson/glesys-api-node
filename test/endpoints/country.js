@@ -1,7 +1,5 @@
-'use strict';
-
-const Country = require('../../lib/endpoints/country');
-const Request = require('../../lib/request');
+import Country from '../../lib/endpoints/country';
+import Request from '../../lib/request';
 
 describe('endpoints/country', () => {
     let country;
@@ -13,7 +11,7 @@ describe('endpoints/country', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         country.list();
 

@@ -1,7 +1,5 @@
-'use strict';
-
-const User = require('../../lib/endpoints/user');
-const Request = require('../../lib/request');
+import User from '../../lib/endpoints/user';
+import Request from '../../lib/request';
 
 describe('endpoints/user', () => {
     let request;
@@ -13,7 +11,7 @@ describe('endpoints/user', () => {
     });
 
     test('changePassword()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             currentpassword: 'currentpassword',
         };
@@ -24,7 +22,7 @@ describe('endpoints/user', () => {
     });
 
     test('confirm()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             token: 'token',
         };
@@ -35,7 +33,7 @@ describe('endpoints/user', () => {
     });
 
     test('createOrganization()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             country: 'country',
             name: 'name',
@@ -48,7 +46,7 @@ describe('endpoints/user', () => {
     });
 
     test('details()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         user.details();
 
@@ -56,7 +54,7 @@ describe('endpoints/user', () => {
     });
 
     test('disableTwoFactor()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             password: 'password',
         };
@@ -67,7 +65,7 @@ describe('endpoints/user', () => {
     });
 
     test('edit()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             name: 'name',
         };
@@ -78,7 +76,7 @@ describe('endpoints/user', () => {
     });
 
     test('enableTwoFactor()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             method: 'method',
         };
@@ -89,7 +87,7 @@ describe('endpoints/user', () => {
     });
 
     test('listOrganizations()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         user.listOrganizations();
 
@@ -97,7 +95,7 @@ describe('endpoints/user', () => {
     });
 
     test('login()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             username: 'username',
         };
@@ -108,7 +106,7 @@ describe('endpoints/user', () => {
     });
 
     test('logout()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
 
         user.logout();
 
@@ -116,7 +114,7 @@ describe('endpoints/user', () => {
     });
 
     test('searchData()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         user.searchData();
 
@@ -124,7 +122,7 @@ describe('endpoints/user', () => {
     });
 
     test('signUp()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             email: 'email',
             locale: 'locale',

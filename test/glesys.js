@@ -1,6 +1,4 @@
-'use strict';
-
-const GleSYSAPI = require('../lib/glesys');
+import GleSYSAPI from '../lib/glesys';
 
 describe('GleSYSAPI', () => {
     test('apiKey and apiUser are set on Request object', () => {

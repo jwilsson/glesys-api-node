@@ -1,6 +1,6 @@
-'use strict';
+import { jest } from '@jest/globals';
 
-const Request = require('../lib/request');
+import Request from '../lib/request';
 
 describe('request', () => {
     const authOptions = {

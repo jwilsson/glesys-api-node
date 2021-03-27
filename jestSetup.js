@@ -1,10 +1,10 @@
-'use strict';
+import { jest } from '@jest/globals';
 
 beforeEach(() => {
     jest.resetAllMocks();
 });
 
 // Jest Request spy setup helper
-global.setupRequestSpy = (request, method) => {
+globalThis.setupRequestSpy = (request, method) => {
     return jest.spyOn(request, method).mockImplementation();
 };

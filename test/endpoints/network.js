@@ -1,7 +1,5 @@
-'use strict';
-
-const Network = require('../../lib/endpoints/network');
-const Request = require('../../lib/request');
+import Network from '../../lib/endpoints/network';
+import Request from '../../lib/request';
 
 describe('endpoints/network', () => {
     let network;
@@ -13,7 +11,7 @@ describe('endpoints/network', () => {
     });
 
     test('create()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             datacenter: 'datacenter',
             description: 'description',
@@ -25,7 +23,7 @@ describe('endpoints/network', () => {
     });
 
     test('delete()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             networkid: 1,
         };
@@ -36,7 +34,7 @@ describe('endpoints/network', () => {
     });
 
     test('details()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
             networkid: 1,
         };
@@ -47,7 +45,7 @@ describe('endpoints/network', () => {
     });
 
     test('edit()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             networkid: 1,
         };
@@ -58,7 +56,7 @@ describe('endpoints/network', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         network.list();
 

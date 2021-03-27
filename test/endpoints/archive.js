@@ -1,7 +1,5 @@
-'use strict';
-
-const Archive = require('../../lib/endpoints/archive');
-const Request = require('../../lib/request');
+import Archive from '../../lib/endpoints/archive';
+import Request from '../../lib/request';
 
 describe('endpoints/archive', () => {
     let archive;
@@ -13,7 +11,7 @@ describe('endpoints/archive', () => {
     });
 
     test('allowedArguments()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         archive.allowedArguments();
 
@@ -21,7 +19,7 @@ describe('endpoints/archive', () => {
     });
 
     test('changeDescription()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             description: 'description',
             username: 'username',
@@ -33,7 +31,7 @@ describe('endpoints/archive', () => {
     });
 
     test('changePassword()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             password: 'password',
             username: 'username',
@@ -45,7 +43,7 @@ describe('endpoints/archive', () => {
     });
 
     test('create()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             password: 'password',
             size: 1,
@@ -58,7 +56,7 @@ describe('endpoints/archive', () => {
     });
 
     test('delete()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             username: 'username',
         };
@@ -69,7 +67,7 @@ describe('endpoints/archive', () => {
     });
 
     test('details()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             username: 'username',
         };
@@ -80,7 +78,7 @@ describe('endpoints/archive', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         archive.list();
 
@@ -88,7 +86,7 @@ describe('endpoints/archive', () => {
     });
 
     test('resize()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             size: 1,
             username: 'username',

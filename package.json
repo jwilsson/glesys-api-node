@@ -2,7 +2,9 @@
   "name": "glesys-api",
   "version": "5.3.0",
   "description": "Node.js wrapper for the GleSYS API.",
-  "main": "lib/glesys.js",
+  "type": "module",
+  "main": "./lib/glesys.js",
+  "exports": "./lib/glesys.js",
   "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
   "contributors": [
     "Oskar Risberg <kokarn@gmail.com>"
@@ -20,16 +22,11 @@
     "type": "git",
     "url": "https://github.com/jwilsson/glesys-api-node"
   },
-  "exports": {
-    ".": {
-      "require": "./lib/glesys.js",
-      "import": "./lib/glesys.mjs"
-    }
-  },
   "dependencies": {
     "got": "^10.0.1"
   },
   "devDependencies": {
+    "@jest/globals": "^26.6.2",
     "@jwilsson/eslint-config-node": "^6.0.0",
     "@jwilsson/eslint-config-prettier": "^1.0.0",
     "@jwilsson/prettier-config": "^1.0.0",
@@ -41,7 +38,7 @@
   },
   "scripts": {
     "pretest": "eslint lib test",
-    "test": "jest "
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

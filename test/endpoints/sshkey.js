@@ -1,7 +1,5 @@
-'use strict';
-
-const SshKey = require('../../lib/endpoints/sshkey');
-const Request = require('../../lib/request');
+import SshKey from '../../lib/endpoints/sshkey';
+import Request from '../../lib/request';
 
 describe('endpoints/sshkey', () => {
     let request;
@@ -13,7 +11,7 @@ describe('endpoints/sshkey', () => {
     });
 
     test('add()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             sshkey: 'abc123',
         };
@@ -24,7 +22,7 @@ describe('endpoints/sshkey', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         sshKey.list();
 
@@ -32,7 +30,7 @@ describe('endpoints/sshkey', () => {
     });
 
     test('remove()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             sshkeyids: 1,
         };

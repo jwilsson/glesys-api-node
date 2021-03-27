@@ -1,7 +1,5 @@
-'use strict';
-
-const Customer = require('../../lib/endpoints/customer');
-const Request = require('../../lib/request');
+import Customer from '../../lib/endpoints/customer';
+import Request from '../../lib/request';
 
 describe('endpoints/customer', () => {
     let customer;
@@ -13,7 +11,7 @@ describe('endpoints/customer', () => {
     });
 
     test('createProject()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             name: 'name',
         };
@@ -24,7 +22,7 @@ describe('endpoints/customer', () => {
     });
 
     test('editCollaborator()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             collaboratorid: 1,
         };
@@ -35,7 +33,7 @@ describe('endpoints/customer', () => {
     });
 
     test('listCollaborators()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         customer.listCollaborators();
 
@@ -43,7 +41,7 @@ describe('endpoints/customer', () => {
     });
 
     test('listProjects()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         customer.listProjects();
 
@@ -51,7 +49,7 @@ describe('endpoints/customer', () => {
     });
 
     test('removeCollaborator()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             collaboratorid: 1,
         };
@@ -62,7 +60,7 @@ describe('endpoints/customer', () => {
     });
 
     test('settings()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             name: 'name',
         };

@@ -1,7 +1,5 @@
-'use strict';
-
-const ObjectStorage = require('../../lib/endpoints/objectstorage');
-const Request = require('../../lib/request');
+import ObjectStorage from '../../lib/endpoints/objectstorage';
+import Request from '../../lib/request';
 
 describe('endpoints/objectstorage', () => {
     let objectStorage;
@@ -13,7 +11,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('createCredential()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             description: 'description',
             instanceid: 'os-123',
@@ -28,7 +26,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('createInstance()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             createinitialbucket: true,
             datacenter: 'dc-sto1',
@@ -41,7 +39,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('deleteCredential()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             credentialid: 'abc123',
             instanceid: 'os-123',
@@ -56,7 +54,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('deleteInstance()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             instanceid: 'os-123',
         };
@@ -67,7 +65,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('editInstance()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             description: 'new description',
             instanceid: 'os-123',
@@ -79,7 +77,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('estimatedCost()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             averageUsageInGib: 10,
             instanceid: 'os-123',
@@ -91,7 +89,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('instanceDetails()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             instanceid: 'os-123',
         };
@@ -105,7 +103,7 @@ describe('endpoints/objectstorage', () => {
     });
 
     test('listInstances()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         objectStorage.listInstances();
 

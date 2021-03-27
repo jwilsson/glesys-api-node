@@ -1,7 +1,5 @@
-'use strict';
-
-const Invoice = require('../../lib/endpoints/invoice');
-const Request = require('../../lib/request');
+import Invoice from '../../lib/endpoints/invoice';
+import Request from '../../lib/request';
 
 describe('endpoints/invoice', () => {
     let invoice;
@@ -13,7 +11,7 @@ describe('endpoints/invoice', () => {
     });
 
     test('billingPeriod()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             account: 'account',
         };
@@ -24,7 +22,7 @@ describe('endpoints/invoice', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         invoice.list();
 
@@ -32,7 +30,7 @@ describe('endpoints/invoice', () => {
     });
 
     test('next()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         invoice.next();
 
@@ -40,7 +38,7 @@ describe('endpoints/invoice', () => {
     });
 
     test('payByPaypal()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             invoicenumbers: 1,
         };

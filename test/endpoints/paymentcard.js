@@ -1,7 +1,5 @@
-'use strict';
-
-const PaymentCard = require('../../lib/endpoints/paymentcard');
-const Request = require('../../lib/request');
+import PaymentCard from '../../lib/endpoints/paymentcard';
+import Request from '../../lib/request';
 
 describe('endpoints/paymentcard', () => {
     let paymentCard;
@@ -13,7 +11,7 @@ describe('endpoints/paymentcard', () => {
     });
 
     test('add()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             description: 'description',
         };
@@ -24,7 +22,7 @@ describe('endpoints/paymentcard', () => {
     });
 
     test('delete()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             paymentcardid: 1,
         };
@@ -35,7 +33,7 @@ describe('endpoints/paymentcard', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         paymentCard.list();
 
@@ -43,7 +41,7 @@ describe('endpoints/paymentcard', () => {
     });
 
     test('payInvoices()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             invoicenumbers: 1,
             paymentcardid: 1,

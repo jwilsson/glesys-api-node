@@ -1,7 +1,5 @@
-'use strict';
-
-const Project = require('../../lib/endpoints/project');
-const Request = require('../../lib/request');
+import Project from '../../lib/endpoints/project';
+import Request from '../../lib/request';
 
 describe('endpoints/project', () => {
     let project;
@@ -13,7 +11,7 @@ describe('endpoints/project', () => {
     });
 
     test('delete()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
 
         project.delete();
 
@@ -21,7 +19,7 @@ describe('endpoints/project', () => {
     });
 
     test('rename()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             name: 'name',
         };

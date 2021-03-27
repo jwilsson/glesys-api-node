@@ -1,7 +1,5 @@
-'use strict';
-
-const Ip = require('../../lib/endpoints/ip');
-const Request = require('../../lib/request');
+import Ip from '../../lib/endpoints/ip';
+import Request from '../../lib/request';
 
 describe('endpoints/ip', () => {
     let ip;
@@ -13,7 +11,7 @@ describe('endpoints/ip', () => {
     });
 
     test('add()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipaddress: '127.0.0.1',
         };
@@ -24,7 +22,7 @@ describe('endpoints/ip', () => {
     });
 
     test('details()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipaddress: '127.0.0.1',
         };
@@ -35,7 +33,7 @@ describe('endpoints/ip', () => {
     });
 
     test('listFree()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipversion: 4,
         };
@@ -46,7 +44,7 @@ describe('endpoints/ip', () => {
     });
 
     test('listOwn()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipversion: 4,
         };
@@ -57,7 +55,7 @@ describe('endpoints/ip', () => {
     });
 
     test('release()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipaddress: '127.0.0.1',
         };
@@ -68,7 +66,7 @@ describe('endpoints/ip', () => {
     });
 
     test('remove()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipaddress: '127.0.0.1',
         };
@@ -79,7 +77,7 @@ describe('endpoints/ip', () => {
     });
 
     test('resetPTR()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipaddress: '127.0.0.1',
         };
@@ -90,7 +88,7 @@ describe('endpoints/ip', () => {
     });
 
     test('setPTR()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipaddress: '127.0.0.1',
         };
@@ -101,7 +99,7 @@ describe('endpoints/ip', () => {
     });
 
     test('take()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             ipaddress: '127.0.0.1',
         };

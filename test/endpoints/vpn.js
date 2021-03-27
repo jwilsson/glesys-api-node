@@ -1,7 +1,5 @@
-'use strict';
-
-const Vpn = require('../../lib/endpoints/vpn');
-const Request = require('../../lib/request');
+import Vpn from '../../lib/endpoints/vpn';
+import Request from '../../lib/request';
 
 describe('endpoints/vpn', () => {
     let vpn;
@@ -13,7 +11,7 @@ describe('endpoints/vpn', () => {
     });
 
     test('createUser()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             username: 'username',
         };
@@ -24,7 +22,7 @@ describe('endpoints/vpn', () => {
     });
 
     test('deleteUser()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             username: 'username',
         };
@@ -35,7 +33,7 @@ describe('endpoints/vpn', () => {
     });
 
     test('editUser()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             username: 'username',
         };
@@ -46,7 +44,7 @@ describe('endpoints/vpn', () => {
     });
 
     test('listUsers()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         vpn.listUsers();
 

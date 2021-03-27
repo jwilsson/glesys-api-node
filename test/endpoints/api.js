@@ -1,7 +1,5 @@
-'use strict';
-
-const Api = require('../../lib/endpoints/api');
-const Request = require('../../lib/request');
+import Api from '../../lib/endpoints/api';
+import Request from '../../lib/request';
 
 describe('endpoints/api', () => {
     let request;
@@ -13,7 +11,7 @@ describe('endpoints/api', () => {
     });
 
     test('listFunctions()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         api.listFunctions();
 
@@ -21,7 +19,7 @@ describe('endpoints/api', () => {
     });
 
     test('maintenance()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         api.maintenance();
 
@@ -29,7 +27,7 @@ describe('endpoints/api', () => {
     });
 
     test('serviceInfo()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         api.serviceInfo();
 

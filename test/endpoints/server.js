@@ -1,7 +1,5 @@
-'use strict';
-
-const Server = require('../../lib/endpoints/server');
-const Request = require('../../lib/request');
+import Server from '../../lib/endpoints/server';
+import Request from '../../lib/request';
 
 describe('endpoints/server', () => {
     let server;
@@ -13,7 +11,7 @@ describe('endpoints/server', () => {
     });
 
     test('allowedArguments()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -24,7 +22,7 @@ describe('endpoints/server', () => {
     });
 
     test('backup()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -35,7 +33,7 @@ describe('endpoints/server', () => {
     });
 
     test('clone()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -46,7 +44,7 @@ describe('endpoints/server', () => {
     });
 
     test('console()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -57,7 +55,7 @@ describe('endpoints/server', () => {
     });
 
     test('costs()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -68,7 +66,7 @@ describe('endpoints/server', () => {
     });
 
     test('create()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             datacenter: 'datacenter',
         };
@@ -79,7 +77,7 @@ describe('endpoints/server', () => {
     });
 
     test('createFromBackup()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             backupid: 'b1',
         };
@@ -90,7 +88,7 @@ describe('endpoints/server', () => {
     });
 
     test('destroy()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -101,7 +99,7 @@ describe('endpoints/server', () => {
     });
 
     test('details()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -112,7 +110,7 @@ describe('endpoints/server', () => {
     });
 
     test('edit()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -123,7 +121,7 @@ describe('endpoints/server', () => {
     });
 
     test('estimatedCost()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -134,7 +132,7 @@ describe('endpoints/server', () => {
     });
 
     test('limits()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -145,7 +143,7 @@ describe('endpoints/server', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         server.list();
 
@@ -153,7 +151,7 @@ describe('endpoints/server', () => {
     });
 
     test('listBackups()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -164,7 +162,7 @@ describe('endpoints/server', () => {
     });
 
     test('listISO()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -175,7 +173,7 @@ describe('endpoints/server', () => {
     });
 
     test('mountISO()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -186,7 +184,7 @@ describe('endpoints/server', () => {
     });
 
     test('networkAdapters()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
             serverid: 'z1',
         };
@@ -197,7 +195,7 @@ describe('endpoints/server', () => {
     });
 
     test('previewCloudConfig()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             cloudconfig: 'config',
         };
@@ -208,7 +206,7 @@ describe('endpoints/server', () => {
     });
 
     test('reboot()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -219,7 +217,7 @@ describe('endpoints/server', () => {
     });
 
     test('resetLimit()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -230,7 +228,7 @@ describe('endpoints/server', () => {
     });
 
     test('resetPassword()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -241,7 +239,7 @@ describe('endpoints/server', () => {
     });
 
     test('resourceUsage()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -252,7 +250,7 @@ describe('endpoints/server', () => {
     });
 
     test('start()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -263,7 +261,7 @@ describe('endpoints/server', () => {
     });
 
     test('status()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -274,7 +272,7 @@ describe('endpoints/server', () => {
     });
 
     test('stop()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             serverid: 'z1',
         };
@@ -285,7 +283,7 @@ describe('endpoints/server', () => {
     });
 
     test('templates()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         server.templates();
 

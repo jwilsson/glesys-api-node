@@ -1,7 +1,5 @@
-'use strict';
-
-const NetworkAdapter = require('../../lib/endpoints/networkadapter');
-const Request = require('../../lib/request');
+import NetworkAdapter from '../../lib/endpoints/networkadapter';
+import Request from '../../lib/request';
 
 describe('endpoints/networkadapter', () => {
     let networkAdapter;

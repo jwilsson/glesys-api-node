@@ -1,7 +1,5 @@
-'use strict';
-
-const Domain = require('../../lib/endpoints/domain');
-const Request = require('../../lib/request');
+import Domain from '../../lib/endpoints/domain';
+import Request from '../../lib/request';
 
 describe('endpoints/domain', () => {
     let request;
@@ -13,7 +11,7 @@ describe('endpoints/domain', () => {
     });
 
     test('add()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -24,7 +22,7 @@ describe('endpoints/domain', () => {
     });
 
     test('addRecord()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -35,7 +33,7 @@ describe('endpoints/domain', () => {
     });
 
     test('allowedArguments()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         domain.allowedArguments();
 
@@ -43,7 +41,7 @@ describe('endpoints/domain', () => {
     });
 
     test('available()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             search: 'search',
         };
@@ -54,7 +52,7 @@ describe('endpoints/domain', () => {
     });
 
     test('changeNameServers()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -65,7 +63,7 @@ describe('endpoints/domain', () => {
     });
 
     test('delete()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -76,7 +74,7 @@ describe('endpoints/domain', () => {
     });
 
     test('deleteRecord()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             recordid: 1,
         };
@@ -87,7 +85,7 @@ describe('endpoints/domain', () => {
     });
 
     test('details()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -98,7 +96,7 @@ describe('endpoints/domain', () => {
     });
 
     test('edit()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -109,7 +107,7 @@ describe('endpoints/domain', () => {
     });
 
     test('legacyWebHosting()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         domain.legacyWebHosting();
 
@@ -117,7 +115,7 @@ describe('endpoints/domain', () => {
     });
 
     test('list()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         domain.list();
 
@@ -125,7 +123,7 @@ describe('endpoints/domain', () => {
     });
 
     test('listRecords()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -136,7 +134,7 @@ describe('endpoints/domain', () => {
     });
 
     test('priceList()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         domain.priceList();
 
@@ -144,7 +142,7 @@ describe('endpoints/domain', () => {
     });
 
     test('register()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -155,7 +153,7 @@ describe('endpoints/domain', () => {
     });
 
     test('renew()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -166,7 +164,7 @@ describe('endpoints/domain', () => {
     });
 
     test('setAutoRenew()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -177,7 +175,7 @@ describe('endpoints/domain', () => {
     });
 
     test('transfer()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             domainname: 'example.com',
         };
@@ -188,7 +186,7 @@ describe('endpoints/domain', () => {
     });
 
     test('updateRecord()', () => {
-        const spy = global.setupRequestSpy(request, 'post');
+        const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
             recordid: 1,
         };

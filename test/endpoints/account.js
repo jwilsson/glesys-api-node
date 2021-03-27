@@ -1,7 +1,5 @@
-'use strict';
-
-const Account = require('../../lib/endpoints/account');
-const Request = require('../../lib/request');
+import Account from '../../lib/endpoints/account';
+import Request from '../../lib/request';
 
 describe('endpoints/account', () => {
     let account;
@@ -13,7 +11,7 @@ describe('endpoints/account', () => {
     });
 
     test('info()', () => {
-        const spy = global.setupRequestSpy(request, 'get');
+        const spy = globalThis.setupRequestSpy(request, 'get');
 
         account.info();
 
