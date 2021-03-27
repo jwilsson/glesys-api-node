@@ -1,5 +1,5 @@
-import Network from '../../lib/endpoints/network';
-import Request from '../../lib/request';
+import Network from '../../lib/endpoints/network.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/network', () => {
     let network;

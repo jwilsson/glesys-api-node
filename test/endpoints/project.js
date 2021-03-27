@@ -1,5 +1,5 @@
-import Project from '../../lib/endpoints/project';
-import Request from '../../lib/request';
+import Project from '../../lib/endpoints/project.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/project', () => {
     let project;

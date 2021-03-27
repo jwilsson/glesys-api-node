@@ -1,5 +1,5 @@
-import Country from '../../lib/endpoints/country';
-import Request from '../../lib/request';
+import Country from '../../lib/endpoints/country.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/country', () => {
     let country;

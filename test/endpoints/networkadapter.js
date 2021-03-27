@@ -1,5 +1,5 @@
-import NetworkAdapter from '../../lib/endpoints/networkadapter';
-import Request from '../../lib/request';
+import NetworkAdapter from '../../lib/endpoints/networkadapter.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/networkadapter', () => {
     let networkAdapter;

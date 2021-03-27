@@ -1,5 +1,5 @@
-import PaymentCard from '../../lib/endpoints/paymentcard';
-import Request from '../../lib/request';
+import PaymentCard from '../../lib/endpoints/paymentcard.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/paymentcard', () => {
     let paymentCard;

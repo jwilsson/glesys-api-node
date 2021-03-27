@@ -1,5 +1,5 @@
-import Customer from '../../lib/endpoints/customer';
-import Request from '../../lib/request';
+import Customer from '../../lib/endpoints/customer.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/customer', () => {
     let customer;

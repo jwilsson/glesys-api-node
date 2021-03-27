@@ -1,5 +1,5 @@
-import Transaction from '../../lib/endpoints/transaction';
-import Request from '../../lib/request';
+import Transaction from '../../lib/endpoints/transaction.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/transaction', () => {
     let transaction;

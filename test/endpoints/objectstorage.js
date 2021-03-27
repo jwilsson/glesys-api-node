@@ -1,5 +1,5 @@
-import ObjectStorage from '../../lib/endpoints/objectstorage';
-import Request from '../../lib/request';
+import ObjectStorage from '../../lib/endpoints/objectstorage.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/objectstorage', () => {
     let objectStorage;

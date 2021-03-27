@@ -1,5 +1,5 @@
-import Ip from '../../lib/endpoints/ip';
-import Request from '../../lib/request';
+import Ip from '../../lib/endpoints/ip.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/ip', () => {
     let ip;

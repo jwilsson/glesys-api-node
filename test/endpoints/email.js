@@ -1,5 +1,5 @@
-import Email from '../../lib/endpoints/email';
-import Request from '../../lib/request';
+import Email from '../../lib/endpoints/email.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/email', () => {
     let request;

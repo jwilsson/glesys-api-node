@@ -1,5 +1,5 @@
-import Invoice from '../../lib/endpoints/invoice';
-import Request from '../../lib/request';
+import Invoice from '../../lib/endpoints/invoice.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/invoice', () => {
     let invoice;

@@ -1,4 +1,11 @@
 # Changelog
+## 6.0.0 (2021-XX-XX)
+* **Breaking** Dropped support for Node < 14.15.0.
+* **Breaking** Complete rewrite to use ES Modules.
+* **Breaking** Updated `got` to `11.x`.
+* **Breaking** Removed `GleSYSAPI.server.addISO()` method no longer in GleSYS API.
+* Removed unused `data` argument from `GleSYSAPI.project.delete()`.
+
 ## 5.3.0 (2021-02-12)
 * Added `data` argument to `GleSYSAPI.Email.overview()`.
 

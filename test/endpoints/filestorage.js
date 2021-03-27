@@ -1,5 +1,5 @@
-import FileStorage from '../../lib/endpoints/filestorage';
-import Request from '../../lib/request';
+import FileStorage from '../../lib/endpoints/filestorage.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/filestorage', () => {
     let fileStorage;

@@ -1,5 +1,5 @@
-import Domain from '../../lib/endpoints/domain';
-import Request from '../../lib/request';
+import Domain from '../../lib/endpoints/domain.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/domain', () => {
     let request;

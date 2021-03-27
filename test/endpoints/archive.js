@@ -1,5 +1,5 @@
-import Archive from '../../lib/endpoints/archive';
-import Request from '../../lib/request';
+import Archive from '../../lib/endpoints/archive.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/archive', () => {
     let archive;

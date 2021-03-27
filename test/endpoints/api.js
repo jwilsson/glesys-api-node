@@ -1,5 +1,5 @@
-import Api from '../../lib/endpoints/api';
-import Request from '../../lib/request';
+import Api from '../../lib/endpoints/api.js';
+import Request from '../../lib/request.js';
 
 describe('endpoints/api', () => {
     let request;
