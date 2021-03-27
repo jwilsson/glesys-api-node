@@ -1,5 +1,5 @@
 # Changelog
-## 6.0.0 (2021-XX-XX)
+## 6.0.0 (2021-03-27)
 * **Breaking** Dropped support for Node < 14.15.0.
 * **Breaking** Complete rewrite to use ES Modules.
 * **Breaking** Updated `got` to `11.x`.
