@@ -143,7 +143,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.loadBalancer.listCertificate()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerlistcertificate)
 * [`GleSYSAPI.loadBalancer.removeBackEnd()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovebackend)
 * [`GleSYSAPI.loadBalancer.removeCertificate()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovecertificate)
-* [`GleSYSAPI.loadBalancer.removeFromBlacklist()`](https://github.com/glesys/API/wiki/API-Documentation#loadbalancerremovefromblacklist)
+* [`GleSYSAPI.loadBalancer.removeFromBlocklist()`](https://github.com/glesys/API/wiki/API-Documentation#loadbalancerremovefromblocklist)
 * [`GleSYSAPI.loadBalancer.removeFrontEnd()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovefrontend)
 * [`GleSYSAPI.loadBalancer.removeTarget()`](https://github.com/GleSYS/API/wiki/API-Documentation#loadbalancerremovetarget)
 
