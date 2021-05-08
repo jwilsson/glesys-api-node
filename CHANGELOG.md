@@ -1,4 +1,9 @@
 # Changelog
+## 6.1.0 (2021-05-08)
+* Renamed `LoadBalancer.addToBlacklist()` to `LoadBalancer.addToBlocklist()`.
+* Renamed `LoadBalancer.removeFromBlacklist()` to `LoadBalancer.removeFromBlocklist()`.
+* Tests are run on Node 16.
+
 ## 6.0.0 (2021-03-27)
 * **Breaking** Dropped support for Node < 14.15.0.
 * **Breaking** Complete rewrite to use ES Modules.
