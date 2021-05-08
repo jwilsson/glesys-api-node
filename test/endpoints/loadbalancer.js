@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import LoadBalancer from '../../lib/endpoints/loadbalancer.js';
 import Request from '../../lib/request.js';
 
@@ -55,7 +56,10 @@ describe('endpoints/loadbalancer', () => {
     });
 
     test('addToBlacklist()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
+        const addToBlocklistSpy = jest
+            .spyOn(loadBalancer, 'addToBlocklist')
+            .mockImplementation();
+
         const data = {
             loadbalancerid: 1,
             prefix: 'a',
@@ -63,7 +67,19 @@ describe('endpoints/loadbalancer', () => {
 
         loadBalancer.addToBlacklist(data);
 
-        expect(spy).toHaveBeenCalledWith('/loadbalancer/addtoblacklist', data);
+        expect(addToBlocklistSpy).toHaveBeenCalledWith(data);
+    });
+
+    test('addToBlocklist()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            loadbalancerid: 1,
+            prefix: 'a',
+        };
+
+        loadBalancer.addToBlocklist(data);
+
+        expect(spy).toHaveBeenCalledWith('/loadbalancer/addtoblocklist', data);
     });
 
     test('create()', () => {
