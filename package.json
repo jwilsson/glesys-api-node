@@ -28,7 +28,7 @@
   "devDependencies": {
     "@jest/globals": "^26.6.2",
     "@jwilsson/eslint-config-node": "^6.0.0",
-    "@jwilsson/eslint-config-prettier": "^1.0.0",
+    "@jwilsson/eslint-config-prettier": "^6.1.0",
     "@jwilsson/prettier-config": "^1.0.0",
     "coveralls": "^3.0.0",
     "eslint": "^7.15.0",
