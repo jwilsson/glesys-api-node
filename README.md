@@ -177,6 +177,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.paymentCard.payInvoices()`](https://github.com/GleSYS/API/wiki/API-Documentation#paymentcardpayinvoices)
 
 ### project
+* [`GleSYSAPI.project.edit()`](https://github.com/glesys/API/wiki/API-Documentation#projectedit)
 * [`GleSYSAPI.project.delete()`](https://github.com/glesys/API/wiki/API-Documentation#projectdelete)
 * [`GleSYSAPI.project.rename()`](https://github.com/glesys/API/wiki/API-Documentation#projectrename)
 

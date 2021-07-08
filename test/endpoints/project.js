@@ -10,6 +10,17 @@ describe('endpoints/project', () => {
         project = new Project(request);
     });
 
+    test('edit()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            name: 'name',
+        };
+
+        project.edit(data);
+
+        expect(spy).toHaveBeenCalledWith('/project/edit', data);
+    });
+
     test('delete()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
 
