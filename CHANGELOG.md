@@ -1,4 +1,7 @@
 # Changelog
+## 6.2.0 (2021-07-08)
+* Added new `GleSYSAPI.Project.edit()` method.
+
 ## 6.1.0 (2021-05-08)
 * Renamed `LoadBalancer.addToBlacklist()` to `LoadBalancer.addToBlocklist()`.
 * Renamed `LoadBalancer.removeFromBlacklist()` to `LoadBalancer.removeFromBlocklist()`.
