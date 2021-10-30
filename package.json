@@ -27,11 +27,11 @@
   },
   "devDependencies": {
     "@jest/globals": "^27.0.6",
-    "@jwilsson/eslint-config-node": "^6.0.0",
-    "@jwilsson/eslint-config-prettier": "^6.1.0",
+    "@jwilsson/eslint-config-node": "^7.0.0",
+    "@jwilsson/eslint-config-prettier": "^7.1.0",
     "@jwilsson/prettier-config": "^1.0.0",
     "coveralls": "^3.0.0",
-    "eslint": "^7.15.0",
+    "eslint": "^8.1.0",
     "jest": "^27.0.6",
     "prettier": "^2.2.1",
     "simple-git-hooks": "^2.2.0"
