@@ -201,6 +201,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.server.networkAdapters()`](https://github.com/glesys/API/wiki/API-Documentation#servernetworkadapters)
 * [`GleSYSAPI.server.previewCloudConfig()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverpreviewcloudconfig)
 * [`GleSYSAPI.server.reboot()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverreboot)
+* [`GleSYSAPI.server.reset()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverreset)
 * [`GleSYSAPI.server.resetLimit()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverresetlimit)
 * [`GleSYSAPI.server.resetPassword()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverresetpassword)
 * [`GleSYSAPI.server.resourceUsage()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverresourceusage)

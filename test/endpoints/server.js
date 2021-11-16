@@ -216,6 +216,17 @@ describe('endpoints/server', () => {
         expect(spy).toHaveBeenCalledWith('/server/reboot', data);
     });
 
+    test('reset()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
+
+        server.reset(data);
+
+        expect(spy).toHaveBeenCalledWith('/server/reset', data);
+    });
+
     test('resetLimit()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
