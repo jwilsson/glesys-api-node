@@ -106,6 +106,17 @@ describe('endpoints/domain', () => {
         expect(spy).toHaveBeenCalledWith('/domain/edit', data);
     });
 
+    test('export()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
+
+        domain.export(data);
+
+        expect(spy).toHaveBeenCalledWith('/domain/export', data);
+    });
+
     test('legacyWebHosting()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 

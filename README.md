@@ -75,6 +75,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.domain.deleteRecord()`](https://github.com/GleSYS/API/wiki/API-Documentation#domaindeleterecord)
 * [`GleSYSAPI.domain.details()`](https://github.com/GleSYS/API/wiki/API-Documentation#domaindetails)
 * [`GleSYSAPI.domain.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainedit)
+* [`GleSYSAPI.domain.export()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainexport)
 * [`GleSYSAPI.domain.legacyWebHosting()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainlegacywebhosting)
 * [`GleSYSAPI.domain.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainlist)
 * [`GleSYSAPI.domain.listRecords()`](https://github.com/GleSYS/API/wiki/API-Documentation#domainlistrecords)
