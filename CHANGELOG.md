@@ -1,4 +1,10 @@
 # Changelog
+## 6.3.0 (2021-11-28)
+* Added new `GleSYSAPI.Domain.export()` method.
+* Added new `GleSYSAPI.Server.reset()` method.
+* Tests are run on Node 17.
+* Updated dev dependencies.
+
 ## 6.2.0 (2021-07-08)
 * Added new `GleSYSAPI.Project.edit()` method.
 
