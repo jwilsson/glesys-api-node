@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/glesys-api.svg)](https://www.npmjs.com/package/glesys-api)
 ![build](https://github.com/jwilsson/glesys-api-node/workflows/build/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/jwilsson/glesys-api-node/badge.svg?branch=master&service=github)](https://coveralls.io/github/jwilsson/glesys-api-node?branch=master)
+[![Coverage Status](https://coveralls.io/repos/jwilsson/glesys-api-node/badge.svg?branch=main)](https://coveralls.io/github/jwilsson/glesys-api-node?branch=main)
 
 A Node.js wrapper for the GleSYS API.
 
