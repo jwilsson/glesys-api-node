@@ -1,4 +1,18 @@
 # Changelog
+## 7.0.0 (2022-04-03)
+* **Breaking** Removed the following methods no longer in the GleSYS API:
+    * `GleSYSAPI.invoice.billingPeriod()`
+    * `GleSYSAPI.loadBalancer.addToBlacklist()`
+    * `GleSYSAPI.loadBalancer.removeFromBlacklist()`
+    * `GleSYSAPI.paymentCard.delete()`
+    * `GleSYSAPI.paymentCard.list()`
+    * `GleSYSAPI.paymentCard.payInvoices()`
+    * `GleSYSAPI.transaction.acknowledge()`
+    * `GleSYSAPI.transaction.cancel()`
+    * `GleSYSAPI.transaction.list()`
+    * `GleSYSAPI.transaction.start()`
+* **Breaking** Updated `got` to `12.x`.
+
 ## 6.4.0 (2022-04-03)
 * Added new `Server` methods:
     * `GleSYSAPI.server.createManualBackup()`
