@@ -25,7 +25,7 @@ const glesys = new GleSYSAPI({
 try {
     const { body } = await glesys.api.serviceInfo();
 
-    console.log(body)
+    console.log(body);
 } catch (e) {
     console.error(e);
 }
