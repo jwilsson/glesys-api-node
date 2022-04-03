@@ -33,7 +33,6 @@ describe('GleSYSAPI', () => {
         expect(glesys.project).toBeDefined();
         expect(glesys.server).toBeDefined();
         expect(glesys.sshKey).toBeDefined();
-        expect(glesys.transaction).toBeDefined();
         expect(glesys.user).toBeDefined();
         expect(glesys.vpn).toBeDefined();
     });

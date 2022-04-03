@@ -212,12 +212,6 @@ glesys.email.createAccount({
 * [`GleSYSAPI.sshKey.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#sshkeylist)
 * [`GleSYSAPI.sshKey.remove()`](https://github.com/GleSYS/API/wiki/API-Documentation#sshkeyremove)
 
-### transaction
-* [`GleSYSAPI.transaction.acknowledge()`](https://github.com/GleSYS/API/wiki/API-Documentation#transactionacknowledge)
-* [`GleSYSAPI.transaction.cancel()`](https://github.com/GleSYS/API/wiki/API-Documentation#transactioncancel)
-* [`GleSYSAPI.transaction.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#transactionlist)
-* [`GleSYSAPI.transaction.start()`](https://github.com/GleSYS/API/wiki/API-Documentation#transactionstart)
-
 ### user
 * [`GleSYSAPI.user.changePassword()`](https://github.com/GleSYS/API/wiki/API-Documentation#userchangepassword)
 * [`GleSYSAPI.user.confirm()`](https://github.com/GleSYS/API/wiki/API-Documentation#userconfirm)
