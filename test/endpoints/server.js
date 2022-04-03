@@ -87,6 +87,24 @@ describe('endpoints/server', () => {
         expect(spy).toHaveBeenCalledWith('/server/createfrombackup', data);
     });
 
+    test('createManualBackup()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {};
+
+        server.createManualBackup(data);
+
+        expect(spy).toHaveBeenCalledWith('/server/createmanualbackup', data);
+    });
+
+    test('deleteManualBackup()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {};
+
+        server.deleteManualBackup(data);
+
+        expect(spy).toHaveBeenCalledWith('/server/deletemanualbackup', data);
+    });
+
     test('destroy()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
