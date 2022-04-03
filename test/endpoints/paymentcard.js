@@ -20,35 +20,4 @@ describe('endpoints/paymentcard', () => {
 
         expect(spy).toHaveBeenCalledWith('/paymentcard/add', data);
     });
-
-    test('delete()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
-        const data = {
-            paymentcardid: 1,
-        };
-
-        paymentCard.delete(data);
-
-        expect(spy).toHaveBeenCalledWith('/paymentcard/delete', data);
-    });
-
-    test('list()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'get');
-
-        paymentCard.list();
-
-        expect(spy).toHaveBeenCalledWith('/paymentcard/list');
-    });
-
-    test('payInvoices()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
-        const data = {
-            invoicenumbers: 1,
-            paymentcardid: 1,
-        };
-
-        paymentCard.payInvoices(data);
-
-        expect(spy).toHaveBeenCalledWith('/paymentcard/payinvoices', data);
-    });
 });
