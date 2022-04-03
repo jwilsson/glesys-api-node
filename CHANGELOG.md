@@ -1,4 +1,11 @@
 # Changelog
+## 6.4.0 (2022-04-03)
+* Added new `Server` methods:
+    * `GleSYSAPI.server.createManualBackup()`
+    * `GleSYSAPI.server.deleteManualBackup()`
+* Fixed imports of internal `Endpoint` class.
+* Updated dev dependencies.
+
 ## 6.3.0 (2021-11-28)
 * Added new `GleSYSAPI.Domain.export()` method.
 * Added new `GleSYSAPI.Server.reset()` method.
