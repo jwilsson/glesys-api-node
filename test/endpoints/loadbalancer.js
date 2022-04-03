@@ -1,5 +1,3 @@
-import { jest } from '@jest/globals';
-
 import LoadBalancer from '../../lib/endpoints/loadbalancer.js';
 import Request from '../../lib/request.js';
 
@@ -54,21 +52,6 @@ describe('endpoints/loadbalancer', () => {
         loadBalancer.addTarget(data);
 
         expect(spy).toHaveBeenCalledWith('/loadbalancer/addtarget', data);
-    });
-
-    test('addToBlacklist()', () => {
-        const addToBlocklistSpy = jest
-            .spyOn(loadBalancer, 'addToBlocklist')
-            .mockImplementation();
-
-        const data = {
-            loadbalancerid: 1,
-            prefix: 'a',
-        };
-
-        loadBalancer.addToBlacklist(data);
-
-        expect(addToBlocklistSpy).toHaveBeenCalledWith(data);
     });
 
     test('addToBlocklist()', () => {
@@ -235,21 +218,6 @@ describe('endpoints/loadbalancer', () => {
             '/loadbalancer/removecertificate',
             data,
         );
-    });
-
-    test('removeFromBlacklist()', () => {
-        const removeFromBlocklistSpy = jest
-            .spyOn(loadBalancer, 'removeFromBlocklist')
-            .mockImplementation();
-
-        const data = {
-            loadbalancerid: 1,
-            prefix: 'a',
-        };
-
-        loadBalancer.removeFromBlacklist(data);
-
-        expect(removeFromBlocklistSpy).toHaveBeenCalledWith(data);
     });
 
     test('removeFromBlocklist()', () => {
