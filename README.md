@@ -108,7 +108,6 @@ glesys.email.createAccount({
 * [`GleSYSAPI.fileStorage.volumeDetails()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragevolumedetails)
 
 ### invoice
-* [`GleSYSAPI.invoice.billingPeriod()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicebillingperiod)
 * [`GleSYSAPI.invoice.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicelist)
 * [`GleSYSAPI.invoice.next()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicenext)
 * [`GleSYSAPI.invoice.payByPaypal()`](https://github.com/GleSYS/API/wiki/API-Documentation#invoicepaybypaypal)

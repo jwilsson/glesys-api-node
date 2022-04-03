@@ -10,17 +10,6 @@ describe('endpoints/invoice', () => {
         invoice = new Invoice(request);
     });
 
-    test('billingPeriod()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
-        const data = {
-            account: 'account',
-        };
-
-        invoice.billingPeriod(data);
-
-        expect(spy).toHaveBeenCalledWith('/invoice/billingperiod', data);
-    });
-
     test('list()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 
