@@ -1,4 +1,11 @@
 # Changelog
+## 7.1.0 (2022-05-13)
+* Added new `User` methods:
+    * `GleSYSAPI.server.initiateSupportChallenge()`
+    * `GleSYSAPI.server.supportChallenge()`
+* Tests are run on Node 18.
+* Updated dev dependencies.
+
 ## 7.0.0 (2022-04-03)
 * **Breaking** Removed the following methods no longer in the GleSYS API:
     * `GleSYSAPI.invoice.billingPeriod()`
