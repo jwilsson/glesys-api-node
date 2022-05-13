@@ -86,6 +86,14 @@ describe('endpoints/user', () => {
         expect(spy).toHaveBeenCalledWith('/user/enabletwofactor', data);
     });
 
+    test('initiateSupportChallenge()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+
+        user.initiateSupportChallenge();
+
+        expect(spy).toHaveBeenCalledWith('/user/initiatesupportchallenge');
+    });
+
     test('listOrganizations()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 
@@ -135,5 +143,13 @@ describe('endpoints/user', () => {
         user.signUp(data);
 
         expect(spy).toHaveBeenCalledWith('/user/signup', data);
+    });
+
+    test('supportChallenge()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+
+        user.supportChallenge();
+
+        expect(spy).toHaveBeenCalledWith('/user/supportchallenge');
     });
 });

@@ -220,11 +220,13 @@ glesys.email.createAccount({
 * [`GleSYSAPI.user.disableTwoFactor()`](https://github.com/GleSYS/API/wiki/API-Documentation#userdisabletwofactor)
 * [`GleSYSAPI.user.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#useredit)
 * [`GleSYSAPI.user.enableTwoFactor()`](https://github.com/GleSYS/API/wiki/API-Documentation#userenabletwofactor)
+* [`GleSYSAPI.user.initiateSupportChallenge()`](https://github.com/GleSYS/API/wiki/API-Documentation#userinitiatesupportchallenge)
 * [`GleSYSAPI.user.listOrganizations()`](https://github.com/glesys/API/wiki/API-Documentation#userlistorganizations)
 * [`GleSYSAPI.user.login()`](https://github.com/GleSYS/API/wiki/API-Documentation#userlogin)
 * [`GleSYSAPI.user.logout()`](https://github.com/GleSYS/API/wiki/API-Documentation#userlogout)
 * [`GleSYSAPI.user.searchData()`](https://github.com/GleSYS/API/wiki/API-Documentation#usersearchdata)
 * [`GleSYSAPI.user.signUp()`](https://github.com/GleSYS/API/wiki/API-Documentation#usersignup)
+* [`GleSYSAPI.user.supportChallenge()`](https://github.com/GleSYS/API/wiki/API-Documentation#usersupportChallenge)
 
 ### vpn
 * [`GleSYSAPI.vpn.createUser()`](https://github.com/GleSYS/API/wiki/API-Documentation#vpncreateuser)
