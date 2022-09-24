@@ -27,8 +27,8 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.0.1",
-    "@jwilsson/eslint-config-node": "^7.0.0",
-    "@jwilsson/eslint-config-prettier": "^7.1.0",
+    "@jwilsson/eslint-config-node": "^7.13.2",
+    "@jwilsson/eslint-config-prettier": "^7.13.2",
     "@jwilsson/prettier-config": "^7.2.0",
     "coveralls": "^3.0.0",
     "eslint": "^8.1.0",
@@ -54,9 +54,6 @@
     ],
     "env": {
       "jest": true
-    },
-    "rules": {
-      "node/no-missing-import": "off"
     }
   },
   "jest": {

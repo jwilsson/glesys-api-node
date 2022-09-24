@@ -1,4 +1,4 @@
-import GleSYSAPI from '../lib/glesys';
+import GleSYSAPI from '../lib/glesys.js';
 
 describe('GleSYSAPI', () => {
     test('apiKey and apiUser are set on Request object', () => {

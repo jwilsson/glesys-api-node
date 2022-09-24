@@ -1,6 +1,6 @@
 import { jest } from '@jest/globals';
 
-import Request from '../lib/request';
+import Request from '../lib/request.js';
 
 describe('request', () => {
     const authOptions = {
