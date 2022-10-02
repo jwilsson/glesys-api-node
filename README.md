@@ -94,7 +94,6 @@ glesys.email.createAccount({
 * [`GleSYSAPI.email.delete()`](https://github.com/GleSYS/API/wiki/API-Documentation#emaildelete)
 * [`GleSYSAPI.email.editAccount()`](https://github.com/GleSYS/API/wiki/API-Documentation#emaileditaccount)
 * [`GleSYSAPI.email.editAlias()`](https://github.com/GleSYS/API/wiki/API-Documentation#emaileditalias)
-* [`GleSYSAPI.email.globalQuota()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailglobalquota)
 * [`GleSYSAPI.email.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#emaillist)
 * [`GleSYSAPI.email.overview()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailoverview)
 * [`GleSYSAPI.email.quota()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailquota)

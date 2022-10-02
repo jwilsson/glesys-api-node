@@ -73,17 +73,6 @@ describe('endpoints/email', () => {
         expect(spy).toHaveBeenCalledWith('/email/editalias', data);
     });
 
-    test('globalQuota()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
-        const data = {
-            globalquota: 1,
-        };
-
-        email.globalQuota(data);
-
-        expect(spy).toHaveBeenCalledWith('/email/globalquota', data);
-    });
-
     test('list()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
