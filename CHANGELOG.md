@@ -1,6 +1,12 @@
 # Changelog
+## 7.2.0 (2023-02-05)
+* Added new `Email` methods:
+    * `GleSYSAPI.email.resetPassword()`
+* Tests are run on Node 19.
+* Updated dev dependencies.
+
 ## 7.1.0 (2022-05-13)
-* Added new `User` methods:
+* Added new `Server` methods:
     * `GleSYSAPI.server.initiateSupportChallenge()`
     * `GleSYSAPI.server.supportChallenge()`
 * Tests are run on Node 18.
