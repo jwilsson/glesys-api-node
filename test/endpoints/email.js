@@ -116,4 +116,15 @@ describe('endpoints/email', () => {
 
         expect(spy).toHaveBeenCalledWith('/email/quota', data);
     });
+
+    test('resetPassword()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            emailaccount: 'example@example.com',
+        };
+
+        email.resetPassword(data);
+
+        expect(spy).toHaveBeenCalledWith('/email/resetpassword', data);
+    });
 });

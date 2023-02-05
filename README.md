@@ -97,6 +97,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.email.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#emaillist)
 * [`GleSYSAPI.email.overview()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailoverview)
 * [`GleSYSAPI.email.quota()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailquota)
+* [`GleSYSAPI.email.resetPassword()`](https://github.com/GleSYS/API/wiki/API-Documentation#emailresetpassword)
 
 ### fileStorage
 * [`GleSYSAPI.fileStorage.createVolume()`](https://github.com/glesys/API/wiki/API-Documentation#filestoragecreatevolume)
