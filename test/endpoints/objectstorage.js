@@ -19,10 +19,7 @@ describe('endpoints/objectstorage', () => {
 
         objectStorage.createCredential(data);
 
-        expect(spy).toHaveBeenCalledWith(
-            '/objectstorage/createcredential',
-            data,
-        );
+        expect(spy).toHaveBeenCalledWith('/objectstorage/createcredential', data);
     });
 
     test('createInstance()', () => {
@@ -47,10 +44,7 @@ describe('endpoints/objectstorage', () => {
 
         objectStorage.deleteCredential(data);
 
-        expect(spy).toHaveBeenCalledWith(
-            '/objectstorage/deletecredential',
-            data,
-        );
+        expect(spy).toHaveBeenCalledWith('/objectstorage/deletecredential', data);
     });
 
     test('deleteInstance()', () => {
@@ -96,10 +90,7 @@ describe('endpoints/objectstorage', () => {
 
         objectStorage.instanceDetails(data);
 
-        expect(spy).toHaveBeenCalledWith(
-            '/objectstorage/instancedetails',
-            data,
-        );
+        expect(spy).toHaveBeenCalledWith('/objectstorage/instancedetails', data);
     });
 
     test('listInstances()', () => {

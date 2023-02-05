@@ -1,71 +1,71 @@
 {
-  "name": "glesys-api",
-  "version": "7.1.0",
-  "description": "Node.js wrapper for the GleSYS API.",
-  "type": "module",
-  "main": "./lib/glesys.js",
-  "exports": "./lib/glesys.js",
-  "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
-  "contributors": [
-    "Oskar Risberg <kokarn@gmail.com>"
-  ],
-  "engines": {
-    "node": ">=14.15.0"
-  },
-  "keywords": [
-    "glesys"
-  ],
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jwilsson/glesys-api-node"
-  },
-  "dependencies": {
-    "got": "^12.0.1"
-  },
-  "devDependencies": {
-    "@jest/globals": "^29.0.1",
-    "@jwilsson/eslint-config-node": "^7.13.2",
-    "@jwilsson/eslint-config-prettier": "^7.13.2",
-    "@jwilsson/prettier-config": "^7.2.0",
-    "coveralls": "^3.0.0",
-    "eslint": "^8.1.0",
-    "jest": "^29.0.1",
-    "prettier": "^2.2.1",
-    "simple-git-hooks": "^2.2.0"
-  },
-  "scripts": {
-    "pretest": "eslint lib test",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
-  "lint-staged": {
-    "*.js": "prettier --write lib test"
-  },
-  "babel": {},
-  "eslintConfig": {
-    "extends": [
-      "@jwilsson/eslint-config-node",
-      "@jwilsson/eslint-config-prettier"
+    "name": "glesys-api",
+    "version": "7.1.0",
+    "description": "Node.js wrapper for the GleSYS API.",
+    "type": "module",
+    "main": "./lib/glesys.js",
+    "exports": "./lib/glesys.js",
+    "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
+    "contributors": [
+        "Oskar Risberg <kokarn@gmail.com>"
     ],
-    "env": {
-      "jest": true
-    }
-  },
-  "jest": {
-    "collectCoverage": true,
-    "setupFilesAfterEnv": [
-      "<rootDir>/jestSetup.js"
+    "engines": {
+        "node": ">=14.15.0"
+    },
+    "keywords": [
+        "glesys"
     ],
-    "testMatch": [
-      "<rootDir>/test/**/*.js"
+    "files": [
+        "lib"
     ],
-    "verbose": true
-  },
-  "prettier": "@jwilsson/prettier-config",
-  "license": "MIT"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jwilsson/glesys-api-node"
+    },
+    "dependencies": {
+        "got": "^12.0.1"
+    },
+    "devDependencies": {
+        "@jest/globals": "^29.0.1",
+        "@jwilsson/eslint-config-node": "^7.14.0",
+        "@jwilsson/eslint-config-prettier": "^7.14.0",
+        "@jwilsson/prettier-config": "^7.15.0",
+        "coveralls": "^3.0.0",
+        "eslint": "^8.1.0",
+        "jest": "^29.0.1",
+        "prettier": "^2.2.1",
+        "simple-git-hooks": "^2.2.0"
+    },
+    "scripts": {
+        "pretest": "eslint lib test",
+        "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged"
+    },
+    "lint-staged": {
+        "*.js": "prettier --write lib test"
+    },
+    "babel": {},
+    "eslintConfig": {
+        "extends": [
+            "@jwilsson/eslint-config-node",
+            "@jwilsson/eslint-config-prettier"
+        ],
+        "env": {
+            "jest": true
+        }
+    },
+    "jest": {
+        "collectCoverage": true,
+        "setupFilesAfterEnv": [
+            "<rootDir>/jestSetup.js"
+        ],
+        "testMatch": [
+            "<rootDir>/test/**/*.js"
+        ],
+        "verbose": true
+    },
+    "prettier": "@jwilsson/prettier-config",
+    "license": "MIT"
 }
