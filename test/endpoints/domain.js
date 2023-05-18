@@ -128,14 +128,6 @@ describe('endpoints/domain', () => {
         expect(spy).toHaveBeenCalledWith('/domain/generateauthcode', data);
     });
 
-    test('legacyWebHosting()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'get');
-
-        domain.legacyWebHosting();
-
-        expect(spy).toHaveBeenCalledWith('/domain/legacywebhosting');
-    });
-
     test('list()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 
