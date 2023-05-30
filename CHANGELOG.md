@@ -1,4 +1,9 @@
 # Changelog
+## 7.3.0 (2023-05-30)
+* Added new `Domain` methods:
+    * `GleSYSAPI.domain.generateAuthCode()`
+* Tests are run on Node 20.
+
 ## 7.2.0 (2023-02-05)
 * Added new `Email` methods:
     * `GleSYSAPI.email.resetPassword()`
