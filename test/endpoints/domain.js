@@ -117,6 +117,17 @@ describe('endpoints/domain', () => {
         expect(spy).toHaveBeenCalledWith('/domain/export', data);
     });
 
+    test('generateAuthCode()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
+
+        domain.generateAuthCode(data);
+
+        expect(spy).toHaveBeenCalledWith('/domain/generateauthcode', data);
+    });
+
     test('legacyWebHosting()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 
