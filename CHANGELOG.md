@@ -1,4 +1,11 @@
 # Changelog
+## 8.0.0 (2023-09-19)
+* **Breaking** Removed the following methods no longer in the GleSYS API:
+    * GleSYSAPI.domain.legacyWebHosting()
+    * GleSYSAPI.email.globalQuota()
+* **Breaking** Dropped support for Node < 18.12.0.
+* **Breaking** Updated `got` to `13.x`.
+
 ## 7.3.0 (2023-05-30)
 * Added new `Domain` methods:
     * `GleSYSAPI.domain.generateAuthCode()`
