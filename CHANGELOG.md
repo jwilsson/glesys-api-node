@@ -1,5 +1,5 @@
 # Changelog
-## 8.0.0 (2023-11-18)
+## 8.1.0 (2023-11-18)
 * Added new `Server` methods:
     * `GleSYSAPI.server.estimatedBackupCost()`
 * Tests are run on Node 21.
