@@ -189,6 +189,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.server.destroy()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverdestroy)
 * [`GleSYSAPI.server.details()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverdetails)
 * [`GleSYSAPI.server.edit()`](https://github.com/GleSYS/API/wiki/API-Documentation#serveredit)
+* [`GleSYSAPI.server.estimatedBackupCost()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverestimatedbackupcost)
 * [`GleSYSAPI.server.estimatedCost()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverestimatedcost)
 * [`GleSYSAPI.server.limits()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverlimits)
 * [`GleSYSAPI.server.list()`](https://github.com/GleSYS/API/wiki/API-Documentation#serverlist)

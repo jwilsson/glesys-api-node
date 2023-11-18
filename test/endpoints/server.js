@@ -138,6 +138,17 @@ describe('endpoints/server', () => {
         expect(spy).toHaveBeenCalledWith('/server/edit', data);
     });
 
+    test('estimatedBackupCost()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            serverid: 'z1',
+        };
+
+        server.estimatedBackupCost(data);
+
+        expect(spy).toHaveBeenCalledWith('/server/estimatedbackupcost', data);
+    });
+
     test('estimatedCost()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
