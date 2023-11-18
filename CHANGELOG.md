@@ -1,4 +1,9 @@
 # Changelog
+## 8.0.0 (2023-11-18)
+* Added new `Server` methods:
+    * `GleSYSAPI.server.estimatedBackupCost()`
+* Tests are run on Node 21.
+
 ## 8.0.0 (2023-09-19)
 * **Breaking** Removed the following methods no longer in the GleSYS API:
     * GleSYSAPI.domain.legacyWebHosting()
