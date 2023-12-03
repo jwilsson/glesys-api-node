@@ -1,4 +1,13 @@
 # Changelog
+## 8.2.0 (2023-12-03)
+* Added new `ServerDisk` module:
+    * `GleSYSAPI.serverDisk.create()`
+    * `GleSYSAPI.serverDisk.delete()`
+    * `GleSYSAPI.serverDisk.estimatedCost()`
+    * `GleSYSAPI.serverDisk.limits()`
+    * `GleSYSAPI.serverDisk.reconfigure()`
+    * `GleSYSAPI.serverDisk.updateName()`
+
 ## 8.1.0 (2023-11-18)
 * Added new `Server` methods:
     * `GleSYSAPI.server.estimatedBackupCost()`
