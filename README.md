@@ -208,6 +208,14 @@ glesys.email.createAccount({
 * [`GleSYSAPI.server.stop()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverstop)
 * [`GleSYSAPI.server.templates()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#servertemplates)
 
+### serverDisk
+* [`GleSYSAPI.serverDisk.create()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdiskcreate)
+* [`GleSYSAPI.serverDisk.delete()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdiskdelete)
+* [`GleSYSAPI.serverDisk.estimatedCost()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdiskestimatedcost)
+* [`GleSYSAPI.serverDisk.limits()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdisklimits)
+* [`GleSYSAPI.serverDisk.reconfigure()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdiskreconfigure)
+* [`GleSYSAPI.serverDisk.updateName()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdiskupdatename)
+
 ### sshKey
 * [`GleSYSAPI.sshKey.add()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#sshkeyadd)
 * [`GleSYSAPI.sshKey.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#sshkeylist)
