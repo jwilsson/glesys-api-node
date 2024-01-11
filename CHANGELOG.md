@@ -1,4 +1,9 @@
 # Changelog
+## 8.3.0 (2024-01-11)
+* Added new `NetworkCircuit` module:
+    * `GleSYSAPI.networkCircuit.details()`
+    * `GleSYSAPI.networkCircuit.list()`
+
 ## 8.2.0 (2023-12-03)
 * Added new `ServerDisk` module:
     * `GleSYSAPI.serverDisk.create()`
