@@ -28,6 +28,7 @@ describe('GleSYSAPI', () => {
         expect(glesys.loadBalancer).toBeDefined();
         expect(glesys.network).toBeDefined();
         expect(glesys.networkAdapter).toBeDefined();
+        expect(glesys.networkCircuit).toBeDefined();
         expect(glesys.objectStorage).toBeDefined();
         expect(glesys.paymentCard).toBeDefined();
         expect(glesys.project).toBeDefined();

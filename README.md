@@ -160,7 +160,11 @@ glesys.email.createAccount({
 * [`GleSYSAPI.networkAdapter.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkadapterdetails)
 * [`GleSYSAPI.networkAdapter.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkadapteredit)
 
+### networkCircuit
+* [`GleSYSAPI.networkCircuit.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkcircuitdetails)
+* [`GleSYSAPI.networkCircuit.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkcircuitlist)
 ### objectStorage
+
 * [`GleSYSAPI.objectStorage.createCredential()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragecreatecredential)
 * [`GleSYSAPI.objectStorage.createInstance()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragecreateinstance)
 * [`GleSYSAPI.objectStorage.deleteCredential()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragedeletecredential)
