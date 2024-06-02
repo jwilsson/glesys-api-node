@@ -116,6 +116,7 @@ glesys.email.createAccount({
 ### ip
 * [`GleSYSAPI.ip.add()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#ipadd)
 * [`GleSYSAPI.ip.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#ipdetails)
+* [`GleSYSAPI.ip.estimatedCost()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#ipestimatedcost)
 * [`GleSYSAPI.ip.listFree()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#iplistfree)
 * [`GleSYSAPI.ip.listOwn()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#iplistown)
 * [`GleSYSAPI.ip.release()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#iprelease)

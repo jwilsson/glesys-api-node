@@ -32,6 +32,14 @@ describe('endpoints/ip', () => {
         expect(spy).toHaveBeenCalledWith('/ip/details', data);
     });
 
+    test('estimatedCost()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+
+        ip.estimatedCost();
+
+        expect(spy).toHaveBeenCalledWith('/ip/estimatedcost');
+    });
+
     test('listFree()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
