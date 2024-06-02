@@ -1,4 +1,9 @@
 # Changelog
+## 8.4.0 (2024-06-02)
+* Added new `Ip` methods:
+    * `GleSYSAPI.ip.estimatedCost()`
+* Tests are run on Node 22.
+
 ## 8.3.0 (2024-01-11)
 * Added new `NetworkCircuit` module:
     * `GleSYSAPI.networkCircuit.details()`
