@@ -69,6 +69,7 @@ glesys.email.createAccount({
 ### domain
 * [`GleSYSAPI.domain.add()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainadd)
 * [`GleSYSAPI.domain.addRecord()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainaddrecord)
+* [`GleSYSAPI.domain.allowedArguments()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainallowedarguments)
 * [`GleSYSAPI.domain.available()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainavailable)
 * [`GleSYSAPI.domain.changeNameServers()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainchangenameservers)
 * [`GleSYSAPI.domain.delete()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domaindelete)
@@ -100,8 +101,8 @@ glesys.email.createAccount({
 
 ### fileStorage
 * [`GleSYSAPI.fileStorage.createVolume()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestoragecreatevolume)
-* [`GleSYSAPI.fileStorage.editVolume()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestorageeditvolume)
 * [`GleSYSAPI.fileStorage.deleteVolume()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestoragedeletevolume)
+* [`GleSYSAPI.fileStorage.editVolume()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestorageeditvolume)
 * [`GleSYSAPI.fileStorage.listPlans()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestoragelistplans)
 * [`GleSYSAPI.fileStorage.listVolumes()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestoragelistvolumes)
 * [`GleSYSAPI.fileStorage.resourceUsage()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestorageresourceusage)
@@ -163,8 +164,8 @@ glesys.email.createAccount({
 ### networkCircuit
 * [`GleSYSAPI.networkCircuit.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkcircuitdetails)
 * [`GleSYSAPI.networkCircuit.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkcircuitlist)
-### objectStorage
 
+### objectStorage
 * [`GleSYSAPI.objectStorage.createCredential()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragecreatecredential)
 * [`GleSYSAPI.objectStorage.createInstance()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragecreateinstance)
 * [`GleSYSAPI.objectStorage.deleteCredential()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragedeletecredential)
@@ -178,8 +179,8 @@ glesys.email.createAccount({
 * [`GleSYSAPI.paymentCard.add()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#paymentcardadd)
 
 ### project
-* [`GleSYSAPI.project.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectedit)
 * [`GleSYSAPI.project.delete()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectdelete)
+* [`GleSYSAPI.project.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectedit)
 * [`GleSYSAPI.project.rename()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectrename)
 
 ### server
@@ -190,6 +191,8 @@ glesys.email.createAccount({
 * [`GleSYSAPI.server.costs()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#servercosts)
 * [`GleSYSAPI.server.create()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#servercreate)
 * [`GleSYSAPI.server.createFromBackup()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#servercreatefrombackup)
+* [`GleSYSAPI.server.createManualBackup()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#servercreatemanualbackup)
+* [`GleSYSAPI.server.deleteManualBackup()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdeletemanualbackup)
 * [`GleSYSAPI.server.destroy()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdestroy)
 * [`GleSYSAPI.server.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdetails)
 * [`GleSYSAPI.server.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serveredit)
@@ -239,7 +242,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.user.logout()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#userlogout)
 * [`GleSYSAPI.user.searchData()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#usersearchdata)
 * [`GleSYSAPI.user.signUp()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#usersignup)
-* [`GleSYSAPI.user.supportChallenge()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#usersupportChallenge)
+* [`GleSYSAPI.user.supportChallenge()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#usersupportchallenge)
 
 ### vpn
 * [`GleSYSAPI.vpn.createUser()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#vpncreateuser)
