@@ -179,6 +179,18 @@ glesys.email.createAccount({
 ### paymentCard
 * [`GleSYSAPI.paymentCard.add()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#paymentcardadd)
 
+### privateNetwork
+* [`GleSYSAPI.privateNetwork.create()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkcreate)
+* [`GleSYSAPI.privateNetwork.createSegment()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkcreatesegment)
+* [`GleSYSAPI.privateNetwork.delete()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkdelete)
+* [`GleSYSAPI.privateNetwork.deleteSegment()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkdeletesegment)
+* [`GleSYSAPI.privateNetwork.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkdetails)
+* [`GleSYSAPI.privateNetwork.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkedit)
+* [`GleSYSAPI.privateNetwork.editSegment()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkeditsegment)
+* [`GleSYSAPI.privateNetwork.estimatedCost()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworkestimatedcost)
+* [`GleSYSAPI.privateNetwork.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworklist)
+* [`GleSYSAPI.privateNetwork.listSegments()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#privatenetworklistsegments)
+
 ### project
 * [`GleSYSAPI.project.delete()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectdelete)
 * [`GleSYSAPI.project.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectedit)
