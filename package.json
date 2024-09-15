@@ -27,13 +27,12 @@
     },
     "devDependencies": {
         "@jest/globals": "^29.0.1",
-        "@jwilsson/eslint-config-node": "^7.14.0",
-        "@jwilsson/eslint-config-prettier": "^7.14.0",
-        "@jwilsson/prettier-config": "^7.15.0",
+        "@jwilsson/eslint-config": "^9.0.0",
+        "@jwilsson/prettier-config": "^9.0.0",
         "coveralls": "^3.0.0",
-        "eslint": "^8.1.0",
+        "eslint": "^9.10.0",
         "jest": "^29.0.1",
-        "prettier": "^2.2.1",
+        "prettier": "^3.3.3",
         "simple-git-hooks": "^2.2.0"
     },
     "scripts": {
@@ -45,16 +44,6 @@
     },
     "lint-staged": {
         "*.js": "prettier --write lib test"
-    },
-    "babel": {},
-    "eslintConfig": {
-        "extends": [
-            "@jwilsson/eslint-config-node",
-            "@jwilsson/eslint-config-prettier"
-        ],
-        "env": {
-            "jest": true
-        }
     },
     "jest": {
         "collectCoverage": true,
