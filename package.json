@@ -39,22 +39,5 @@
         "pretest": "eslint lib test",
         "test": "node --experimental-vm-modules node_modules/.bin/jest"
     },
-    "simple-git-hooks": {
-        "pre-commit": "npx lint-staged"
-    },
-    "lint-staged": {
-        "*.js": "prettier --write lib test"
-    },
-    "jest": {
-        "collectCoverage": true,
-        "setupFilesAfterEnv": [
-            "<rootDir>/jestSetup.js"
-        ],
-        "testMatch": [
-            "<rootDir>/test/**/*.js"
-        ],
-        "verbose": true
-    },
-    "prettier": "@jwilsson/prettier-config",
     "license": "MIT"
 }
