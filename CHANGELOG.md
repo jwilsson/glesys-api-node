@@ -1,4 +1,10 @@
 # Changelog
+## 9.0.0 (2025-02-22)
+* **Breaking** Dropped support for Node < 22.11.0.
+* **Breaking** Updated `got` to `14.x`.
+* Tests are run on Node 23.
+* Updated dev dependencies.
+
 ## 8.5.0 (2024-06-30)
 * Added new `PrivateNetwork` module:
     * `GleSYSAPI.serverDisk.create()`
