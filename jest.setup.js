@@ -5,6 +5,4 @@ beforeEach(() => {
 });
 
 // Jest Request spy setup helper
-globalThis.setupRequestSpy = (request, method) => {
-    return jest.spyOn(request, method).mockImplementation();
-};
+globalThis.setupRequestSpy = (request, method) => jest.spyOn(request, method).mockImplementation();
