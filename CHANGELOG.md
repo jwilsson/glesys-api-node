@@ -7,16 +7,16 @@
 
 ## 8.5.0 (2024-06-30)
 * Added new `PrivateNetwork` module:
-    * `GleSYSAPI.serverDisk.create()`
-    * `GleSYSAPI.serverDisk.createSegment()`
-    * `GleSYSAPI.serverDisk.delete()`
-    * `GleSYSAPI.serverDisk.deleteSegment()`
-    * `GleSYSAPI.serverDisk.details()`
-    * `GleSYSAPI.serverDisk.edit()`
-    * `GleSYSAPI.serverDisk.editSegment()`
-    * `GleSYSAPI.serverDisk.estimatedCost()`
-    * `GleSYSAPI.serverDisk.list()`
-    * `GleSYSAPI.serverDisk.listSegments()`
+    * `GleSYSAPI.privateNetwork.create()`
+    * `GleSYSAPI.privateNetwork.createSegment()`
+    * `GleSYSAPI.privateNetwork.delete()`
+    * `GleSYSAPI.privateNetwork.deleteSegment()`
+    * `GleSYSAPI.privateNetwork.details()`
+    * `GleSYSAPI.privateNetwork.edit()`
+    * `GleSYSAPI.privateNetwork.editSegment()`
+    * `GleSYSAPI.privateNetwork.estimatedCost()`
+    * `GleSYSAPI.privateNetwork.list()`
+    * `GleSYSAPI.privateNetwork.listSegments()`
 
 ## 8.4.0 (2024-06-02)
 * Added new `Ip` methods:
@@ -44,8 +44,8 @@
 
 ## 8.0.0 (2023-09-19)
 * **Breaking** Removed the following methods no longer in the GleSYS API:
-    * GleSYSAPI.domain.legacyWebHosting()
-    * GleSYSAPI.email.globalQuota()
+    * `GleSYSAPI.domain.legacyWebHosting()`
+    * `GleSYSAPI.email.globalQuota()`
 * **Breaking** Dropped support for Node < 18.12.0.
 * **Breaking** Updated `got` to `13.x`.
 
