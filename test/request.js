@@ -1,4 +1,4 @@
-import { jest } from '@jest/globals';
+import { vi } from 'vitest';
 
 import Request from '../lib/request.js';
 
@@ -18,7 +18,7 @@ describe('request', () => {
 
     test('get() sets query string and request method', () => {
         const request = new Request({});
-        const requestSpy = jest.spyOn(request, 'request').mockImplementation();
+        const requestSpy = vi.spyOn(request, 'request').mockImplementation();
 
         const url = 'https://api.glesys.com/api/serviceinfo';
         const data = {
@@ -38,7 +38,7 @@ describe('request', () => {
 
     test('post() sets body and request method', () => {
         const request = new Request({});
-        const requestSpy = jest.spyOn(request, 'request').mockImplementation();
+        const requestSpy = vi.spyOn(request, 'request').mockImplementation();
 
         const url = 'https://api.glesys.com/api/serviceinfo';
         const data = {
