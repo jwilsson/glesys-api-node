@@ -5,6 +5,7 @@ export default defineConfig({
         coverage: {
             enabled: true,
             exclude: ['./*.js', ...coverageConfigDefaults.exclude],
+            reporter: ['html', 'lcov'],
         },
         globals: true,
         include: ['./test/**/*.js'],
