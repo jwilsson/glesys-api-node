@@ -1,4 +1,20 @@
 # Changelog
+## 9.1.0 (2025-06-14)
+* Added new `Database` module:
+    * `GleSYSAPI.database.connectionDetails()`
+    * `GleSYSAPI.database.create()`
+    * `GleSYSAPI.database.delete()`
+    * `GleSYSAPI.database.details()`
+    * `GleSYSAPI.database.estimatedCost()`
+    * `GleSYSAPI.database.list()`
+    * `GleSYSAPI.database.listPlans()`
+    * `GleSYSAPI.database.updateAllowList()`
+* Added new `Domain` DNSSEC methods:
+    * `GleSYSAPI.domain.enableDNSSEC()`
+    * `GleSYSAPI.domain.publishDNSKEY()`
+    * `GleSYSAPI.domain.unpublishDNSKEY()`
+* Tests are run on Node 24.
+
 ## 9.0.0 (2025-02-22)
 * **Breaking** Dropped support for Node < 22.11.0.
 * **Breaking** Updated `got` to `14.x`.
