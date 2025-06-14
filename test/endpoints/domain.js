@@ -106,6 +106,17 @@ describe('endpoints/domain', () => {
         expect(spy).toHaveBeenCalledWith('/domain/edit', data);
     });
 
+    test('enableDNSSEC()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
+
+        domain.enableDNSSEC(data);
+
+        expect(spy).toHaveBeenCalledWith('/domain/enablednssec', data);
+    });
+
     test('export()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
@@ -153,6 +164,17 @@ describe('endpoints/domain', () => {
         domain.priceList();
 
         expect(spy).toHaveBeenCalledWith('/domain/pricelist');
+    });
+
+    test('publishDNSKEY()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
+
+        domain.publishDNSKEY(data);
+
+        expect(spy).toHaveBeenCalledWith('/domain/publishdnskey', data);
     });
 
     test('register()', () => {
@@ -208,5 +230,16 @@ describe('endpoints/domain', () => {
         domain.updateRecord(data);
 
         expect(spy).toHaveBeenCalledWith('/domain/updaterecord', data);
+    });
+
+    test('unpublishDNSKEY()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
+
+        domain.unpublishDNSKEY(data);
+
+        expect(spy).toHaveBeenCalledWith('/domain/unpublishdnskey', data);
     });
 });
