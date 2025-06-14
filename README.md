@@ -66,6 +66,16 @@ glesys.email.createAccount({
 * [`GleSYSAPI.customer.removeCollaborator()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#customerremovecollaborator)
 * [`GleSYSAPI.customer.settings()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#customersettings)
 
+### database
+* [`GleSYSAPI.database.connectionDetails()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databaseconnectiondetails)
+* [`GleSYSAPI.database.create()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databasecreate)
+* [`GleSYSAPI.database.delete()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databasedelete)
+* [`GleSYSAPI.database.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databasedetails)
+* [`GleSYSAPI.database.estimatedCost()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databaseestimatedcost)
+* [`GleSYSAPI.database.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databaselist)
+* [`GleSYSAPI.database.listPlans()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databaselistplans)
+* [`GleSYSAPI.database.updateAllowList()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#databaseupdateallowlist)
+
 ### domain
 * [`GleSYSAPI.domain.add()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainadd)
 * [`GleSYSAPI.domain.addRecord()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainaddrecord)

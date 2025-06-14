@@ -20,6 +20,7 @@ describe('GleSYSAPI', () => {
         expect(glesys.archive).toBeDefined();
         expect(glesys.country).toBeDefined();
         expect(glesys.customer).toBeDefined();
+        expect(glesys.database).toBeDefined();
         expect(glesys.domain).toBeDefined();
         expect(glesys.email).toBeDefined();
         expect(glesys.fileStorage).toBeDefined();
@@ -31,6 +32,7 @@ describe('GleSYSAPI', () => {
         expect(glesys.networkCircuit).toBeDefined();
         expect(glesys.objectStorage).toBeDefined();
         expect(glesys.paymentCard).toBeDefined();
+        expect(glesys.privateNetwork).toBeDefined();
         expect(glesys.project).toBeDefined();
         expect(glesys.server).toBeDefined();
         expect(glesys.serverDisk).toBeDefined();
