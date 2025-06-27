@@ -1,4 +1,8 @@
 # Changelog
+## 9.2.0 (2025-06-27)
+* Added new `Domain` methods:
+    * `GleSYSAPI.domain.prepareForDNSSEC()`
+
 ## 9.1.0 (2025-06-14)
 * Added new `Database` module:
     * `GleSYSAPI.database.connectionDetails()`
