@@ -91,6 +91,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.domain.generateAuthCode()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domaingenerateauthcode)
 * [`GleSYSAPI.domain.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainlist)
 * [`GleSYSAPI.domain.listRecords()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainlistrecords)
+* [`GleSYSAPI.domain.prepareForDNSSEC()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainpreparefordnssec)
 * [`GleSYSAPI.domain.priceList()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainpricelist)
 * [`GleSYSAPI.domain.publishDNSKEY()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainpublishdnskey)
 * [`GleSYSAPI.domain.register()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainregister)

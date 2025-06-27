@@ -158,6 +158,17 @@ describe('endpoints/domain', () => {
         expect(spy).toHaveBeenCalledWith('/domain/listrecords', data);
     });
 
+    test('prepareForDNSSEC()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            domainname: 'example.com',
+        };
+
+        domain.prepareForDNSSEC(data);
+
+        expect(spy).toHaveBeenCalledWith('/domain/preparefordnssec', data);
+    });
+
     test('priceList()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 
