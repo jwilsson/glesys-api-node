@@ -3,8 +3,8 @@
     "version": "9.2.0",
     "description": "Node.js wrapper for the GleSYS API.",
     "type": "module",
-    "main": "./lib/glesys.js",
-    "exports": "./lib/glesys.js",
+    "exports": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "author": "Jonathan Wilsson <jonathan.wilsson@gmail.com>",
     "contributors": [
         "Oskar Risberg <kokarn@gmail.com>"
@@ -16,7 +16,7 @@
         "glesys"
     ],
     "files": [
-        "lib"
+        "dist"
     ],
     "repository": {
         "type": "git",
@@ -28,15 +28,21 @@
     "devDependencies": {
         "@jwilsson/eslint-config": "^9.0.0",
         "@jwilsson/prettier-config": "^9.0.0",
+        "@jwilsson/tsconfig": "^9.9.0",
+        "@types/node": "^24.8.1",
         "@vitest/coverage-v8": "^3.1.1",
         "coveralls": "^3.0.0",
         "eslint": "^9.10.0",
         "prettier": "^3.3.3",
         "simple-git-hooks": "^2.2.0",
+        "typescript": "^5.9.3",
         "vitest": "^3.1.1"
     },
     "scripts": {
-        "pretest": "eslint lib test",
+        "build": "tsc -p tsconfig.lib.json",
+        "lint": "eslint lib test",
+        "prepublishOnly": "npm run build",
+        "pretest": "npm run lint",
         "test": "vitest --run"
     },
     "license": "MIT"
