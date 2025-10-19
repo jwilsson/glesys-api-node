@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import NetworkAdapter from '../../lib/endpoints/networkadapter.js';
-import Request from '../../lib/request.js';
+import { NetworkAdapter } from '../../lib/endpoints/networkadapter.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/networkadapter', () => {

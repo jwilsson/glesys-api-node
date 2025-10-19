@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class User extends Endpoint {
+export class User extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#userchangepassword
     changePassword(data) {
         return this.request.post('/user/changepassword', data);
@@ -71,5 +71,3 @@ class User extends Endpoint {
         return this.request.post('/user/supportchallenge');
     }
 }
-
-export default User;

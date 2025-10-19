@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class NetworkCircuit extends Endpoint {
+export class NetworkCircuit extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkcircuitdetails
     details(data) {
         return this.request.get('/networkcircuit/details', data);
@@ -11,5 +11,3 @@ class NetworkCircuit extends Endpoint {
         return this.request.get('/networkcircuit/list');
     }
 }
-
-export default NetworkCircuit;

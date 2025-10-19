@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import ObjectStorage from '../../lib/endpoints/objectstorage.js';
-import Request from '../../lib/request.js';
+import { ObjectStorage } from '../../lib/endpoints/objectstorage.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/objectstorage', () => {

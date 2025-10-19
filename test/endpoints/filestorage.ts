@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import FileStorage from '../../lib/endpoints/filestorage.js';
-import Request from '../../lib/request.js';
+import { FileStorage } from '../../lib/endpoints/filestorage.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/filestorage', () => {

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import LoadBalancer from '../../lib/endpoints/loadbalancer.js';
-import Request from '../../lib/request.js';
+import { LoadBalancer } from '../../lib/endpoints/loadbalancer.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/loadbalancer', () => {

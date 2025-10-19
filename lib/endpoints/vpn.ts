@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class Vpn extends Endpoint {
+export class Vpn extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#vpncreateuser
     createUser(data) {
         return this.request.post('/vpn/createuser', data);
@@ -21,5 +21,3 @@ class Vpn extends Endpoint {
         return this.request.get('/vpn/listusers');
     }
 }
-
-export default Vpn;

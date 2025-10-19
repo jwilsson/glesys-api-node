@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import Domain from '../../lib/endpoints/domain.js';
-import Request from '../../lib/request.js';
+import { Domain } from '../../lib/endpoints/domain.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/domain', () => {

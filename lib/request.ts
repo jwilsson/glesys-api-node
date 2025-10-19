@@ -3,7 +3,7 @@ import { URL } from 'node:url';
 import { Options } from './types/Options.js';
 import { Response } from './types/Response.js';
 
-class Request {
+export class Request {
     static #baseUrl = 'https://api.glesys.com';
     static #userAgent = 'https://github.com/jwilsson/glesys-api';
 
@@ -58,5 +58,3 @@ class Request {
         };
     }
 }
-
-export default Request;

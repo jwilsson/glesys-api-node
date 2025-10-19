@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class NetworkAdapter extends Endpoint {
+export class NetworkAdapter extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#networkadaptercreate
     create(data) {
         return this.request.post('/networkadapter/create', data);
@@ -21,5 +21,3 @@ class NetworkAdapter extends Endpoint {
         return this.request.post('/networkadapter/edit', data);
     }
 }
-
-export default NetworkAdapter;

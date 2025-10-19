@@ -1,28 +1,28 @@
-import Account from './endpoints/account.js';
-import Api from './endpoints/api.js';
-import Archive from './endpoints/archive.js';
-import Country from './endpoints/country.js';
-import Customer from './endpoints/customer.js';
-import Database from './endpoints/database.js';
-import Domain from './endpoints/domain.js';
-import Email from './endpoints/email.js';
-import Filestorage from './endpoints/filestorage.js';
-import Invoice from './endpoints/invoice.js';
-import Ip from './endpoints/ip.js';
-import LoadBalancer from './endpoints/loadbalancer.js';
-import Network from './endpoints/network.js';
-import NetworkAdapter from './endpoints/networkadapter.js';
-import NetworkCircuit from './endpoints/networkcircuit.js';
-import ObjectStorage from './endpoints/objectstorage.js';
-import PaymentCard from './endpoints/paymentcard.js';
-import PrivateNetwork from './endpoints/privatenetwork.js';
-import Project from './endpoints/project.js';
-import Server from './endpoints/server.js';
-import ServerDisk from './endpoints/serverdisk.js';
-import Sshkey from './endpoints/sshkey.js';
-import User from './endpoints/user.js';
-import Vpn from './endpoints/vpn.js';
-import Request from './request.js';
+import { Account } from './endpoints/account.js';
+import { Api } from './endpoints/api.js';
+import { Archive } from './endpoints/archive.js';
+import { Country } from './endpoints/country.js';
+import { Customer } from './endpoints/customer.js';
+import { Database } from './endpoints/database.js';
+import { Domain } from './endpoints/domain.js';
+import { Email } from './endpoints/email.js';
+import { FileStorage } from './endpoints/filestorage.js';
+import { Invoice } from './endpoints/invoice.js';
+import { Ip } from './endpoints/ip.js';
+import { LoadBalancer } from './endpoints/loadbalancer.js';
+import { Network } from './endpoints/network.js';
+import { NetworkAdapter } from './endpoints/networkadapter.js';
+import { NetworkCircuit } from './endpoints/networkcircuit.js';
+import { ObjectStorage } from './endpoints/objectstorage.js';
+import { PaymentCard } from './endpoints/paymentcard.js';
+import { PrivateNetwork } from './endpoints/privatenetwork.js';
+import { Project } from './endpoints/project.js';
+import { Server } from './endpoints/server.js';
+import { ServerDisk } from './endpoints/serverdisk.js';
+import { SshKey } from './endpoints/sshkey.js';
+import { User } from './endpoints/user.js';
+import { Vpn } from './endpoints/vpn.js';
+import { Request } from './request.js';
 import { Options } from './types/Options.js';
 
 class GleSYSAPI {
@@ -69,8 +69,8 @@ class GleSYSAPI {
         return new Email(this.request);
     }
 
-    public get fileStorage(): Filestorage {
-        return new Filestorage(this.request);
+    public get fileStorage(): FileStorage {
+        return new FileStorage(this.request);
     }
 
     public get invoice(): Invoice {
@@ -121,8 +121,8 @@ class GleSYSAPI {
         return new ServerDisk(this.request);
     }
 
-    public get sshKey(): Sshkey {
-        return new Sshkey(this.request);
+    public get sshKey(): SshKey {
+        return new SshKey(this.request);
     }
 
     public get user(): User {

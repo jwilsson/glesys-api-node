@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class LoadBalancer extends Endpoint {
+export class LoadBalancer extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#loadbalanceraddbackend
     addBackEnd(data) {
         return this.request.post('/loadbalancer/addbackend', data);
@@ -111,5 +111,3 @@ class LoadBalancer extends Endpoint {
         return this.request.post('/loadbalancer/removetarget', data);
     }
 }
-
-export default LoadBalancer;

@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class Project extends Endpoint {
+export class Project extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectedit
     edit(data) {
         return this.request.post('/project/edit', data);
@@ -16,5 +16,3 @@ class Project extends Endpoint {
         return this.request.post('/project/rename', data);
     }
 }
-
-export default Project;

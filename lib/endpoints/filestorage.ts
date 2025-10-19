@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class FileStorage extends Endpoint {
+export class FileStorage extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#filestoragecreatevolume
     createVolume(data) {
         return this.request.post('/filestorage/createvolume', data);
@@ -36,5 +36,3 @@ class FileStorage extends Endpoint {
         return this.request.get('/filestorage/volumedetails', data);
     }
 }
-
-export default FileStorage;

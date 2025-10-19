@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import Api from '../../lib/endpoints/api.js';
-import Request from '../../lib/request.js';
+import { Api } from '../../lib/endpoints/api.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/api', () => {

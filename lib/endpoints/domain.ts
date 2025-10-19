@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class Domain extends Endpoint {
+export class Domain extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainadd
     add(data) {
         return this.request.post('/domain/add', data);
@@ -116,5 +116,3 @@ class Domain extends Endpoint {
         return this.request.post('/domain/unpublishdnskey', data);
     }
 }
-
-export default Domain;

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import SshKey from '../../lib/endpoints/sshkey.js';
-import Request from '../../lib/request.js';
+import { SshKey } from '../../lib/endpoints/sshkey.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/sshkey', () => {

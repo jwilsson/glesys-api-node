@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import PrivateNetwork from '../../lib/endpoints/privatenetwork.js';
-import Request from '../../lib/request.js';
+import { PrivateNetwork } from '../../lib/endpoints/privatenetwork.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/privatenetwork', () => {

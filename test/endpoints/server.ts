@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, test } from 'vitest';
-import Server from '../../lib/endpoints/server.js';
-import Request from '../../lib/request.js';
+import { Server } from '../../lib/endpoints/server.js';
+import { Request } from '../../lib/request.js';
 import { setupRequest, setupRequestSpy } from '../../vitest.helpers.js';
 
 describe('endpoints/server', () => {

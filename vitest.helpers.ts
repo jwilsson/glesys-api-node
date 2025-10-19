@@ -1,5 +1,5 @@
 import { vi } from 'vitest';
-import Request from './lib/request.js';
+import { Request } from './lib/request.js';
 import { Options } from './lib/types/Options.js';
 
 export const setupRequest = () => {

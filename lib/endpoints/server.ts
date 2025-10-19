@@ -1,6 +1,6 @@
-import Endpoint from '../endpoint.js';
+import { Endpoint } from '../endpoint.js';
 
-class Server extends Endpoint {
+export class Server extends Endpoint {
     // https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverallowedarguments
     allowedArguments(data) {
         return this.request.post('/server/allowedarguments', data);
@@ -151,5 +151,3 @@ class Server extends Endpoint {
         return this.request.get('/server/templates');
     }
 }
-
-export default Server;
