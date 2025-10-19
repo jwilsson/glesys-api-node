@@ -1,6 +1,7 @@
-import got from 'got';
+import ky from 'ky';
 import { URL } from 'node:url';
 import { Options } from './types/Options.js';
+import { Response } from './types/Response.js';
 
 class Request {
     static #baseUrl = 'https://api.glesys.com';
@@ -17,7 +18,7 @@ class Request {
         this.token = Buffer.from(`${this.apiUser}:${this.apiKey}`).toString('base64');
     }
 
-    public get(uri: string, data: Record<string, unknown> = {}) {
+    public get<T>(uri: string, data: Record<string, unknown> = {}): Promise<Response<T>> {
         const options = {
             method: 'GET',
             searchParams: data,
@@ -26,30 +27,35 @@ class Request {
         return this.request(uri, options);
     }
 
-    public post(uri: string, data: Record<string, unknown> = {}) {
+    public post<T>(uri: string, data: Record<string, unknown> = {}): Promise<Response<T>> {
         const options = {
-            json: data,
+            body: data,
             method: 'POST',
         };
 
         return this.request(uri, options);
     }
 
-    public request(uri: string, options: Record<string, unknown> = {}) {
+    public async request<T>(uri: string, options: Record<string, unknown> = {}): Promise<Response<T>> {
         const defaults = {
             headers: {
                 'Authorization': `Basic ${this.token}`,
                 'User-Agent': Request.#userAgent,
             },
-            responseType: 'json',
         };
 
         const url = new URL(uri, Request.#baseUrl);
-
-        return got(url, {
+        const response = await ky(url, {
             ...defaults,
             ...options,
         });
+
+        return {
+            body: await response.json(),
+            headers: response.headers,
+            status: response.status,
+            statusText: response.statusText,
+        };
     }
 }
 

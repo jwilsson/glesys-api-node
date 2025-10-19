@@ -15,7 +15,7 @@ describe('request', () => {
         expect(request.token).toBe('dXNlcjprZXk=');
     });
 
-    test('get() sets query string and request method', () => {
+    test('get() sets query string and request method', async () => {
         const request = new Request(authOptions);
         const requestSpy = vi.spyOn(request, 'request').mockImplementation(vi.fn());
 
@@ -24,7 +24,7 @@ describe('request', () => {
             foo: 'bar',
         };
 
-        request.get(url, data);
+        await request.get(url, data);
 
         expect(requestSpy).toHaveBeenCalledWith(
             url,
@@ -35,7 +35,7 @@ describe('request', () => {
         );
     });
 
-    test('post() sets body and request method', () => {
+    test('post() sets body and request method', async () => {
         const request = new Request(authOptions);
         const requestSpy = vi.spyOn(request, 'request').mockImplementation(vi.fn());
 
@@ -44,7 +44,7 @@ describe('request', () => {
             foo: 'bar',
         };
 
-        request.post(url, data);
+        await request.post(url, data);
 
         expect(requestSpy).toHaveBeenCalledWith(
             url,
@@ -59,6 +59,6 @@ describe('request', () => {
         const request = new Request(authOptions);
         const response = await request.request('https://httpbin.org/headers');
 
-        expect(response.headers['Authorization']).toBe('Basic dXNlcjprZXk=');
+        expect(response.headers.get(' Authorization')).toBe('Basic dXNlcjprZXk=');
     });
 });
