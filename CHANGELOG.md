@@ -1,4 +1,29 @@
 # Changelog
+## 9.3.0 (2026-07-18)
+* Added new `BlockStorage` module:
+    * `GleSYSAPI.blockStorage.attach()`
+    * `GleSYSAPI.blockStorage.create()`
+    * `GleSYSAPI.blockStorage.delete()`
+    * `GleSYSAPI.blockStorage.detach()`
+    * `GleSYSAPI.blockStorage.details()`
+    * `GleSYSAPI.blockStorage.edit()`
+    * `GleSYSAPI.blockStorage.list()`
+    * `GleSYSAPI.blockStorage.listTiers()`
+    * `GleSYSAPI.blockStorage.resize()`
+* Added new `Database` methods:
+    * `GleSYSAPI.database.createDatabase()`
+    * `GleSYSAPI.database.createUser()`
+    * `GleSYSAPI.database.deleteDatabase()`
+    * `GleSYSAPI.database.deleteUser()`
+    * `GleSYSAPI.database.resetUserPassword()`
+    * `GleSYSAPI.database.setUserPermissions()`
+* Added new `ObjectStorage` methods:
+    * `GleSYSAPI.objectStorage.costs()`
+* Added new `Server` methods:
+    * `GleSYSAPI.server.listPlans()`
+* Added new `User` methods:
+    * `GleSYSAPI.user.listInvites()`
+
 ## 9.2.0 (2025-06-27)
 * Added new `Domain` methods:
     * `GleSYSAPI.domain.prepareForDNSSEC()`
