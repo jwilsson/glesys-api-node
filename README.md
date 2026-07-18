@@ -236,6 +236,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.server.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverlist)
 * [`GleSYSAPI.server.listBackups()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverlistbackups)
 * [`GleSYSAPI.server.listISO()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverlistiso)
+* [`GleSYSAPI.server.listPlans()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverlistplans)
 * [`GleSYSAPI.server.mountISO()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#servermountiso)
 * [`GleSYSAPI.server.networkAdapters()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#servernetworkadapters)
 * [`GleSYSAPI.server.previewCloudConfig()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverpreviewcloudconfig)

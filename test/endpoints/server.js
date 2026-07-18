@@ -201,6 +201,14 @@ describe('endpoints/server', () => {
         expect(spy).toHaveBeenCalledWith('/server/listiso', data);
     });
 
+    test('listPlans()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'get');
+
+        server.listPlans();
+
+        expect(spy).toHaveBeenCalledWith('/server/listplans');
+    });
+
     test('mountISO()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
