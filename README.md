@@ -55,6 +55,17 @@ glesys.email.createAccount({
 * [`GleSYSAPI.archive.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#archivelist)
 * [`GleSYSAPI.archive.resize()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#archiveresize)
 
+### blockStorage
+* [`GleSYSAPI.blockStorage.attach()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstorageattach)
+* [`GleSYSAPI.blockStorage.create()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragecreate)
+* [`GleSYSAPI.blockStorage.delete()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragedelete)
+* [`GleSYSAPI.blockStorage.detach()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragedetach)
+* [`GleSYSAPI.blockStorage.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragedetails)
+* [`GleSYSAPI.blockStorage.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstorageedit)
+* [`GleSYSAPI.blockStorage.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragelist)
+* [`GleSYSAPI.blockStorage.listTiers()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragelisttiers)
+* [`GleSYSAPI.blockStorage.resize()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstorageresize)
+
 ### country
 * [`GleSYSAPI.country.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#countrylist)
 

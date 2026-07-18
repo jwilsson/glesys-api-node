@@ -18,6 +18,7 @@ describe('GleSYSAPI', () => {
         expect(glesys.account).toBeDefined();
         expect(glesys.api).toBeDefined();
         expect(glesys.archive).toBeDefined();
+        expect(glesys.blockStorage).toBeDefined();
         expect(glesys.country).toBeDefined();
         expect(glesys.customer).toBeDefined();
         expect(glesys.database).toBeDefined();
