@@ -1,6 +1,11 @@
+import got from 'got';
 import { vi } from 'vitest';
 
 import Request from '../lib/request.js';
+
+vi.mock('got', () => ({
+    default: vi.fn(),
+}));
 
 describe('request', () => {
     const authOptions = {
@@ -56,10 +61,19 @@ describe('request', () => {
         );
     });
 
-    test('request() sends a request', async () => {
+    test('request() sends an authenticated JSON request', () => {
         const request = new Request(authOptions);
-        const response = await request.request('https://httpbin.org/headers');
+        request.request('/api/serviceinfo');
 
-        expect(response.body.headers.Authorization).toBe('Basic dXNlcjprZXk=');
+        expect(got).toHaveBeenCalledWith(
+            new URL('https://api.glesys.com/api/serviceinfo'),
+            expect.objectContaining({
+                headers: {
+                    'Authorization': 'Basic dXNlcjprZXk=',
+                    'User-Agent': 'https://github.com/jwilsson/glesys-api',
+                },
+                responseType: 'json',
+            }),
+        );
     });
 });
