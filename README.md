@@ -189,6 +189,7 @@ glesys.email.createAccount({
 ### objectStorage
 * [`GleSYSAPI.objectStorage.createCredential()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragecreatecredential)
 * [`GleSYSAPI.objectStorage.createInstance()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragecreateinstance)
+* [`GleSYSAPI.objectStorage.costs()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragecosts)
 * [`GleSYSAPI.objectStorage.deleteCredential()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragedeletecredential)
 * [`GleSYSAPI.objectStorage.deleteInstance()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstoragedeleteinstance)
 * [`GleSYSAPI.objectStorage.editInstance()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#objectstorageeditinstance)

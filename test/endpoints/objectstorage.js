@@ -35,6 +35,17 @@ describe('endpoints/objectstorage', () => {
         expect(spy).toHaveBeenCalledWith('/objectstorage/createinstance', data);
     });
 
+    test('costs()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            projectkey: 'cl123',
+        };
+
+        objectStorage.costs(data);
+
+        expect(spy).toHaveBeenCalledWith('/objectstorage/costs', data);
+    });
+
     test('deleteCredential()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
