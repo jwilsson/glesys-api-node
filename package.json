@@ -23,7 +23,7 @@
         "url": "https://github.com/jwilsson/glesys-api-node"
     },
     "dependencies": {
-        "got": "^14.4.3"
+        "got": "^15.1.0"
     },
     "devDependencies": {
         "@jwilsson/eslint-config": "^9.0.0",
