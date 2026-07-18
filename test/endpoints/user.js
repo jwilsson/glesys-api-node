@@ -94,6 +94,14 @@ describe('endpoints/user', () => {
         expect(spy).toHaveBeenCalledWith('/user/initiatesupportchallenge');
     });
 
+    test('listInvites()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'get');
+
+        user.listInvites();
+
+        expect(spy).toHaveBeenCalledWith('/user/listinvites');
+    });
+
     test('listOrganizations()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 

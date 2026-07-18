@@ -272,6 +272,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.user.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#useredit)
 * [`GleSYSAPI.user.enableTwoFactor()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#userenabletwofactor)
 * [`GleSYSAPI.user.initiateSupportChallenge()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#userinitiatesupportchallenge)
+* [`GleSYSAPI.user.listInvites()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#userlistinvites)
 * [`GleSYSAPI.user.listOrganizations()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#userlistorganizations)
 * [`GleSYSAPI.user.login()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#userlogin)
 * [`GleSYSAPI.user.logout()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#userlogout)
