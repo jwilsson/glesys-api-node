@@ -1,5 +1,13 @@
 # Changelog
-## 9.3.0 (2026-07-18)
+## 10.0.0 (2026-07-18)
+* **Breaking** Replaced default exports with named exports.
+* **Breaking** Dropped support for Node < 24.11.0.
+* **Breaking** Updated `got` to `15.x`.
+* **Breaking** Remove the following methods no longer in the GleSYS API:
+    * `GleSYSAPI.domain.prepareForDNSSEC()`
+    * `GleSYSAPI.domain.publishDNSKEY()`
+    * `GleSYSAPI.domain.unpublishDNSKEY()`
+
 * Added new `BlockStorage` module:
     * `GleSYSAPI.blockStorage.attach()`
     * `GleSYSAPI.blockStorage.create()`
