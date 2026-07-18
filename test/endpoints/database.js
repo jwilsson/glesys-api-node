@@ -32,6 +32,30 @@ describe('endpoints/database', () => {
         expect(spy).toHaveBeenCalledWith('/database/create', data);
     });
 
+    test('createDatabase()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            instanceid: 'instanceid',
+            name: 'name',
+        };
+
+        database.createDatabase(data);
+
+        expect(spy).toHaveBeenCalledWith('/database/createdatabase', data);
+    });
+
+    test('createUser()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            instanceid: 'instanceid',
+            username: 'username',
+        };
+
+        database.createUser(data);
+
+        expect(spy).toHaveBeenCalledWith('/database/createuser', data);
+    });
+
     test('delete()', () => {
         const spy = globalThis.setupRequestSpy(request, 'post');
         const data = {
@@ -41,6 +65,28 @@ describe('endpoints/database', () => {
         database.delete(data);
 
         expect(spy).toHaveBeenCalledWith('/database/delete', data);
+    });
+
+    test('deleteDatabase()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            databaseid: 'databaseid',
+        };
+
+        database.deleteDatabase(data);
+
+        expect(spy).toHaveBeenCalledWith('/database/deletedatabase', data);
+    });
+
+    test('deleteUser()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            userid: 'userid',
+        };
+
+        database.deleteUser(data);
+
+        expect(spy).toHaveBeenCalledWith('/database/deleteuser', data);
     });
 
     test('details()', () => {
@@ -79,6 +125,29 @@ describe('endpoints/database', () => {
         database.listPlans();
 
         expect(spy).toHaveBeenCalledWith('/database/listplans');
+    });
+
+    test('resetUserPassword()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            userid: 'userid',
+        };
+
+        database.resetUserPassword(data);
+
+        expect(spy).toHaveBeenCalledWith('/database/resetuserpassword', data);
+    });
+
+    test('setUserPermissions()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            permissions: [],
+            userid: 'userid',
+        };
+
+        database.setUserPermissions(data);
+
+        expect(spy).toHaveBeenCalledWith('/database/setuserpermissions', data);
     });
 
     test('updateAllowList()', () => {
