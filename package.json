@@ -29,7 +29,6 @@
         "@jwilsson/eslint-config": "^9.0.0",
         "@jwilsson/prettier-config": "^9.0.0",
         "@vitest/coverage-v8": "^3.1.1",
-        "coveralls": "^3.0.0",
         "eslint": "^9.10.0",
         "prettier": "^3.3.3",
         "simple-git-hooks": "^2.2.0",
