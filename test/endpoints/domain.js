@@ -158,34 +158,12 @@ describe('endpoints/domain', () => {
         expect(spy).toHaveBeenCalledWith('/domain/listrecords', data);
     });
 
-    test('prepareForDNSSEC()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
-        const data = {
-            domainname: 'example.com',
-        };
-
-        domain.prepareForDNSSEC(data);
-
-        expect(spy).toHaveBeenCalledWith('/domain/preparefordnssec', data);
-    });
-
     test('priceList()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
 
         domain.priceList();
 
         expect(spy).toHaveBeenCalledWith('/domain/pricelist');
-    });
-
-    test('publishDNSKEY()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
-        const data = {
-            domainname: 'example.com',
-        };
-
-        domain.publishDNSKEY(data);
-
-        expect(spy).toHaveBeenCalledWith('/domain/publishdnskey', data);
     });
 
     test('register()', () => {
@@ -241,16 +219,5 @@ describe('endpoints/domain', () => {
         domain.updateRecord(data);
 
         expect(spy).toHaveBeenCalledWith('/domain/updaterecord', data);
-    });
-
-    test('unpublishDNSKEY()', () => {
-        const spy = globalThis.setupRequestSpy(request, 'post');
-        const data = {
-            domainname: 'example.com',
-        };
-
-        domain.unpublishDNSKEY(data);
-
-        expect(spy).toHaveBeenCalledWith('/domain/unpublishdnskey', data);
     });
 });

@@ -108,15 +108,12 @@ glesys.email.createAccount({
 * [`GleSYSAPI.domain.generateAuthCode()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domaingenerateauthcode)
 * [`GleSYSAPI.domain.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainlist)
 * [`GleSYSAPI.domain.listRecords()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainlistrecords)
-* [`GleSYSAPI.domain.prepareForDNSSEC()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainpreparefordnssec)
 * [`GleSYSAPI.domain.priceList()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainpricelist)
-* [`GleSYSAPI.domain.publishDNSKEY()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainpublishdnskey)
 * [`GleSYSAPI.domain.register()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainregister)
 * [`GleSYSAPI.domain.renew()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainrenew)
 * [`GleSYSAPI.domain.setAutoRenew()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainsetautorenew)
 * [`GleSYSAPI.domain.transfer()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domaintransfer)
 * [`GleSYSAPI.domain.updateRecord()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainupdaterecord)
-* [`GleSYSAPI.domain.unpublishDNSKEY()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#domainunpublishdnskey)
 
 ### email
 * [`GleSYSAPI.email.costs()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#emailcosts)
