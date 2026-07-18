@@ -1,5 +1,5 @@
-import ServerDisk from '../../lib/endpoints/serverdisk.js';
-import Request from '../../lib/request.js';
+import { ServerDisk } from '../../lib/endpoints/serverdisk.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/serverdisk', () => {
     let serverDisk;

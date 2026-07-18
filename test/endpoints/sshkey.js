@@ -1,5 +1,5 @@
-import SshKey from '../../lib/endpoints/sshkey.js';
-import Request from '../../lib/request.js';
+import { SshKey } from '../../lib/endpoints/sshkey.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/sshkey', () => {
     let request;

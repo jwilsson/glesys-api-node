@@ -1,7 +1,7 @@
 import got from 'got';
 import { vi } from 'vitest';
 
-import Request from '../lib/request.js';
+import { Request } from '../lib/request.js';
 
 vi.mock('got', () => ({
     default: vi.fn(),

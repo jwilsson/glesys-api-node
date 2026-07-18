@@ -1,5 +1,5 @@
-import Server from '../../lib/endpoints/server.js';
-import Request from '../../lib/request.js';
+import { Server } from '../../lib/endpoints/server.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/server', () => {
     let server;

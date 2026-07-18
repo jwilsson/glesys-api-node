@@ -1,5 +1,5 @@
-import Vpn from '../../lib/endpoints/vpn.js';
-import Request from '../../lib/request.js';
+import { Vpn } from '../../lib/endpoints/vpn.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/vpn', () => {
     let vpn;

@@ -1,5 +1,5 @@
-import NetworkCircuit from '../../lib/endpoints/networkcircuit.js';
-import Request from '../../lib/request.js';
+import { NetworkCircuit } from '../../lib/endpoints/networkcircuit.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/networkcircuit', () => {
     let networkCircuit;

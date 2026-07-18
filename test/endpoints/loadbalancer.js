@@ -1,5 +1,5 @@
-import LoadBalancer from '../../lib/endpoints/loadbalancer.js';
-import Request from '../../lib/request.js';
+import { LoadBalancer } from '../../lib/endpoints/loadbalancer.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/loadbalancer', () => {
     let loadBalancer;

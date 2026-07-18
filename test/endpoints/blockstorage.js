@@ -1,5 +1,5 @@
-import BlockStorage from '../../lib/endpoints/blockstorage.js';
-import Request from '../../lib/request.js';
+import { BlockStorage } from '../../lib/endpoints/blockstorage.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/blockstorage', () => {
     let blockStorage;

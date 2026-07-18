@@ -1,5 +1,5 @@
-import PrivateNetwork from '../../lib/endpoints/privatenetwork.js';
-import Request from '../../lib/request.js';
+import { PrivateNetwork } from '../../lib/endpoints/privatenetwork.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/privatenetwork', () => {
     let privateNetwork;

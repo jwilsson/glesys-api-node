@@ -1,5 +1,5 @@
-import Database from '../../lib/endpoints/database.js';
-import Request from '../../lib/request.js';
+import { Database } from '../../lib/endpoints/database.js';
+import { Request } from '../../lib/request.js';
 
 describe('endpoints/database', () => {
     let database;
