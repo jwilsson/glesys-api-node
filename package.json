@@ -26,11 +26,11 @@
         "got": "^15.1.0"
     },
     "devDependencies": {
-        "@jwilsson/eslint-config": "^9.0.0",
-        "@jwilsson/prettier-config": "^9.0.0",
+        "@jwilsson/eslint-config": "^10.0.0",
+        "@jwilsson/prettier-config": "^10.0.0",
         "@vitest/coverage-v8": "^4.1.10",
-        "eslint": "^9.10.0",
-        "prettier": "^3.3.3",
+        "eslint": "^10.7.0",
+        "prettier": "^3.9.5",
         "simple-git-hooks": "^2.2.0",
         "vitest": "^4.1.10"
     },
