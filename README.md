@@ -66,6 +66,9 @@ glesys.email.createAccount({
 * [`GleSYSAPI.blockStorage.listTiers()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragelisttiers)
 * [`GleSYSAPI.blockStorage.resize()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstorageresize)
 
+### colocationRack
+* [`GleSYSAPI.colocationRack.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#colocationracklist)
+
 ### country
 * [`GleSYSAPI.country.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#countrylist)
 
