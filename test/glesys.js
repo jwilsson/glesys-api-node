@@ -36,6 +36,7 @@ describe('GleSYSAPI', () => {
         expect(glesys.paymentCard).toBeDefined();
         expect(glesys.privateNetwork).toBeDefined();
         expect(glesys.project).toBeDefined();
+        expect(glesys.remoteHands).toBeDefined();
         expect(glesys.server).toBeDefined();
         expect(glesys.serverDisk).toBeDefined();
         expect(glesys.sshKey).toBeDefined();

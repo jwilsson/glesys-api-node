@@ -228,6 +228,11 @@ glesys.email.createAccount({
 * [`GleSYSAPI.project.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectedit)
 * [`GleSYSAPI.project.rename()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#projectrename)
 
+### remoteHands
+* [`GleSYSAPI.remoteHands.cancel()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#remotehandscancel)
+* [`GleSYSAPI.remoteHands.create()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#remotehandscreate)
+* [`GleSYSAPI.remoteHands.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#remotehandslist)
+
 ### server
 * [`GleSYSAPI.server.allowedArguments()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverallowedarguments)
 * [`GleSYSAPI.server.backup()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverbackup)
