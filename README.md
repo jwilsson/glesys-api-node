@@ -274,6 +274,12 @@ glesys.email.createAccount({
 * [`GleSYSAPI.serverDisk.reconfigure()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdiskreconfigure)
 * [`GleSYSAPI.serverDisk.updateName()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#serverdiskupdatename)
 
+### shipment
+* [`GleSYSAPI.shipment.cancel()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#shipmentcancel)
+* [`GleSYSAPI.shipment.create()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#shipmentcreate)
+* [`GleSYSAPI.shipment.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#shipmentedit)
+* [`GleSYSAPI.shipment.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#shipmentlist)
+
 ### sshKey
 * [`GleSYSAPI.sshKey.add()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#sshkeyadd)
 * [`GleSYSAPI.sshKey.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#sshkeylist)

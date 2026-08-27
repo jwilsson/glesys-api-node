@@ -39,6 +39,7 @@ describe('GleSYSAPI', () => {
         expect(glesys.remoteHands).toBeDefined();
         expect(glesys.server).toBeDefined();
         expect(glesys.serverDisk).toBeDefined();
+        expect(glesys.shipment).toBeDefined();
         expect(glesys.sshKey).toBeDefined();
         expect(glesys.user).toBeDefined();
         expect(glesys.vpn).toBeDefined();
