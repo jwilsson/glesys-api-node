@@ -1,4 +1,17 @@
 # Changelog
+## 10.1.0 (2026-09-02)
+* Added new `ColocationRack` module:
+    * `GleSYSAPI.colocationRack.list()`
+* Added new `RemoteHands` module:
+    * `GleSYSAPI.remoteHands.cancel()`
+    * `GleSYSAPI.remoteHands.create()`
+    * `GleSYSAPI.remoteHands.list()`
+* Added new `Shipment` module:
+    * `GleSYSAPI.shipment.cancel()`
+    * `GleSYSAPI.shipment.create()`
+    * `GleSYSAPI.shipment.edit()`
+    * `GleSYSAPI.shipment.list()`
+
 ## 10.0.0 (2026-07-18)
 * **Breaking** Replaced default exports with named exports.
 * **Breaking** Dropped support for Node < 24.11.0.
