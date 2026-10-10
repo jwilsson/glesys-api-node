@@ -62,6 +62,7 @@ glesys.email.createAccount({
 * [`GleSYSAPI.blockStorage.detach()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragedetach)
 * [`GleSYSAPI.blockStorage.details()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragedetails)
 * [`GleSYSAPI.blockStorage.edit()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstorageedit)
+* [`GleSYSAPI.blockStorage.estimatedCost()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstorageestimatedcost)
 * [`GleSYSAPI.blockStorage.list()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragelist)
 * [`GleSYSAPI.blockStorage.listTiers()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstoragelisttiers)
 * [`GleSYSAPI.blockStorage.resize()`](https://github.com/GleSYS/API-docs/wiki/API-Documentation#blockstorageresize)

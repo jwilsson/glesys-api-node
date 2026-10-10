@@ -82,6 +82,17 @@ describe('endpoints/blockstorage', () => {
         expect(spy).toHaveBeenCalledWith('/blockstorage/edit', data);
     });
 
+    test('estimatedCost()', () => {
+        const spy = globalThis.setupRequestSpy(request, 'post');
+        const data = {
+            projectkey: 'projectkey',
+        };
+
+        blockStorage.estimatedCost(data);
+
+        expect(spy).toHaveBeenCalledWith('/blockstorage/estimatedcost', data);
+    });
+
     test('list()', () => {
         const spy = globalThis.setupRequestSpy(request, 'get');
         const data = {
