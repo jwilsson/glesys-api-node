@@ -28,11 +28,11 @@
     "devDependencies": {
         "@jwilsson/eslint-config": "^10.0.0",
         "@jwilsson/prettier-config": "^10.0.0",
-        "@vitest/coverage-v8": "^4.1.10",
+        "@vitest/coverage-v8": "^5.0.3",
         "eslint": "^10.7.0",
         "prettier": "^3.9.5",
         "simple-git-hooks": "^2.2.0",
-        "vitest": "^4.1.10"
+        "vitest": "^5.0.3"
     },
     "scripts": {
         "pretest": "eslint lib test",
