@@ -1,4 +1,9 @@
 # Changelog
+## 10.2.0 (2026-09-02)
+* Added new `BlockStorage` methods:
+    * `GleSYSAPI.blockStorage.estimatedCost()`
+    * Updated `vitest` to `5.x`.
+
 ## 10.1.0 (2026-09-02)
 * Added new `ColocationRack` module:
     * `GleSYSAPI.colocationRack.list()`
